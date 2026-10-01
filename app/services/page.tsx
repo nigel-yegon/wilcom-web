@@ -189,7 +189,7 @@ export default function ServicesPage() {
       {/* Header */}
       <section className="px-6 py-20 text-center max-w-4xl mx-auto">
         <h1 className="text-4xl md:text-6xl font-extrabold mb-6">
-          Products &amp; <span className="text-blue-400">Services</span>
+          Products &amp; <span className="text-red-400">Services</span>
         </h1>
         <p className="text-lg text-slate-300 leading-relaxed">
           A complete portfolio of ICT infrastructure, retail automation,
@@ -217,7 +217,7 @@ export default function ServicesPage() {
           ].map((item) => (
             <div
               key={item}
-              className="bg-white	dark:bg-ink-900/60 p-5 rounded-lg border border-slate-700 text-slate-200 font-medium hover:border-blue-400 transition"
+              className="bg-white	dark:bg-ink-900/60 p-5 rounded-lg border border-slate-700 text-slate-200 font-medium hover:border-red-400 transition"
             >
               {item}
             </div>
@@ -235,9 +235,9 @@ export default function ServicesPage() {
             <div
               key={service.slug}
               id={service.slug}
-              className="bg-white	dark:bg-ink-900 p-8 rounded-xl border border-slate-700 hover:border-blue-400 transition scroll-mt-24"
+              className="bg-white	dark:bg-ink-900 p-8 rounded-xl border border-slate-700 hover:border-red-400 transition scroll-mt-24"
             >
-              <h3 className="text-2xl font-bold text-blue-400 mb-3">
+              <h3 className="text-2xl font-bold text-red-400 mb-3">
                 {service.title}
               </h3>
               <p className="text-slate-300 mb-5 leading-relaxed">
@@ -246,7 +246,7 @@ export default function ServicesPage() {
               <ul className="space-y-2 text-slate-300 text-sm">
                 {service.items.map((item) => (
                   <li key={item} className="flex items-start gap-2">
-                    <span className="text-blue-400 mt-0.5">•</span>
+                    <span className="text-red-400 mt-0.5">•</span>
                     <span>{item}</span>
                   </li>
                 ))}
@@ -264,7 +264,7 @@ export default function ServicesPage() {
           </h2>
           <div className="grid md:grid-cols-2 gap-10">
             <div>
-              <h3 className="text-2xl font-bold text-blue-400 mb-4">
+              <h3 className="text-2xl font-bold text-red-400 mb-4">
                 Networking
               </h3>
               <p className="text-slate-300 mb-4 leading-relaxed">
@@ -282,7 +282,7 @@ export default function ServicesPage() {
               </p>
             </div>
             <div>
-              <h3 className="text-2xl font-bold text-blue-400 mb-4">
+              <h3 className="text-2xl font-bold text-red-400 mb-4">
                 CCTV &amp; Surveillance
               </h3>
               <p className="text-slate-300 mb-4 leading-relaxed">
@@ -313,7 +313,7 @@ export default function ServicesPage() {
         </p>
         <div className="grid md:grid-cols-2 gap-8">
           <div className="bg-white	dark:bg-ink-900 p-8 rounded-xl border border-slate-700">
-            <h3 className="text-2xl font-bold text-blue-400 mb-4">
+            <h3 className="text-2xl font-bold text-red-400 mb-4">
               Complete POS Solution
             </h3>
             <p className="text-slate-300 mb-5 leading-relaxed">
@@ -330,14 +330,14 @@ export default function ServicesPage() {
                 "Ongoing help, Support and Maintenance",
               ].map((item) => (
                 <li key={item} className="flex items-start gap-2">
-                  <span className="text-blue-400 mt-0.5">•</span>
+                  <span className="text-red-400 mt-0.5">•</span>
                   <span>{item}</span>
                 </li>
               ))}
             </ul>
           </div>
           <div className="bg-white	dark:bg-ink-900 p-8 rounded-xl border border-slate-700">
-            <h3 className="text-2xl font-bold text-blue-400 mb-4">
+            <h3 className="text-2xl font-bold text-red-400 mb-4">
               County Management System
             </h3>
             <p className="text-slate-300 mb-5 leading-relaxed">
@@ -362,7 +362,7 @@ export default function ServicesPage() {
                 "Grievances tracking",
               ].map((item) => (
                 <span key={item} className="flex items-start gap-2">
-                  <span className="text-blue-400 mt-0.5">•</span>
+                  <span className="text-red-400 mt-0.5">•</span>
                   <span>{item}</span>
                 </span>
               ))}
@@ -375,7 +375,7 @@ export default function ServicesPage() {
       <section className="px-6 py-16 bg-ink-50	dark:bg-ink-9500/60">
         <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
           <div className="bg-white	dark:bg-ink-900 p-8 rounded-xl border border-slate-700">
-            <h3 className="text-xl font-bold text-blue-400 mb-4">
+            <h3 className="text-xl font-bold text-red-400 mb-4">
               Custom Solutions
             </h3>
             <p className="text-slate-300 leading-relaxed">
@@ -386,7 +386,7 @@ export default function ServicesPage() {
             </p>
           </div>
           <div className="bg-white	dark:bg-ink-900 p-8 rounded-xl border border-slate-700">
-            <h3 className="text-xl font-bold text-blue-400 mb-4">
+            <h3 className="text-xl font-bold text-red-400 mb-4">
               Web Solutions
             </h3>
             <p className="text-slate-300 leading-relaxed">
@@ -397,7 +397,7 @@ export default function ServicesPage() {
             </p>
           </div>
           <div className="bg-white	dark:bg-ink-900 p-8 rounded-xl border border-slate-700">
-            <h3 className="text-xl font-bold text-blue-400 mb-4">
+            <h3 className="text-xl font-bold text-red-400 mb-4">
               eBusiness Solutions
             </h3>
             <p className="text-slate-300 leading-relaxed">
@@ -425,7 +425,7 @@ export default function ServicesPage() {
               key={item}
               className="bg-white	dark:bg-ink-900/60 p-6 rounded-xl border border-slate-700 flex items-start gap-3"
             >
-              <span className="text-blue-400 text-xl mt-0.5">→</span>
+              <span className="text-red-400 text-xl mt-0.5">→</span>
               <p className="text-slate-300">{item}</p>
             </div>
           ))}
@@ -445,13 +445,13 @@ export default function ServicesPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/contact"
-              className="bg-blue-500 hover:bg-blue-600 transition px-8 py-3 rounded-lg font-semibold"
+              className="bg-red-500 hover:bg-red-600 transition px-8 py-3 rounded-lg font-semibold"
             >
               Contact Us
             </Link>
             <a
               href="tel:+254202396916"
-              className="border border-slate-600 hover:border-blue-400 transition px-8 py-3 rounded-lg font-semibold text-slate-200"
+              className="border border-slate-600 hover:border-red-400 transition px-8 py-3 rounded-lg font-semibold text-slate-200"
             >
               Call +254 020 2396916/7
             </a>

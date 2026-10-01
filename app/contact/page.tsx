@@ -58,7 +58,7 @@ export default function ContactPage() {
       {/* Header */}
       <section className="px-6 py-20 text-center max-w-4xl mx-auto">
         <h1 className="text-4xl md:text-6xl font-extrabold mb-6">
-          Contact <span className="text-blue-400">Us</span>
+          Contact <span className="text-red-400">Us</span>
         </h1>
         <p className="text-lg text-slate-300 leading-relaxed">
           Please contact us for product information, pricing, and ordering.
@@ -72,12 +72,12 @@ export default function ContactPage() {
           {/* Info column */}
           <div className="md:col-span-2 space-y-6">
             <div className="bg-white	dark:bg-ink-900 p-8 rounded-xl border border-slate-700">
-              <h2 className="text-xl font-bold text-blue-400 mb-6">
+              <h2 className="text-xl font-bold text-red-400 mb-6">
                 WilCom Systems Limited
               </h2>
               <ul className="space-y-4 text-slate-300 text-sm">
                 <li className="flex items-start gap-3">
-                  <span className="text-blue-400 mt-0.5 text-lg">📍</span>
+                  <span className="text-red-400 mt-0.5 text-lg">📍</span>
                   <div>
                     <p className="font-medium text-white">Address</p>
                     <p>2nd Floor, Elyzee Plaza</p>
@@ -86,29 +86,29 @@ export default function ContactPage() {
                   </div>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-blue-400 mt-0.5 text-lg">📞</span>
+                  <span className="text-red-400 mt-0.5 text-lg">📞</span>
                   <div>
                     <p className="font-medium text-white">Phone</p>
                     <p>
-                      <a href="tel:+254202396916" className="hover:text-blue-400">
+                      <a href="tel:+254202396916" className="hover:text-red-400">
                         +254 020 2396916/7
                       </a>
                     </p>
                     <p>
-                      <a href="tel:+254205288878" className="hover:text-blue-400">
+                      <a href="tel:+254205288878" className="hover:text-red-400">
                         +254 020 5288878
                       </a>
                     </p>
                   </div>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-blue-400 mt-0.5 text-lg">✉️</span>
+                  <span className="text-red-400 mt-0.5 text-lg">✉️</span>
                   <div>
                     <p className="font-medium text-white">Email</p>
                     <p>
                       <a
                         href="mailto:sales@wilcom.co.ke"
-                        className="hover:text-blue-400"
+                        className="hover:text-red-400"
                       >
                         sales@wilcom.co.ke
                       </a>
@@ -116,7 +116,7 @@ export default function ContactPage() {
                     <p>
                       <a
                         href="mailto:info@wilcom.co.ke"
-                        className="hover:text-blue-400"
+                        className="hover:text-red-400"
                       >
                         info@wilcom.co.ke
                       </a>
@@ -124,21 +124,21 @@ export default function ContactPage() {
                   </div>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-blue-400 mt-0.5 text-lg">🌐</span>
+                  <span className="text-red-400 mt-0.5 text-lg">🌐</span>
                   <div>
                     <p className="font-medium text-white">Website</p>
                     <a
                       href="https://www.wilcom.co.ke"
                       target="_blank"
                       rel="noreferrer"
-                      className="hover:text-blue-400"
+                      className="hover:text-red-400"
                     >
                       www.wilcom.co.ke
                     </a>
                   </div>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-blue-400 mt-0.5 text-lg">🕐</span>
+                  <span className="text-red-400 mt-0.5 text-lg">🕐</span>
                   <div>
                     <p className="font-medium text-white">Business Hours</p>
                     <p>Monday – Friday: 8:00 AM – 5:00 PM</p>
@@ -150,7 +150,7 @@ export default function ContactPage() {
             </div>
 
             <div className="bg-white	dark:bg-ink-900/60 p-6 rounded-xl border border-slate-700">
-              <h3 className="text-lg font-bold text-blue-400 mb-2">
+              <h3 className="text-lg font-bold text-red-400 mb-2">
                 Quick Response
               </h3>
               <p className="text-slate-300 text-sm leading-relaxed">
@@ -224,7 +224,7 @@ export default function ContactPage() {
         </p>
         <a
           href="tel:+254202396916"
-          className="inline-block bg-blue-500 hover:bg-blue-600 transition px-8 py-3 rounded-lg font-semibold"
+          className="inline-block bg-red-500 hover:bg-red-600 transition px-8 py-3 rounded-lg font-semibold"
         >
           Call +254 020 2396916/7
         </a>

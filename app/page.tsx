@@ -16,7 +16,7 @@ export default async function Home() {
       <section id="home" className="flex flex-col items-center justify-center text-center px-6 py-32">
         <h1 className="text-5xl md:text-6xl font-extrabold mb-6">
           Welcome to{" "}
-          <span className="text-blue-400">Wilcom Systems Limited</span>
+          <span className="text-red-400">Wilcom Systems Limited</span>
         </h1>
         <p className="max-w-2xl text-lg text-slate-300 mb-10">
           Delivering innovative technology solutions that power your business
@@ -25,7 +25,7 @@ export default async function Home() {
         </p>
         <Link
           href="#services"
-          className="bg-blue-500 hover:bg-blue-600 transition px-8 py-3 rounded-lg font-semibold"
+          className="bg-red-500 hover:bg-red-600 transition px-8 py-3 rounded-lg font-semibold"
         >
           Explore Our Services
         </Link>
@@ -45,9 +45,9 @@ export default async function Home() {
             {services.map((s) => (
               <div
                 key={s.id}
-                className="bg-white	dark:bg-ink-900 p-8 rounded-xl border border-slate-700 hover:border-blue-400 transition"
+                className="bg-white	dark:bg-ink-900 p-8 rounded-xl border border-slate-700 hover:border-red-400 transition"
               >
-                <h3 className="text-xl font-semibold mb-3 text-blue-400">
+                <h3 className="text-xl font-semibold mb-3 text-red-400">
                   {s.title}
                 </h3>
                 <p className="text-slate-300">{s.description}</p>

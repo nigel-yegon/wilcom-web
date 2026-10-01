@@ -13,7 +13,7 @@ export default function AboutPage() {
             {/* Header */}
             <section className="px-6 py-20 text-center max-w-4xl mx-auto">
                 <h1 className="text-5xl md:text-6xl font-extrabold mb-6">
-                    About <span className="text-blue-400">Wilcom Systems</span>
+                    About <span className="text-red-400">Wilcom Systems</span>
                 </h1>
                 <p className="text-lg text-slate-300 leading-relaxed">
                     Wilcom Systems Limited is a limited liability company established in
@@ -27,7 +27,7 @@ export default function AboutPage() {
             <section className="px-6 py-16 max-w-6xl mx-auto">
                 <div className="grid md:grid-cols-2 gap-10">
                     <div className="bg-white	dark:bg-ink-900/60 p-8 rounded-xl border border-slate-700">
-                        <h2 className="text-2xl font-bold text-blue-400 mb-4">Who We Are</h2>
+                        <h2 className="text-2xl font-bold text-red-400 mb-4">Who We Are</h2>
                         <p className="text-slate-300 leading-relaxed">
                             Wilcom Systems was established in 2008 by experienced and
                             knowledgeable professionals with intensive background in the ICT
@@ -37,7 +37,7 @@ export default function AboutPage() {
                         </p>
                     </div>
                     <div className="bg-white	dark:bg-ink-900/60 p-8 rounded-xl border border-slate-700">
-                        <h2 className="text-2xl font-bold text-blue-400 mb-4">What We Do</h2>
+                        <h2 className="text-2xl font-bold text-red-400 mb-4">What We Do</h2>
                         <p className="text-slate-300 leading-relaxed">
                             Our portfolio supports clients across ICT infrastructure (LAN,
                             Servers, PCs), CCTV and Security Surveillance Systems, Biometric
@@ -52,7 +52,7 @@ export default function AboutPage() {
             <section className="px-6 py-16 bg-ink-50	dark:bg-ink-9500/60">
                 <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
                     <div className="bg-white	dark:bg-ink-900 p-8 rounded-xl border border-slate-700">
-                        <h3 className="text-xl font-bold text-blue-400 mb-4">Our Vision</h3>
+                        <h3 className="text-xl font-bold text-red-400 mb-4">Our Vision</h3>
                         <p className="text-slate-300 leading-relaxed">
                             To be the leading distributor and reseller of computer
                             electronics, achieving recognition as a provider of ICT solutions
@@ -60,7 +60,7 @@ export default function AboutPage() {
                         </p>
                     </div>
                     <div className="bg-white	dark:bg-ink-900 p-8 rounded-xl border border-slate-700">
-                        <h3 className="text-xl font-bold text-blue-400 mb-4">Our Mission</h3>
+                        <h3 className="text-xl font-bold text-red-400 mb-4">Our Mission</h3>
                         <p className="text-slate-300 leading-relaxed">
                             Supply and maintenance of high quality Point of Sale hardware,
                             software and computer electronics products, coupled with efficient
@@ -70,7 +70,7 @@ export default function AboutPage() {
                         </p>
                     </div>
                     <div className="bg-white	dark:bg-ink-900 p-8 rounded-xl border border-slate-700">
-                        <h3 className="text-xl font-bold text-blue-400 mb-4">Quality Policy</h3>
+                        <h3 className="text-xl font-bold text-red-400 mb-4">Quality Policy</h3>
                         <p className="text-slate-300 leading-relaxed italic">
                             &ldquo;We will provide reliable, scalable and robust solutions,
                             products and services to our customers, on time, each time. We
@@ -97,9 +97,9 @@ export default function AboutPage() {
                     ].map((value) => (
                         <div
                             key={value}
-                            className="bg-white	dark:bg-ink-900/60 p-6 rounded-xl border border-slate-700 hover:border-blue-400 transition flex items-start gap-3"
+                            className="bg-white	dark:bg-ink-900/60 p-6 rounded-xl border border-slate-700 hover:border-red-400 transition flex items-start gap-3"
                         >
-                            <span className="text-blue-400 text-xl mt-0.5">✓</span>
+                            <span className="text-red-400 text-xl mt-0.5">✓</span>
                             <p className="text-slate-300">{value}</p>
                         </div>
                     ))}
@@ -135,7 +135,7 @@ export default function AboutPage() {
                         ].map((item) => (
                             <div
                                 key={item}
-                                className="bg-white	dark:bg-ink-900 p-5 rounded-lg border border-slate-700 hover:border-blue-400 transition"
+                                className="bg-white	dark:bg-ink-900 p-5 rounded-lg border border-slate-700 hover:border-red-400 transition"
                             >
                                 <p className="text-slate-200 font-medium">{item}</p>
                             </div>
@@ -147,7 +147,7 @@ export default function AboutPage() {
             {/* Networking & CCTV Deep Dive */}
             <section className="px-6 py-16 max-w-6xl mx-auto grid md:grid-cols-2 gap-10">
                 <div>
-                    <h3 className="text-2xl font-bold text-blue-400 mb-4">Networking</h3>
+                    <h3 className="text-2xl font-bold text-red-400 mb-4">Networking</h3>
                     <p className="text-slate-300 mb-4 leading-relaxed">
                         We have a team of well-trained and experienced professionals with
                         capacity to design and implement complex Local Area Networks (LAN)
@@ -167,14 +167,14 @@ export default function AboutPage() {
                             "Firewalls",
                         ].map((item) => (
                             <li key={item} className="flex items-start gap-2">
-                                <span className="text-blue-400 mt-1">•</span>
+                                <span className="text-red-400 mt-1">•</span>
                                 <span>{item}</span>
                             </li>
                         ))}
                     </ul>
                 </div>
                 <div>
-                    <h3 className="text-2xl font-bold text-blue-400 mb-4">
+                    <h3 className="text-2xl font-bold text-red-400 mb-4">
                         CCTV &amp; Surveillance
                     </h3>
                     <p className="text-slate-300 mb-4 leading-relaxed">
@@ -192,7 +192,7 @@ export default function AboutPage() {
                             "Complete line of security accessories",
                         ].map((item) => (
                             <li key={item} className="flex items-start gap-2">
-                                <span className="text-blue-400 mt-1">•</span>
+                                <span className="text-red-400 mt-1">•</span>
                                 <span>{item}</span>
                             </li>
                         ))}
@@ -249,7 +249,7 @@ export default function AboutPage() {
                             key={item}
                             className="bg-white	dark:bg-ink-900/60 p-6 rounded-xl border border-slate-700 flex items-start gap-3"
                         >
-                            <span className="text-blue-400 text-xl mt-0.5">→</span>
+                            <span className="text-red-400 text-xl mt-0.5">→</span>
                             <p className="text-slate-300">{item}</p>
                         </div>
                     ))}
@@ -274,17 +274,17 @@ export default function AboutPage() {
                         </p>
                         <p>
                             <span className="text-slate-500">Email:</span>{" "}
-                            <a href="mailto:sales@wilcom.co.ke" className="text-blue-400 hover:underline">
+                            <a href="mailto:sales@wilcom.co.ke" className="text-red-400 hover:underline">
                                 sales@wilcom.co.ke
                             </a>{" "}
                             /{" "}
-                            <a href="mailto:info@wilcom.co.ke" className="text-blue-400 hover:underline">
+                            <a href="mailto:info@wilcom.co.ke" className="text-red-400 hover:underline">
                                 info@wilcom.co.ke
                             </a>
                         </p>
                         <p>
                             <span className="text-slate-500">Website:</span>{" "}
-                            <a href="https://www.wilcom.co.ke" className="text-blue-400 hover:underline">
+                            <a href="https://www.wilcom.co.ke" className="text-red-400 hover:underline">
                                 www.wilcom.co.ke
                             </a>
                         </p>
