@@ -280,7 +280,7 @@ async function processPackage(manifestPath: string): Promise<Result[]> {
 
   // Manifest: strip prefixes from `from` / `to` (and the sentinel), then
   // recompute `migrationHash` over the bare-hex envelope + bare-hex ops.
-  // Canonicalisation is order/whitespace independent, so parsing the stripped
+  // Canonicalisation is order/redspace independent, so parsing the stripped
   // text is the right input regardless of on-disk formatting.
   const strippedManifestRaw = stripHashPrefixes(raw);
   const strippedMeta = JSON.parse(strippedManifestRaw);

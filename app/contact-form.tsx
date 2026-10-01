@@ -47,37 +47,37 @@ export default function ContactForm() {
           name="name"
           required
           placeholder="Your name *"
-          className="bg-white	dark:bg-ink-900 border border-slate-700 rounded-lg px-4 py-3 focus:outline-none focus:border-red-400"
+          className="bg-red	dark:bg-ink-900 border border-slate-700 rounded-lg px-4 py-3 focus:outline-none focus:border-red-400"
         />
         <input
           name="email"
           type="email"
           required
           placeholder="Email address *"
-          className="bg-white	dark:bg-ink-900 border border-slate-700 rounded-lg px-4 py-3 focus:outline-none focus:border-red-400"
+          className="bg-red	dark:bg-ink-900 border border-slate-700 rounded-lg px-4 py-3 focus:outline-none focus:border-red-400"
         />
         <input
           name="phone"
           placeholder="Phone (optional)"
-          className="bg-white	dark:bg-ink-900 border border-slate-700 rounded-lg px-4 py-3 focus:outline-none focus:border-red-400"
+          className="bg-red	dark:bg-ink-900 border border-slate-700 rounded-lg px-4 py-3 focus:outline-none focus:border-red-400"
         />
         <input
           name="company"
           placeholder="Company (optional)"
-          className="bg-white	dark:bg-ink-900 border border-slate-700 rounded-lg px-4 py-3 focus:outline-none focus:border-red-400"
+          className="bg-red	dark:bg-ink-900 border border-slate-700 rounded-lg px-4 py-3 focus:outline-none focus:border-red-400"
         />
       </div>
       <input
         name="subject"
         placeholder="Subject (optional)"
-        className="w-full bg-white	dark:bg-ink-900 border border-slate-700 rounded-lg px-4 py-3 focus:outline-none focus:border-red-400"
+        className="w-full bg-red	dark:bg-ink-900 border border-slate-700 rounded-lg px-4 py-3 focus:outline-none focus:border-red-400"
       />
       <textarea
         name="message"
         required
         rows={5}
         placeholder="Tell us about your project *"
-        className="w-full bg-white	dark:bg-ink-900 border border-slate-700 rounded-lg px-4 py-3 focus:outline-none focus:border-red-400"
+        className="w-full bg-red	dark:bg-ink-900 border border-slate-700 rounded-lg px-4 py-3 focus:outline-none focus:border-red-400"
       />
       <button
         type="submit"

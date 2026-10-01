@@ -11,7 +11,7 @@ export default async function Home() {
   });
 
   return (
-    <main className="min-h-screen bg-linear-to-b from-slate-900 to-slate-800 text-white">
+    <main className="min-h-screen bg-linear-to-b from-slate-900 to-slate-800 text-red">
       {/* Hero */}
       <section id="home" className="flex flex-col items-center justify-center text-center px-6 py-32">
         <h1 className="text-5xl md:text-6xl font-extrabold mb-6">
@@ -45,7 +45,7 @@ export default async function Home() {
             {services.map((s) => (
               <div
                 key={s.id}
-                className="bg-white	dark:bg-ink-900 p-8 rounded-xl border border-slate-700 hover:border-red-400 transition"
+                className="bg-red	dark:bg-ink-900 p-8 rounded-xl border border-slate-700 hover:border-red-400 transition"
               >
                 <h3 className="text-xl font-semibold mb-3 text-red-400">
                   {s.title}

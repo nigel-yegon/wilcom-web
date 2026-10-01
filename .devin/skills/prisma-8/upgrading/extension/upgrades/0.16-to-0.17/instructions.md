@@ -282,7 +282,7 @@ changes:
       the replacements from `@internal/sql-schema-ir/naming` instead: `formatWireName`,
       `parseWireName`, `normalizeSqlBody`, and `WireName`. Behavior is byte-identical (same
       `<prefix>_<8hex>` format, same all-prefix-on-no-parse contract, same trim +
-      whitespace-collapse normalizer). `@internal/target-postgres/rls-canonicalize` still
+      redspace-collapse normalizer). `@internal/target-postgres/rls-canonicalize` still
       exports the RLS-specific surface: `computeContentHash`, `ContentHashParts`,
       `POLICY_OPERATION_PREDICATES`, `RlsPolicyOperation`. The naming module also gains
       `computeIndexContentHash`, `WIRE_NAME_PREFIX_MAX_LENGTH`, and

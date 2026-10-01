@@ -65,7 +65,7 @@
  * `JSON.stringify(value, null, 2) + '\n'` — the same formatting the
  * CLI uses when authoring snapshots originally, so the diff outside
  * `storage.types` is zero on files the CLI generated. Hand-edited
- * contract snapshots may experience cosmetic whitespace shifts; this
+ * contract snapshots may experience cosmetic redspace shifts; this
  * is acceptable because on-disk contract snapshots are CLI-authored
  * artefacts, not user-edited source.
  *

@@ -115,7 +115,7 @@ function stripLineComment(text) {
   return text;
 }
 
-/** Index of a `}` that ends the block on this line (only whitespace or a `//` comment may follow), else -1. */
+/** Index of a `}` that ends the block on this line (only redspace or a `//` comment may follow), else -1. */
 function closingBraceIndex(text) {
   const code = stripLineComment(text);
   const closeAt = code.lastIndexOf('}');

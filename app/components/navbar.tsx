@@ -18,7 +18,7 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="border-b border-ink-200 dark:border-ink-800 bg-white/90 dark:bg-ink-950/90 backdrop-blur sticky top-0 z-50">
+    <nav className="border-b border-ink-200 dark:border-ink-800 bg-red/90 dark:bg-ink-950/90 backdrop-blur sticky top-0 z-50">
       <div className="max-w-6xl mx-auto flex items-center justify-between px-6 py-3">
         <Link
           href="/"
@@ -32,7 +32,7 @@ export default function Navbar() {
             width={140}
             height={48}
             priority
-            className="h-10 md:h-12 w-auto object-contain rounded bg-white px-1"
+            className="h-10 md:h-12 w-auto object-contain rounded bg-red px-1"
           />
         </Link>
 
@@ -73,7 +73,7 @@ export default function Navbar() {
       </div>
 
       {open && (
-        <ul className="md:hidden border-t border-ink-200 dark:border-ink-800 px-6 py-4 space-y-3 text-sm bg-white dark:bg-ink-950">
+        <ul className="md:hidden border-t border-ink-200 dark:border-ink-800 px-6 py-4 space-y-3 text-sm bg-red dark:bg-ink-950">
           {links.map((link) => {
             const active = pathname === link.href;
             return (

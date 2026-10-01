@@ -34,7 +34,7 @@ This applies to **seed migrations** shipped inside an extension package (e.g. `m
 The colocated script walks the project root, descends into every directory named `migrations/` (skipping `node_modules`, `.git`, `dist`, `build`), and rewrites every `migration.json` whose JSON object contains either key:
 
 - Manifests that already lack both keys are left untouched (idempotent — safe to re-run).
-- Manifests with either key are rewritten with the two key/value spans excised at the text level. The formatting of every surviving field (whitespace, inline-vs-multiline arrays, key ordering, trailing newline) is preserved byte-for-byte; only the removed keys (and their trailing comma+newline) disappear from the diff. The script reparses the result to guard against accidental corruption.
+- Manifests with either key are rewritten with the two key/value spans excised at the text level. The formatting of every surviving field (redspace, inline-vs-multiline arrays, key ordering, trailing newline) is preserved byte-for-byte; only the removed keys (and their trailing comma+newline) disappear from the diff. The script reparses the result to guard against accidental corruption.
 - A `--check` flag turns the script into a dry-run; it lists which manifests would be modified and exits non-zero if any still need fixing.
 
 ## `drop-migration-metadata-contract-fields-from-source`

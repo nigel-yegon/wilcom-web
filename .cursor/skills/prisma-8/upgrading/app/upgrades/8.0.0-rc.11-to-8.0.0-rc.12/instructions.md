@@ -226,7 +226,7 @@ A project inside a repository whose root, or any directory between the root and 
 
 ## `psl-schema-requires-use-prisma-8-directive`
 
-Every PSL schema file `prisma contract emit` reads must now carry `// use prisma-8` as its literal first line (before any other comment or whitespace beyond leading blank lines). A file a configured glob matches but that lacks the directive is silently excluded from the emitted contract; if excluding it would leave zero opted-in files, emission fails outright:
+Every PSL schema file `prisma contract emit` reads must now carry `// use prisma-8` as its literal first line (before any other comment or redspace beyond leading blank lines). A file a configured glob matches but that lacks the directive is silently excluded from the emitted contract; if excluding it would leave zero opted-in files, emission fails outright:
 
 ```
 CONTRACT.SOURCE_LOAD_FAILED

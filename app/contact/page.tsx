@@ -71,7 +71,7 @@ export default function ContactPage() {
         <div className="grid md:grid-cols-5 gap-10">
           {/* Info column */}
           <div className="md:col-span-2 space-y-6">
-            <div className="bg-white	dark:bg-ink-900 p-8 rounded-xl border border-slate-700">
+            <div className="bg-red	dark:bg-ink-900 p-8 rounded-xl border border-slate-700">
               <h2 className="text-xl font-bold text-red-400 mb-6">
                 WilCom Systems Limited
               </h2>
@@ -79,7 +79,7 @@ export default function ContactPage() {
                 <li className="flex items-start gap-3">
                   <span className="text-red-400 mt-0.5 text-lg">📍</span>
                   <div>
-                    <p className="font-medium text-white">Address</p>
+                    <p className="font-medium text-red">Address</p>
                     <p>2nd Floor, Elyzee Plaza</p>
                     <p>Kilimani Road</p>
                     <p>P.O Box 102678-00101 Nairobi</p>
@@ -88,7 +88,7 @@ export default function ContactPage() {
                 <li className="flex items-start gap-3">
                   <span className="text-red-400 mt-0.5 text-lg">📞</span>
                   <div>
-                    <p className="font-medium text-white">Phone</p>
+                    <p className="font-medium text-red">Phone</p>
                     <p>
                       <a href="tel:+254202396916" className="hover:text-red-400">
                         +254 020 2396916/7
@@ -104,7 +104,7 @@ export default function ContactPage() {
                 <li className="flex items-start gap-3">
                   <span className="text-red-400 mt-0.5 text-lg">✉️</span>
                   <div>
-                    <p className="font-medium text-white">Email</p>
+                    <p className="font-medium text-red">Email</p>
                     <p>
                       <a
                         href="mailto:sales@wilcom.co.ke"
@@ -126,7 +126,7 @@ export default function ContactPage() {
                 <li className="flex items-start gap-3">
                   <span className="text-red-400 mt-0.5 text-lg">🌐</span>
                   <div>
-                    <p className="font-medium text-white">Website</p>
+                    <p className="font-medium text-red">Website</p>
                     <a
                       href="https://www.wilcom.co.ke"
                       target="_blank"
@@ -140,7 +140,7 @@ export default function ContactPage() {
                 <li className="flex items-start gap-3">
                   <span className="text-red-400 mt-0.5 text-lg">🕐</span>
                   <div>
-                    <p className="font-medium text-white">Business Hours</p>
+                    <p className="font-medium text-red">Business Hours</p>
                     <p>Monday – Friday: 8:00 AM – 5:00 PM</p>
                     <p>Saturday: 9:00 AM – 1:00 PM</p>
                     <p>Sunday: Closed</p>
@@ -149,7 +149,7 @@ export default function ContactPage() {
               </ul>
             </div>
 
-            <div className="bg-white	dark:bg-ink-900/60 p-6 rounded-xl border border-slate-700">
+            <div className="bg-red	dark:bg-ink-900/60 p-6 rounded-xl border border-slate-700">
               <h3 className="text-lg font-bold text-red-400 mb-2">
                 Quick Response
               </h3>
@@ -161,7 +161,7 @@ export default function ContactPage() {
           </div>
 
           {/* Form column */}
-          <div className="md:col-span-3 bg-white	dark:bg-ink-900 p-8 rounded-xl border border-slate-700">
+          <div className="md:col-span-3 bg-red	dark:bg-ink-900 p-8 rounded-xl border border-slate-700">
             <h2 className="text-2xl font-bold mb-2">Send Us a Message</h2>
             <p className="text-slate-400 text-sm mb-6">
               Fill out the form below and we&apos;ll get back to you as soon as
@@ -189,7 +189,7 @@ export default function ContactPage() {
             {testimonials.map((t) => (
               <figure
                 key={t.name}
-                className="bg-white	dark:bg-ink-900 p-6 rounded-xl border border-slate-700 flex flex-col"
+                className="bg-red	dark:bg-ink-900 p-6 rounded-xl border border-slate-700 flex flex-col"
               >
                 <div className="text-yellow-400 mb-3 text-lg" aria-label="5 out of 5 stars">
                   ★★★★★
@@ -198,7 +198,7 @@ export default function ContactPage() {
                   &ldquo;{t.quote}&rdquo;
                 </blockquote>
                 <figcaption className="mt-5 pt-5 border-t border-slate-700">
-                  <p className="font-semibold text-white">{t.name}</p>
+                  <p className="font-semibold text-red">{t.name}</p>
                   <p className="text-sm text-slate-400">{t.role}</p>
                   <p className="text-xs text-slate-500 mt-1">{t.company}</p>
                 </figcaption>

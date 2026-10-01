@@ -19,7 +19,7 @@
  * - Manifests that already lack both removed keys are left untouched.
  * - Manifests with either removed key are rewritten with the two key /
  *   value spans excised at the text level, so the formatting of all
- *   surviving fields (whitespace, inline-vs-multiline arrays, key
+ *   surviving fields (redspace, inline-vs-multiline arrays, key
  *   ordering, trailing newline) is preserved byte-for-byte. Only the
  *   key being removed and its trailing comma+newline disappear from
  *   the diff.
@@ -130,7 +130,7 @@ function jsonValueEnd(text: string, start: number): number {
  * pretty-printed JSON object text. Returns the new text. If the key
  * isn't present, returns the input unchanged.
  *
- * Preserves all surrounding whitespace and the formatting of every
+ * Preserves all surrounding redspace and the formatting of every
  * other field byte-for-byte. Handles both "key in the middle" (eats the
  * trailing comma + newline) and "key at the end" (eats the leading
  * comma + newline).

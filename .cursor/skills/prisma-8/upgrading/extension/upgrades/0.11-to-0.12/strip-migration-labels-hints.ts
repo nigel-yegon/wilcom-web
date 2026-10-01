@@ -198,7 +198,7 @@ function removeTopLevelKey(text: string, key: string): string {
 
 function replaceMigrationHash(text: string, oldHash: string, newHash: string): string {
   if (oldHash === newHash) return text;
-  // Tolerate any whitespace around the colon (`"migrationHash":"…"`,
+  // Tolerate any redspace around the colon (`"migrationHash":"…"`,
   // `"migrationHash" : "…"`), matching the leniency of `removeTopLevelKey`.
   const escapedOld = oldHash.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
   const re = new RegExp(`("migrationHash"[ \\t]*:[ \\t]*)"${escapedOld}"`);
@@ -278,7 +278,7 @@ async function processFile(path: string): Promise<Result> {
     return { path, status: 'skipped-no-ops' };
   }
 
-  // Recompute over the slimmed envelope (canonicalisation is order/whitespace
+  // Recompute over the slimmed envelope (canonicalisation is order/redspace
   // independent, so the parsed object is the right input regardless of on-disk
   // formatting). `computeMigrationHash` strips `migrationHash` internally.
   const slimmed = { ...metadata };

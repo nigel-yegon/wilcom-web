@@ -217,7 +217,7 @@ export default function ServicesPage() {
           ].map((item) => (
             <div
               key={item}
-              className="bg-white	dark:bg-ink-900/60 p-5 rounded-lg border border-slate-700 text-slate-200 font-medium hover:border-red-400 transition"
+              className="bg-red	dark:bg-ink-900/60 p-5 rounded-lg border border-slate-700 text-slate-200 font-medium hover:border-red-400 transition"
             >
               {item}
             </div>
@@ -235,7 +235,7 @@ export default function ServicesPage() {
             <div
               key={service.slug}
               id={service.slug}
-              className="bg-white	dark:bg-ink-900 p-8 rounded-xl border border-slate-700 hover:border-red-400 transition scroll-mt-24"
+              className="bg-red	dark:bg-ink-900 p-8 rounded-xl border border-slate-700 hover:border-red-400 transition scroll-mt-24"
             >
               <h3 className="text-2xl font-bold text-red-400 mb-3">
                 {service.title}
@@ -312,7 +312,7 @@ export default function ServicesPage() {
           our Retail Technology Specialists.
         </p>
         <div className="grid md:grid-cols-2 gap-8">
-          <div className="bg-white	dark:bg-ink-900 p-8 rounded-xl border border-slate-700">
+          <div className="bg-red	dark:bg-ink-900 p-8 rounded-xl border border-slate-700">
             <h3 className="text-2xl font-bold text-red-400 mb-4">
               Complete POS Solution
             </h3>
@@ -336,12 +336,12 @@ export default function ServicesPage() {
               ))}
             </ul>
           </div>
-          <div className="bg-white	dark:bg-ink-900 p-8 rounded-xl border border-slate-700">
+          <div className="bg-red	dark:bg-ink-900 p-8 rounded-xl border border-slate-700">
             <h3 className="text-2xl font-bold text-red-400 mb-4">
               County Management System
             </h3>
             <p className="text-slate-300 mb-5 leading-relaxed">
-              Use <span className="text-white font-medium">MuniLogic</span>{" "}
+              Use <span className="text-red font-medium">MuniLogic</span>{" "}
               for a complete municipal/county solution:
             </p>
             <div className="grid grid-cols-2 gap-2 text-slate-300 text-sm">
@@ -374,7 +374,7 @@ export default function ServicesPage() {
       {/* Custom & Web Solutions */}
       <section className="px-6 py-16 bg-ink-50	dark:bg-ink-9500/60">
         <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
-          <div className="bg-white	dark:bg-ink-900 p-8 rounded-xl border border-slate-700">
+          <div className="bg-red	dark:bg-ink-900 p-8 rounded-xl border border-slate-700">
             <h3 className="text-xl font-bold text-red-400 mb-4">
               Custom Solutions
             </h3>
@@ -385,7 +385,7 @@ export default function ServicesPage() {
               inbuilt technologies inherent to each operating system.
             </p>
           </div>
-          <div className="bg-white	dark:bg-ink-900 p-8 rounded-xl border border-slate-700">
+          <div className="bg-red	dark:bg-ink-900 p-8 rounded-xl border border-slate-700">
             <h3 className="text-xl font-bold text-red-400 mb-4">
               Web Solutions
             </h3>
@@ -396,7 +396,7 @@ export default function ServicesPage() {
               enhancing the viewing experience.
             </p>
           </div>
-          <div className="bg-white	dark:bg-ink-900 p-8 rounded-xl border border-slate-700">
+          <div className="bg-red	dark:bg-ink-900 p-8 rounded-xl border border-slate-700">
             <h3 className="text-xl font-bold text-red-400 mb-4">
               eBusiness Solutions
             </h3>
@@ -423,7 +423,7 @@ export default function ServicesPage() {
           ].map((item) => (
             <div
               key={item}
-              className="bg-white	dark:bg-ink-900/60 p-6 rounded-xl border border-slate-700 flex items-start gap-3"
+              className="bg-red	dark:bg-ink-900/60 p-6 rounded-xl border border-slate-700 flex items-start gap-3"
             >
               <span className="text-red-400 text-xl mt-0.5">→</span>
               <p className="text-slate-300">{item}</p>
