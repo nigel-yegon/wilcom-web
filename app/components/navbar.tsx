@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import ThemeToggle from "./theme-toggle";
 
 const links = [
   { href: "/", label: "Home" },
@@ -17,9 +18,8 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="border-b border-slate-700 bg-slate-900/95 backdrop-blur sticky top-0 z-50">
+    <nav className="border-b border-ink-200 dark:border-ink-800 bg-white/90 dark:bg-ink-950/90 backdrop-blur sticky top-0 z-50">
       <div className="max-w-6xl mx-auto flex items-center justify-between px-6 py-3">
-        {/* Logo */}
         <Link
           href="/"
           className="flex items-center gap-3"
@@ -29,48 +29,51 @@ export default function Navbar() {
           <Image
             src="/wilcom-logo.jpg"
             alt="Wilcom Systems Limited"
-            width={240}
-            height={100}
+            width={140}
+            height={48}
             priority
-            className="h-10 md:h-12 w-auto object-contain"
+            className="h-10 md:h-12 w-auto object-contain rounded bg-white px-1"
           />
         </Link>
 
-        {/* Desktop */}
-        <ul className="hidden md:flex gap-8 text-sm">
-          {links.map((link) => {
-            const active = pathname === link.href;
-            return (
-              <li key={link.href}>
-                <Link
-                  href={link.href}
-                  className={
-                    active
-                      ? "text-blue-400 font-semibold"
-                      : "hover:text-blue-400 transition"
-                  }
-                >
-                  {link.label}
-                </Link>
-              </li>
-            );
-          })}
-        </ul>
+        <div className="flex items-center gap-4">
+          {/* Desktop links */}
+          <ul className="hidden md:flex gap-8 text-sm">
+            {links.map((link) => {
+              const active = pathname === link.href;
+              return (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className={
+                      active
+                        ? "text-brand-600 dark:text-brand-400 font-semibold"
+                        : "text-ink-700 dark:text-ink-200 hover:text-brand-600 dark:hover:text-brand-400 transition"
+                    }
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
 
-        {/* Mobile toggle */}
-        <button
-          className="md:hidden text-slate-300 hover:text-blue-400 transition"
-          onClick={() => setOpen(!open)}
-          aria-label="Toggle menu"
-          aria-expanded={open}
-        >
-          {open ? "✕" : "☰"}
-        </button>
+          <ThemeToggle />
+
+          {/* Mobile toggle */}
+          <button
+            className="md:hidden text-ink-700 dark:text-ink-200 hover:text-brand-600 transition"
+            onClick={() => setOpen(!open)}
+            aria-label="Toggle menu"
+            aria-expanded={open}
+          >
+            {open ? "✕" : "☰"}
+          </button>
+        </div>
       </div>
 
-      {/* Mobile menu */}
       {open && (
-        <ul className="md:hidden border-t border-slate-700 px-6 py-4 space-y-3 text-sm">
+        <ul className="md:hidden border-t border-ink-200 dark:border-ink-800 px-6 py-4 space-y-3 text-sm bg-white dark:bg-ink-950">
           {links.map((link) => {
             const active = pathname === link.href;
             return (
@@ -80,8 +83,8 @@ export default function Navbar() {
                   onClick={() => setOpen(false)}
                   className={
                     active
-                      ? "block text-blue-400 font-semibold"
-                      : "block hover:text-blue-400 transition"
+                      ? "block text-brand-600 dark:text-brand-400 font-semibold"
+                      : "block text-ink-700 dark:text-ink-200 hover:text-brand-600 transition"
                   }
                 >
                   {link.label}

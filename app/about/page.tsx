@@ -26,7 +26,7 @@ export default function AboutPage() {
             {/* Who We Are / What We Do */}
             <section className="px-6 py-16 max-w-6xl mx-auto">
                 <div className="grid md:grid-cols-2 gap-10">
-                    <div className="bg-slate-800/60 p-8 rounded-xl border border-slate-700">
+                    <div className="bg-white	dark:bg-ink-900/60 p-8 rounded-xl border border-slate-700">
                         <h2 className="text-2xl font-bold text-blue-400 mb-4">Who We Are</h2>
                         <p className="text-slate-300 leading-relaxed">
                             Wilcom Systems was established in 2008 by experienced and
@@ -36,7 +36,7 @@ export default function AboutPage() {
                             relationships.
                         </p>
                     </div>
-                    <div className="bg-slate-800/60 p-8 rounded-xl border border-slate-700">
+                    <div className="bg-white	dark:bg-ink-900/60 p-8 rounded-xl border border-slate-700">
                         <h2 className="text-2xl font-bold text-blue-400 mb-4">What We Do</h2>
                         <p className="text-slate-300 leading-relaxed">
                             Our portfolio supports clients across ICT infrastructure (LAN,
@@ -49,9 +49,9 @@ export default function AboutPage() {
             </section>
 
             {/* Vision / Mission / Quality Policy */}
-            <section className="px-6 py-16 bg-slate-900/60">
+            <section className="px-6 py-16 bg-ink-50	dark:bg-ink-9500/60">
                 <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
-                    <div className="bg-slate-800 p-8 rounded-xl border border-slate-700">
+                    <div className="bg-white	dark:bg-ink-900 p-8 rounded-xl border border-slate-700">
                         <h3 className="text-xl font-bold text-blue-400 mb-4">Our Vision</h3>
                         <p className="text-slate-300 leading-relaxed">
                             To be the leading distributor and reseller of computer
@@ -59,7 +59,7 @@ export default function AboutPage() {
                             to clients by leveraging our core strengths.
                         </p>
                     </div>
-                    <div className="bg-slate-800 p-8 rounded-xl border border-slate-700">
+                    <div className="bg-white	dark:bg-ink-900 p-8 rounded-xl border border-slate-700">
                         <h3 className="text-xl font-bold text-blue-400 mb-4">Our Mission</h3>
                         <p className="text-slate-300 leading-relaxed">
                             Supply and maintenance of high quality Point of Sale hardware,
@@ -69,7 +69,7 @@ export default function AboutPage() {
                             partners.
                         </p>
                     </div>
-                    <div className="bg-slate-800 p-8 rounded-xl border border-slate-700">
+                    <div className="bg-white	dark:bg-ink-900 p-8 rounded-xl border border-slate-700">
                         <h3 className="text-xl font-bold text-blue-400 mb-4">Quality Policy</h3>
                         <p className="text-slate-300 leading-relaxed italic">
                             &ldquo;We will provide reliable, scalable and robust solutions,
@@ -97,7 +97,7 @@ export default function AboutPage() {
                     ].map((value) => (
                         <div
                             key={value}
-                            className="bg-slate-800/60 p-6 rounded-xl border border-slate-700 hover:border-blue-400 transition flex items-start gap-3"
+                            className="bg-white	dark:bg-ink-900/60 p-6 rounded-xl border border-slate-700 hover:border-blue-400 transition flex items-start gap-3"
                         >
                             <span className="text-blue-400 text-xl mt-0.5">✓</span>
                             <p className="text-slate-300">{value}</p>
@@ -107,7 +107,7 @@ export default function AboutPage() {
             </section>
 
             {/* Products & Solutions */}
-            <section className="px-6 py-16 bg-slate-900/60">
+            <section className="px-6 py-16 bg-ink-50	dark:bg-ink-9500/60">
                 <div className="max-w-6xl mx-auto">
                     <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
                         Products &amp; Solutions
@@ -135,7 +135,7 @@ export default function AboutPage() {
                         ].map((item) => (
                             <div
                                 key={item}
-                                className="bg-slate-800 p-5 rounded-lg border border-slate-700 hover:border-blue-400 transition"
+                                className="bg-white	dark:bg-ink-900 p-5 rounded-lg border border-slate-700 hover:border-blue-400 transition"
                             >
                                 <p className="text-slate-200 font-medium">{item}</p>
                             </div>
@@ -201,7 +201,7 @@ export default function AboutPage() {
             </section>
 
             {/* Retail Automation */}
-            <section className="px-6 py-16 bg-slate-900/60">
+            <section className="px-6 py-16 bg-ink-50	dark:bg-ink-9500/60">
                 <div className="max-w-6xl mx-auto">
                     <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
                         Retail Automation
@@ -224,7 +224,7 @@ export default function AboutPage() {
                         ].map((item) => (
                             <div
                                 key={item}
-                                className="bg-slate-800 p-5 rounded-lg border border-slate-700"
+                                className="bg-white	dark:bg-ink-900 p-5 rounded-lg border border-slate-700"
                             >
                                 <p className="text-slate-200 font-medium">{item}</p>
                             </div>
@@ -247,7 +247,7 @@ export default function AboutPage() {
                     ].map((item) => (
                         <div
                             key={item}
-                            className="bg-slate-800/60 p-6 rounded-xl border border-slate-700 flex items-start gap-3"
+                            className="bg-white	dark:bg-ink-900/60 p-6 rounded-xl border border-slate-700 flex items-start gap-3"
                         >
                             <span className="text-blue-400 text-xl mt-0.5">→</span>
                             <p className="text-slate-300">{item}</p>
@@ -257,10 +257,10 @@ export default function AboutPage() {
             </section>
 
             {/* Contact Info */}
-            <section className="px-6 py-16 bg-slate-900/60">
+            <section className="px-6 py-16 bg-ink-50	dark:bg-ink-9500/60">
                 <div className="max-w-3xl mx-auto text-center">
                     <h2 className="text-3xl font-bold mb-8">Contact Us</h2>
-                    <div className="bg-slate-800 p-8 rounded-xl border border-slate-700 space-y-3 text-slate-300">
+                    <div className="bg-white	dark:bg-ink-900 p-8 rounded-xl border border-slate-700 space-y-3 text-slate-300">
                         <p className="font-semibold text-white text-lg">
                             WilCom Systems Limited
                         </p>

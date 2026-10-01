@@ -185,7 +185,7 @@ const services = [
 
 export default function ServicesPage() {
   return (
-    <main className="bg-gradient-to-b from-slate-900 to-slate-800">
+    <main className="bg-linear-to-b from-slate-900 to-slate-800">
       {/* Header */}
       <section className="px-6 py-20 text-center max-w-4xl mx-auto">
         <h1 className="text-4xl md:text-6xl font-extrabold mb-6">
@@ -217,7 +217,7 @@ export default function ServicesPage() {
           ].map((item) => (
             <div
               key={item}
-              className="bg-slate-800/60 p-5 rounded-lg border border-slate-700 text-slate-200 font-medium hover:border-blue-400 transition"
+              className="bg-white	dark:bg-ink-900/60 p-5 rounded-lg border border-slate-700 text-slate-200 font-medium hover:border-blue-400 transition"
             >
               {item}
             </div>
@@ -235,7 +235,7 @@ export default function ServicesPage() {
             <div
               key={service.slug}
               id={service.slug}
-              className="bg-slate-800 p-8 rounded-xl border border-slate-700 hover:border-blue-400 transition scroll-mt-24"
+              className="bg-white	dark:bg-ink-900 p-8 rounded-xl border border-slate-700 hover:border-blue-400 transition scroll-mt-24"
             >
               <h3 className="text-2xl font-bold text-blue-400 mb-3">
                 {service.title}
@@ -257,7 +257,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Networking & CCTV deep dive */}
-      <section className="px-6 py-16 bg-slate-900/60">
+      <section className="px-6 py-16 bg-ink-50	dark:bg-ink-9500/60">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
             Deep Dive: Networking &amp; CCTV
@@ -312,7 +312,7 @@ export default function ServicesPage() {
           our Retail Technology Specialists.
         </p>
         <div className="grid md:grid-cols-2 gap-8">
-          <div className="bg-slate-800 p-8 rounded-xl border border-slate-700">
+          <div className="bg-white	dark:bg-ink-900 p-8 rounded-xl border border-slate-700">
             <h3 className="text-2xl font-bold text-blue-400 mb-4">
               Complete POS Solution
             </h3>
@@ -336,7 +336,7 @@ export default function ServicesPage() {
               ))}
             </ul>
           </div>
-          <div className="bg-slate-800 p-8 rounded-xl border border-slate-700">
+          <div className="bg-white	dark:bg-ink-900 p-8 rounded-xl border border-slate-700">
             <h3 className="text-2xl font-bold text-blue-400 mb-4">
               County Management System
             </h3>
@@ -372,9 +372,9 @@ export default function ServicesPage() {
       </section>
 
       {/* Custom & Web Solutions */}
-      <section className="px-6 py-16 bg-slate-900/60">
+      <section className="px-6 py-16 bg-ink-50	dark:bg-ink-9500/60">
         <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
-          <div className="bg-slate-800 p-8 rounded-xl border border-slate-700">
+          <div className="bg-white	dark:bg-ink-900 p-8 rounded-xl border border-slate-700">
             <h3 className="text-xl font-bold text-blue-400 mb-4">
               Custom Solutions
             </h3>
@@ -385,7 +385,7 @@ export default function ServicesPage() {
               inbuilt technologies inherent to each operating system.
             </p>
           </div>
-          <div className="bg-slate-800 p-8 rounded-xl border border-slate-700">
+          <div className="bg-white	dark:bg-ink-900 p-8 rounded-xl border border-slate-700">
             <h3 className="text-xl font-bold text-blue-400 mb-4">
               Web Solutions
             </h3>
@@ -396,7 +396,7 @@ export default function ServicesPage() {
               enhancing the viewing experience.
             </p>
           </div>
-          <div className="bg-slate-800 p-8 rounded-xl border border-slate-700">
+          <div className="bg-white	dark:bg-ink-900 p-8 rounded-xl border border-slate-700">
             <h3 className="text-xl font-bold text-blue-400 mb-4">
               eBusiness Solutions
             </h3>
@@ -423,7 +423,7 @@ export default function ServicesPage() {
           ].map((item) => (
             <div
               key={item}
-              className="bg-slate-800/60 p-6 rounded-xl border border-slate-700 flex items-start gap-3"
+              className="bg-white	dark:bg-ink-900/60 p-6 rounded-xl border border-slate-700 flex items-start gap-3"
             >
               <span className="text-blue-400 text-xl mt-0.5">→</span>
               <p className="text-slate-300">{item}</p>
@@ -433,7 +433,7 @@ export default function ServicesPage() {
       </section>
 
       {/* CTA */}
-      <section className="px-6 py-20 bg-slate-900/60">
+      <section className="px-6 py-20 bg-ink-50	dark:bg-ink-9500/60">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Ready to Get Started?

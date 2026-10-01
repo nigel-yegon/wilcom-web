@@ -54,7 +54,7 @@ const testimonials = [
 
 export default function ContactPage() {
   return (
-    <main className="bg-gradient-to-b from-slate-900 to-slate-800">
+    <main className="bg-linear-to-b from-slate-900 to-slate-800">
       {/* Header */}
       <section className="px-6 py-20 text-center max-w-4xl mx-auto">
         <h1 className="text-4xl md:text-6xl font-extrabold mb-6">
@@ -71,7 +71,7 @@ export default function ContactPage() {
         <div className="grid md:grid-cols-5 gap-10">
           {/* Info column */}
           <div className="md:col-span-2 space-y-6">
-            <div className="bg-slate-800 p-8 rounded-xl border border-slate-700">
+            <div className="bg-white	dark:bg-ink-900 p-8 rounded-xl border border-slate-700">
               <h2 className="text-xl font-bold text-blue-400 mb-6">
                 WilCom Systems Limited
               </h2>
@@ -149,7 +149,7 @@ export default function ContactPage() {
               </ul>
             </div>
 
-            <div className="bg-slate-800/60 p-6 rounded-xl border border-slate-700">
+            <div className="bg-white	dark:bg-ink-900/60 p-6 rounded-xl border border-slate-700">
               <h3 className="text-lg font-bold text-blue-400 mb-2">
                 Quick Response
               </h3>
@@ -161,7 +161,7 @@ export default function ContactPage() {
           </div>
 
           {/* Form column */}
-          <div className="md:col-span-3 bg-slate-800 p-8 rounded-xl border border-slate-700">
+          <div className="md:col-span-3 bg-white	dark:bg-ink-900 p-8 rounded-xl border border-slate-700">
             <h2 className="text-2xl font-bold mb-2">Send Us a Message</h2>
             <p className="text-slate-400 text-sm mb-6">
               Fill out the form below and we&apos;ll get back to you as soon as
@@ -173,7 +173,7 @@ export default function ContactPage() {
       </section>
 
       {/* Testimonials */}
-      <section className="px-6 py-20 bg-slate-900/60">
+      <section className="px-6 py-20 bg-ink-50	dark:bg-ink-9500/60">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -189,7 +189,7 @@ export default function ContactPage() {
             {testimonials.map((t) => (
               <figure
                 key={t.name}
-                className="bg-slate-800 p-6 rounded-xl border border-slate-700 flex flex-col"
+                className="bg-white	dark:bg-ink-900 p-6 rounded-xl border border-slate-700 flex flex-col"
               >
                 <div className="text-yellow-400 mb-3 text-lg" aria-label="5 out of 5 stars">
                   ★★★★★

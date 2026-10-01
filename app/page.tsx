@@ -45,7 +45,7 @@ export default async function Home() {
             {services.map((s) => (
               <div
                 key={s.id}
-                className="bg-slate-800 p-8 rounded-xl border border-slate-700 hover:border-blue-400 transition"
+                className="bg-white	dark:bg-ink-900 p-8 rounded-xl border border-slate-700 hover:border-blue-400 transition"
               >
                 <h3 className="text-xl font-semibold mb-3 text-blue-400">
                   {s.title}
@@ -58,7 +58,7 @@ export default async function Home() {
       </section>
 
       {/* About */}
-      <section id="about" className="px-6 py-20 bg-slate-900">
+      <section id="about" className="px-6 py-20 bg-ink-50	dark:bg-ink-9500">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">About Us</h2>
           <p className="text-slate-300 text-lg">
