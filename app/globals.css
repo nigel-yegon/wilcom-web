@@ -1,46 +1,57 @@
 @import "tailwindcss";
 
 :root {
-  --brand-50: #fef2f2;
-  --brand-100: #fee2e2;
-  --brand-200: #fecaca;
-  --brand-300: #fca5a5;
-  --brand-400: #f87171;
-  --brand-500: #ef4444;
-  --brand-600: #dc2626;
-  --brand-700: #b91c1c;
-  --brand-800: #991b1b;
-  --brand-900: #7f1d1d;
+  /* Brand palette */
+  --color-brand-50: #fef2f2;
+  --color-brand-100: #fee2e2;
+  --color-brand-200: #fecaca;
+  --color-brand-300: #fca5a5;
+  --color-brand-400: #f87171;
+  --color-brand-500: #ef4444;
+  --color-brand-600: #dc2626;
+  --color-brand-700: #b91c1c;
+  --color-brand-800: #991b1b;
+  --color-brand-900: #7f1d1d;
 
-  --ink-50: #f6f7f9;
-  --ink-100: #eceef2;
-  --ink-200: #d4d8e0;
-  --ink-300: #aab1bf;
-  --ink-400: #7c8699;
-  --ink-500: #5c667a;
-  --ink-600: #454e5f;
-  --ink-700: #333b4a;
-  --ink-800: #1f2632;
-  --ink-900: #131820;
-  --ink-950: #0a0e14;
+  /* True black/grey scale for both modes */
+  --color-ink-50: #f7f7f8;
+  --color-ink-100: #ebebed;
+  --color-ink-200: #d4d4d8;
+  --color-ink-300: #a8a8b0;
+  --color-ink-400: #71717a;
+  --color-ink-500: #4b4b52;
+  --color-ink-600: #303036;
+  --color-ink-700: #1f1f23;
+  --color-ink-800: #141417;
+  --color-ink-900: #0a0a0c;
+  --color-ink-950: #000000;
 
-  --background: var(--ink-50);
-  --foreground: var(--ink-900);
+  /* Light mode: white surfaces, black text, red accents */
+  --background: #ffffff;
+  --foreground: #0a0a0c;   /* near-black text */
   --card: #ffffff;
-  --card-border: var(--ink-200);
-  --muted: var(--ink-500);
+  --card-border: #e4e4e7;
+  --muted: #52525b;
 }
 
-.dark {
-  --background: var(--ink-950);
+.dark,
+.dark * {
+  /* Dark mode: true black surfaces, white text, red accents */
+  --background: #000000;
   --foreground: #ffffff;
-  --card: var(--ink-900);
-  --card-border: var(--ink-800);
-  --muted: var(--ink-400);
+  --card: #0a0a0c;
+  --card-border: #1f1f23;
+  --muted: #a1a1aa;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
   transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Optional: smooth selection in brand red */
+::selection {
+  background: var(--color-brand-600);
+  color: #ffffff;
 }
