@@ -2,6 +2,8 @@ import Link from "next/link";
 import { prisma } from "@/lib/prisma";
 import ContactForm from "./contact-form";
 
+export const dynamic = "force-dynamic";
+
 export default async function Home() {
   const services = await prisma.service.findMany({
     where: { published: true },
@@ -9,20 +11,7 @@ export default async function Home() {
   });
 
   return (
-    <main className="min-h-screen bg-gradient-to-b from-slate-900 to-slate-800 text-white">
-      {/* Navbar */}
-      <nav className="flex items-center justify-between px-6 md:px-8 py-5 border-b border-slate-700">
-        <Link href="/" className="text-2xl font-bold text-blue-400">
-          Wilcom Systems Limited
-        </Link>
-        <ul className="hidden md:flex gap-8 text-sm">
-          <li><Link href="#home" className="hover:text-blue-400">Home</Link></li>
-          <li><Link href="#services" className="hover:text-blue-400">Services</Link></li>
-          <li><Link href="#about" className="hover:text-blue-400">About</Link></li>
-          <li><Link href="#contact" className="hover:text-blue-400">Contact</Link></li>
-        </ul>
-      </nav>
-
+    <main className="min-h-screen bg-linear-to-b from-slate-900 to-slate-800 text-white">
       {/* Hero */}
       <section id="home" className="flex flex-col items-center justify-center text-center px-6 py-32">
         <h1 className="text-5xl md:text-6xl font-extrabold mb-6">
@@ -91,12 +80,7 @@ export default async function Home() {
           back to you shortly.
         </p>
         <ContactForm />
-      </section>
-
-      {/* Footer */}
-      <footer className="text-center py-8 border-t border-slate-700 text-slate-400 text-sm">
-        © {new Date().getFullYear()} Wilcom Systems Limited. All rights reserved.
-      </footer>
+      </section> 
     </main>
   );
 }
