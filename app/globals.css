@@ -1,7 +1,9 @@
 @import "tailwindcss";
 
-:root {
-  /* Brand palette */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  /* Brand red scale */
   --color-brand-50: #fef2f2;
   --color-brand-100: #fee2e2;
   --color-brand-200: #fecaca;
@@ -13,7 +15,7 @@
   --color-brand-800: #991b1b;
   --color-brand-900: #7f1d1d;
 
-  /* True black/grey scale for both modes */
+  /* Ink (grey/black) scale */
   --color-ink-50: #f7f7f8;
   --color-ink-100: #ebebed;
   --color-ink-200: #d4d4d8;
@@ -25,23 +27,16 @@
   --color-ink-800: #141417;
   --color-ink-900: #0a0a0c;
   --color-ink-950: #000000;
-
-  /* Light mode: red surfaces, black text, red accents */
-  --background: #ffffff;
-  --foreground: #0a0a0c;   /* near-black text */
-  --card: #ffffff;
-  --card-border: #e4e4e7;
-  --muted: #52525b;
 }
 
-.dark,
-.dark * {
-  /* Dark mode: true black surfaces, red text, red accents */
+:root {
+  --background: #ffffff;
+  --foreground: #0a0a0c;
+}
+
+.dark {
   --background: #000000;
   --foreground: #ffffff;
-  --card: #0a0a0c;
-  --card-border: #1f1f23;
-  --muted: #a1a1aa;
 }
 
 body {
@@ -50,7 +45,6 @@ body {
   transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-/* Optional: smooth selection in brand red */
 ::selection {
   background: var(--color-brand-600);
   color: #ffffff;

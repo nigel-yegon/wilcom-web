@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ContactForm from "../contact-form";
+import FadeIn from "../components/fade-in";
 
 export const metadata: Metadata = {
   title: "Contact Us | Wilcom Systems Limited",
@@ -54,180 +55,232 @@ const testimonials = [
 
 export default function ContactPage() {
   return (
-    <main className="bg-linear-to-b from-grey-900 to-grey-800">
+    <main>
       {/* Header */}
       <section className="px-6 py-20 text-center max-w-4xl mx-auto">
-        <h1 className="text-4xl md:text-6xl font-extrabold mb-6">
-          Contact <span className="text-red-400">Us</span>
-        </h1>
-        <p className="text-lg text-grey-300 leading-relaxed">
-          Please contact us for product information, pricing, and ordering.
-          Call us if you have any inquiries — we&apos;ll be glad to help.
-        </p>
+        <FadeIn y={30}>
+          <h1 className="text-4xl md:text-6xl font-extrabold mb-6">
+            Contact <span className="text-brand-600 dark:text-brand-400">Us</span>
+          </h1>
+        </FadeIn>
+        <FadeIn y={20} delay={0.15}>
+          <p className="text-lg text-ink-600 dark:text-ink-300 leading-relaxed">
+            Please contact us for product information, pricing, and ordering.
+            Call us if you have any inquiries — we&apos;ll be glad to help.
+          </p>
+        </FadeIn>
       </section>
 
       {/* Contact info + form */}
       <section className="px-6 pb-20 max-w-6xl mx-auto">
         <div className="grid md:grid-cols-5 gap-10">
           {/* Info column */}
-          <div className="md:col-span-2 space-y-6">
-            <div className="bg-red	dark:bg-ink-900 p-8 rounded-xl border border-grey-700">
-              <h2 className="text-xl font-bold text-red-400 mb-6">
-                WilCom Systems Limited
-              </h2>
-              <ul className="space-y-4 text-grey-300 text-sm">
-                <li className="flex items-start gap-3">
-                  <span className="text-red-400 mt-0.5 text-lg">📍</span>
-                  <div>
-                    <p className="font-medium text-red">Address</p>
-                    <p>2nd Floor, Elyzee Plaza</p>
-                    <p>Kilimani Road</p>
-                    <p>P.O Box 102678-00101 Nairobi</p>
-                  </div>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-red-400 mt-0.5 text-lg">📞</span>
-                  <div>
-                    <p className="font-medium text-red">Phone</p>
-                    <p>
-                      <a href="tel:+254202396916" className="hover:text-red-400">
-                        +254 020 2396916/7
-                      </a>
-                    </p>
-                    <p>
-                      <a href="tel:+254205288878" className="hover:text-red-400">
-                        +254 020 5288878
-                      </a>
-                    </p>
-                  </div>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-red-400 mt-0.5 text-lg">✉️</span>
-                  <div>
-                    <p className="font-medium text-red">Email</p>
-                    <p>
+          <FadeIn className="md:col-span-2">
+            <div className="space-y-6">
+              <div className="bg-white dark:bg-ink-900 p-8 rounded-xl border border-ink-200 dark:border-ink-800">
+                <h2 className="text-xl font-bold text-brand-600 dark:text-brand-400 mb-6">
+                  WilCom Systems Limited
+                </h2>
+                <ul className="space-y-4 text-ink-600 dark:text-ink-300 text-sm">
+                  <li className="flex items-start gap-3">
+                    <span className="text-brand-600 dark:text-brand-400 mt-0.5 text-lg">
+                      📍
+                    </span>
+                    <div>
+                      <p className="font-medium text-ink-900 dark:text-white">
+                        Address
+                      </p>
+                      <p>2nd Floor, Elyzee Plaza</p>
+                      <p>Kilimani Road</p>
+                      <p>P.O Box 102678-00101 Nairobi</p>
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-brand-600 dark:text-brand-400 mt-0.5 text-lg">
+                      📞
+                    </span>
+                    <div>
+                      <p className="font-medium text-ink-900 dark:text-white">
+                        Phone
+                      </p>
+                      <p>
+                        <a
+                          href="tel:+254202396916"
+                          className="hover:text-brand-600 dark:hover:text-brand-400"
+                        >
+                          +254 020 2396916/7
+                        </a>
+                      </p>
+                      <p>
+                        <a
+                          href="tel:+254205288878"
+                          className="hover:text-brand-600 dark:hover:text-brand-400"
+                        >
+                          +254 020 5288878
+                        </a>
+                      </p>
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-brand-600 dark:text-brand-400 mt-0.5 text-lg">
+                      ✉️
+                    </span>
+                    <div>
+                      <p className="font-medium text-ink-900 dark:text-white">
+                        Email
+                      </p>
+                      <p>
+                        <a
+                          href="mailto:sales@wilcom.co.ke"
+                          className="hover:text-brand-600 dark:hover:text-brand-400"
+                        >
+                          sales@wilcom.co.ke
+                        </a>
+                      </p>
+                      <p>
+                        <a
+                          href="mailto:info@wilcom.co.ke"
+                          className="hover:text-brand-600 dark:hover:text-brand-400"
+                        >
+                          info@wilcom.co.ke
+                        </a>
+                      </p>
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-brand-600 dark:text-brand-400 mt-0.5 text-lg">
+                      🌐
+                    </span>
+                    <div>
+                      <p className="font-medium text-ink-900 dark:text-white">
+                        Website
+                      </p>
                       <a
-                        href="mailto:sales@wilcom.co.ke"
-                        className="hover:text-red-400"
+                        href="https://www.wilcom.co.ke"
+                        target="_blank"
+                        rel="noreferrer"
+                        className="hover:text-brand-600 dark:hover:text-brand-400"
                       >
-                        sales@wilcom.co.ke
+                        www.wilcom.co.ke
                       </a>
-                    </p>
-                    <p>
-                      <a
-                        href="mailto:info@wilcom.co.ke"
-                        className="hover:text-red-400"
-                      >
-                        info@wilcom.co.ke
-                      </a>
-                    </p>
-                  </div>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-red-400 mt-0.5 text-lg">🌐</span>
-                  <div>
-                    <p className="font-medium text-red">Website</p>
-                    <a
-                      href="https://www.wilcom.co.ke"
-                      target="_blank"
-                      rel="noreferrer"
-                      className="hover:text-red-400"
-                    >
-                      www.wilcom.co.ke
-                    </a>
-                  </div>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-red-400 mt-0.5 text-lg">🕐</span>
-                  <div>
-                    <p className="font-medium text-red">Business Hours</p>
-                    <p>Monday – Friday: 8:00 AM – 5:00 PM</p>
-                    <p>Saturday: 9:00 AM – 1:00 PM</p>
-                    <p>Sunday: Closed</p>
-                  </div>
-                </li>
-              </ul>
-            </div>
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-brand-600 dark:text-brand-400 mt-0.5 text-lg">
+                      🕐
+                    </span>
+                    <div>
+                      <p className="font-medium text-ink-900 dark:text-white">
+                        Business Hours
+                      </p>
+                      <p>Monday – Friday: 8:00 AM – 5:00 PM</p>
+                      <p>Saturday: 9:00 AM – 1:00 PM</p>
+                      <p>Sunday: Closed</p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
 
-            <div className="bg-red	dark:bg-ink-900/60 p-6 rounded-xl border border-grey-700">
-              <h3 className="text-lg font-bold text-red-400 mb-2">
-                Quick Response
-              </h3>
-              <p className="text-grey-300 text-sm leading-relaxed">
-                We typically respond to inquiries within one business day. For
-                urgent matters, please call us directly.
-              </p>
+              <div className="bg-ink-100 dark:bg-ink-900/60 p-6 rounded-xl border border-ink-200 dark:border-ink-800">
+                <h3 className="text-lg font-bold text-brand-600 dark:text-brand-400 mb-2">
+                  Quick Response
+                </h3>
+                <p className="text-ink-600 dark:text-ink-300 text-sm leading-relaxed">
+                  We typically respond to inquiries within one business day. For
+                  urgent matters, please call us directly.
+                </p>
+              </div>
             </div>
-          </div>
+          </FadeIn>
 
           {/* Form column */}
-          <div className="md:col-span-3 bg-red	dark:bg-ink-900 p-8 rounded-xl border border-grey-700">
-            <h2 className="text-2xl font-bold mb-2">Send Us a Message</h2>
-            <p className="text-grey-400 text-sm mb-6">
-              Fill out the form below and we&apos;ll get back to you as soon as
-              possible.
-            </p>
-            <ContactForm />
-          </div>
+          <FadeIn className="md:col-span-3" delay={0.15}>
+            <div className="bg-white dark:bg-ink-900 p-8 rounded-xl border border-ink-200 dark:border-ink-800">
+              <h2 className="text-2xl font-bold mb-2">Send Us a Message</h2>
+              <p className="text-ink-500 dark:text-ink-400 text-sm mb-6">
+                Fill out the form below and we&apos;ll get back to you as soon as
+                possible.
+              </p>
+              <ContactForm />
+            </div>
+          </FadeIn>
         </div>
       </section>
 
       {/* Testimonials */}
-      <section className="px-6 py-20 bg-ink-50	dark:bg-ink-9500/60">
+      <section className="px-6 py-20 bg-ink-100 dark:bg-ink-900/60">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <FadeIn y={20}>
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
               What Our Clients Say
             </h2>
-            <p className="text-grey-400 max-w-2xl mx-auto">
+          </FadeIn>
+          <FadeIn y={20} delay={0.15}>
+            <p className="text-center text-ink-500 dark:text-ink-400 max-w-2xl mx-auto mb-12">
               Trusted by businesses, financial institutions, and government
               agencies across Kenya since 2008.
             </p>
-          </div>
+          </FadeIn>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {testimonials.map((t) => (
-              <figure
-                key={t.name}
-                className="bg-red	dark:bg-ink-900 p-6 rounded-xl border border-grey-700 flex flex-col"
-              >
-                <div className="text-yellow-400 mb-3 text-lg" aria-label="5 out of 5 stars">
-                  ★★★★★
-                </div>
-                <blockquote className="text-grey-300 leading-relaxed flex-1 italic">
-                  &ldquo;{t.quote}&rdquo;
-                </blockquote>
-                <figcaption className="mt-5 pt-5 border-t border-grey-700">
-                  <p className="font-semibold text-red">{t.name}</p>
-                  <p className="text-sm text-grey-400">{t.role}</p>
-                  <p className="text-xs text-grey-500 mt-1">{t.company}</p>
-                </figcaption>
-              </figure>
+            {testimonials.map((t, i) => (
+              <FadeIn key={t.name} delay={(i % 3) * 0.1}>
+                <figure className="h-full bg-white dark:bg-ink-900 p-6 rounded-xl border border-ink-200 dark:border-ink-800 flex flex-col">
+                  <div
+                    className="text-brand-500 mb-3 text-lg"
+                    aria-label="5 out of 5 stars"
+                  >
+                    ★★★★★
+                  </div>
+                  <blockquote className="text-ink-600 dark:text-ink-300 leading-relaxed flex-1 italic">
+                    &ldquo;{t.quote}&rdquo;
+                  </blockquote>
+                  <figcaption className="mt-5 pt-5 border-t border-ink-200 dark:border-ink-800">
+                    <p className="font-semibold text-ink-900 dark:text-white">
+                      {t.name}
+                    </p>
+                    <p className="text-sm text-ink-500 dark:text-ink-400">
+                      {t.role}
+                    </p>
+                    <p className="text-xs text-ink-400 dark:text-ink-500 mt-1">
+                      {t.company}
+                    </p>
+                  </figcaption>
+                </figure>
+              </FadeIn>
             ))}
           </div>
 
-          <p className="text-center text-grey-500 text-xs mt-10 italic max-w-2xl mx-auto">
-            Testimonials shown are representative samples. Client names have
-            been changed to protect privacy.
-          </p>
+          <FadeIn delay={0.3}>
+            <p className="text-center text-ink-400 dark:text-ink-500 text-xs mt-10 italic max-w-2xl mx-auto">
+              Testimonials shown are representative samples. Client names have
+              been changed to protect privacy.
+            </p>
+          </FadeIn>
         </div>
       </section>
 
       {/* CTA */}
       <section className="px-6 py-16 max-w-3xl mx-auto text-center">
-        <h2 className="text-2xl md:text-3xl font-bold mb-4">
-          Prefer to Talk Directly?
-        </h2>
-        <p className="text-grey-300 mb-8">
-          Our team is available during business hours to discuss your
-          requirements and provide a tailored quote.
-        </p>
-        <a
-          href="tel:+254202396916"
-          className="inline-block bg-red-500 hover:bg-red-600 transition px-8 py-3 rounded-lg font-semibold"
-        >
-          Call +254 020 2396916/7
-        </a>
+        <FadeIn y={20}>
+          <h2 className="text-2xl md:text-3xl font-bold mb-4">
+            Prefer to Talk Directly?
+          </h2>
+        </FadeIn>
+        <FadeIn y={20} delay={0.15}>
+          <p className="text-ink-600 dark:text-ink-300 mb-8">
+            Our team is available during business hours to discuss your
+            requirements and provide a tailored quote.
+          </p>
+        </FadeIn>
+        <FadeIn y={20} delay={0.3}>
+          <a
+            href="tel:+254202396916"
+            className="inline-block bg-brand-600 hover:bg-brand-700 transition px-8 py-3 rounded-lg font-semibold text-white"
+          >
+            Call +254 020 2396916/7
+          </a>
+        </FadeIn>
       </section>
     </main>
   );
