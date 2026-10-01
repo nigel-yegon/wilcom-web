@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 
@@ -17,13 +18,22 @@ export default function Navbar() {
 
   return (
     <nav className="border-b border-slate-700 bg-slate-900/95 backdrop-blur sticky top-0 z-50">
-      <div className="max-w-6xl mx-auto flex items-center justify-between px-6 py-5">
+      <div className="max-w-6xl mx-auto flex items-center justify-between px-6 py-3">
+        {/* Logo */}
         <Link
           href="/"
-          className="text-xl md:text-2xl font-bold text-blue-400"
+          className="flex items-center gap-3"
           onClick={() => setOpen(false)}
+          aria-label="Wilcom Systems Limited — Home"
         >
-          Wilcom Systems Limited
+          <Image
+            src="/wilcom-logo.jpg"
+            alt="Wilcom Systems Limited"
+            width={240}
+            height={100}
+            priority
+            className="h-10 md:h-12 w-auto object-contain"
+          />
         </Link>
 
         {/* Desktop */}
