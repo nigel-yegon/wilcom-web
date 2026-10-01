@@ -13,7 +13,8 @@ export default function ContactForm() {
     setStatus("loading");
     setMessage("");
 
-    const formData = new FormData(e.currentTarget);
+    const form = e.currentTarget;
+    const formData = new FormData(form);
     const payload = Object.fromEntries(formData.entries());
 
     try {
@@ -33,12 +34,15 @@ export default function ContactForm() {
 
       setStatus("success");
       setMessage("Thanks! We'll be in touch soon.");
-      (e.target as HTMLFormElement).reset();
+      form.reset();
     } catch {
       setStatus("error");
       setMessage("Network error. Please try again.");
     }
   }
+
+  const inputClass =
+    "w-full bg-ink-50 dark:bg-ink-900 border border-ink-200 dark:border-ink-800 rounded-lg px-4 py-3 text-ink-900 dark:text-white placeholder:text-ink-400 dark:placeholder:text-ink-500 focus:outline-none focus:border-brand-500 dark:focus:border-brand-500 transition";
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
@@ -47,50 +51,54 @@ export default function ContactForm() {
           name="name"
           required
           placeholder="Your name *"
-          className="bg-red	dark:bg-ink-900 border border-grey-700 rounded-lg px-4 py-3 focus:outline-none focus:border-red-400"
+          className={inputClass}
         />
         <input
           name="email"
           type="email"
           required
           placeholder="Email address *"
-          className="bg-red	dark:bg-ink-900 border border-grey-700 rounded-lg px-4 py-3 focus:outline-none focus:border-red-400"
+          className={inputClass}
         />
         <input
           name="phone"
           placeholder="Phone (optional)"
-          className="bg-red	dark:bg-ink-900 border border-grey-700 rounded-lg px-4 py-3 focus:outline-none focus:border-red-400"
+          className={inputClass}
         />
         <input
           name="company"
           placeholder="Company (optional)"
-          className="bg-red	dark:bg-ink-900 border border-grey-700 rounded-lg px-4 py-3 focus:outline-none focus:border-red-400"
+          className={inputClass}
         />
       </div>
       <input
         name="subject"
         placeholder="Subject (optional)"
-        className="w-full bg-red	dark:bg-ink-900 border border-grey-700 rounded-lg px-4 py-3 focus:outline-none focus:border-red-400"
+        className={inputClass}
       />
       <textarea
         name="message"
         required
         rows={5}
         placeholder="Tell us about your project *"
-        className="w-full bg-red	dark:bg-ink-900 border border-grey-700 rounded-lg px-4 py-3 focus:outline-none focus:border-red-400"
+        className={inputClass}
       />
       <button
         type="submit"
         disabled={status === "loading"}
-        className="w-full bg-red-500 hover:bg-red-600 disabled:opacity-50 transition px-8 py-3 rounded-lg font-semibold"
+        className="w-full bg-brand-600 hover:bg-brand-700 disabled:opacity-50 disabled:cursor-not-allowed transition px-8 py-3 rounded-lg font-semibold text-white"
       >
         {status === "loading" ? "Sending…" : "Send Message"}
       </button>
       {message && (
         <p
           className={`text-center text-sm ${
-            status === "success" ? "text-green-400" : "text-red-400"
+            status === "success"
+              ? "text-brand-600 dark:text-brand-400"
+              : "text-brand-500"
           }`}
+          role="status"
+          aria-live="polite"
         >
           {message}
         </p>
