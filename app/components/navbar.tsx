@@ -23,17 +23,17 @@ export default function Navbar() {
                 <Link
 
                     href="/"
-                    className="flex items-center gap-3"
+                    className="flex items-center gap-0.5"
                     onClick={() => setOpen(false)}
                     aria-label="Wilcom Systems Limited — Home"
                 >
                     <Image
-                        src="/fav.png"
+                        src="/favicon.webp"
                         alt="Wilcom Systems Limited"
-                        width={140}
-                        height={48}
+                        width={50}
+                        height={50}
                         priority
-                        className="h-10 md:h-12 w-auto p-1 object-contain rounded-full"
+                        className="h-10 md:h-12 w-auto object-contain rounded-full p-1"
                     />
                     <span className="text-brand-600 dark:text-brand-400 text-lg md:text-xl font-bold whitespace-nowrap">
                         Wilcom Systems
