@@ -96,6 +96,6 @@ Report back to the user: the number of steps applied, the SHAs of the commits yo
 
 ## Failure surfaces
 
-When a step fails: surface a structured error with code `PN-UPGRADE-NNNN`, the failing change's `id`, the file paths touched (or the lockfile, or the validation command), and the inferred remediation. Do not retry automatically; do not auto-roll-back. The user can revert if they want a clean slate.
+When a step fails: surface a structured error with code `PN-UPGRADE-NNNN`, the failing change's `id`, the file paths touched (or the lockfile, or the validation command), and the inferred remediation. Do not retry automatically; do not auto-roll-back. The user can revert if they want a clean grey.
 
 If a pre-flight halt fires, do not bump anything; the project is left unchanged.

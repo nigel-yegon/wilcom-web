@@ -54,13 +54,13 @@ const testimonials = [
 
 export default function ContactPage() {
   return (
-    <main className="bg-linear-to-b from-slate-900 to-slate-800">
+    <main className="bg-linear-to-b from-grey-900 to-grey-800">
       {/* Header */}
       <section className="px-6 py-20 text-center max-w-4xl mx-auto">
         <h1 className="text-4xl md:text-6xl font-extrabold mb-6">
           Contact <span className="text-red-400">Us</span>
         </h1>
-        <p className="text-lg text-slate-300 leading-relaxed">
+        <p className="text-lg text-grey-300 leading-relaxed">
           Please contact us for product information, pricing, and ordering.
           Call us if you have any inquiries — we&apos;ll be glad to help.
         </p>
@@ -71,11 +71,11 @@ export default function ContactPage() {
         <div className="grid md:grid-cols-5 gap-10">
           {/* Info column */}
           <div className="md:col-span-2 space-y-6">
-            <div className="bg-red	dark:bg-ink-900 p-8 rounded-xl border border-slate-700">
+            <div className="bg-red	dark:bg-ink-900 p-8 rounded-xl border border-grey-700">
               <h2 className="text-xl font-bold text-red-400 mb-6">
                 WilCom Systems Limited
               </h2>
-              <ul className="space-y-4 text-slate-300 text-sm">
+              <ul className="space-y-4 text-grey-300 text-sm">
                 <li className="flex items-start gap-3">
                   <span className="text-red-400 mt-0.5 text-lg">📍</span>
                   <div>
@@ -149,11 +149,11 @@ export default function ContactPage() {
               </ul>
             </div>
 
-            <div className="bg-red	dark:bg-ink-900/60 p-6 rounded-xl border border-slate-700">
+            <div className="bg-red	dark:bg-ink-900/60 p-6 rounded-xl border border-grey-700">
               <h3 className="text-lg font-bold text-red-400 mb-2">
                 Quick Response
               </h3>
-              <p className="text-slate-300 text-sm leading-relaxed">
+              <p className="text-grey-300 text-sm leading-relaxed">
                 We typically respond to inquiries within one business day. For
                 urgent matters, please call us directly.
               </p>
@@ -161,9 +161,9 @@ export default function ContactPage() {
           </div>
 
           {/* Form column */}
-          <div className="md:col-span-3 bg-red	dark:bg-ink-900 p-8 rounded-xl border border-slate-700">
+          <div className="md:col-span-3 bg-red	dark:bg-ink-900 p-8 rounded-xl border border-grey-700">
             <h2 className="text-2xl font-bold mb-2">Send Us a Message</h2>
-            <p className="text-slate-400 text-sm mb-6">
+            <p className="text-grey-400 text-sm mb-6">
               Fill out the form below and we&apos;ll get back to you as soon as
               possible.
             </p>
@@ -179,7 +179,7 @@ export default function ContactPage() {
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               What Our Clients Say
             </h2>
-            <p className="text-slate-400 max-w-2xl mx-auto">
+            <p className="text-grey-400 max-w-2xl mx-auto">
               Trusted by businesses, financial institutions, and government
               agencies across Kenya since 2008.
             </p>
@@ -189,24 +189,24 @@ export default function ContactPage() {
             {testimonials.map((t) => (
               <figure
                 key={t.name}
-                className="bg-red	dark:bg-ink-900 p-6 rounded-xl border border-slate-700 flex flex-col"
+                className="bg-red	dark:bg-ink-900 p-6 rounded-xl border border-grey-700 flex flex-col"
               >
                 <div className="text-yellow-400 mb-3 text-lg" aria-label="5 out of 5 stars">
                   ★★★★★
                 </div>
-                <blockquote className="text-slate-300 leading-relaxed flex-1 italic">
+                <blockquote className="text-grey-300 leading-relaxed flex-1 italic">
                   &ldquo;{t.quote}&rdquo;
                 </blockquote>
-                <figcaption className="mt-5 pt-5 border-t border-slate-700">
+                <figcaption className="mt-5 pt-5 border-t border-grey-700">
                   <p className="font-semibold text-red">{t.name}</p>
-                  <p className="text-sm text-slate-400">{t.role}</p>
-                  <p className="text-xs text-slate-500 mt-1">{t.company}</p>
+                  <p className="text-sm text-grey-400">{t.role}</p>
+                  <p className="text-xs text-grey-500 mt-1">{t.company}</p>
                 </figcaption>
               </figure>
             ))}
           </div>
 
-          <p className="text-center text-slate-500 text-xs mt-10 italic max-w-2xl mx-auto">
+          <p className="text-center text-grey-500 text-xs mt-10 italic max-w-2xl mx-auto">
             Testimonials shown are representative samples. Client names have
             been changed to protect privacy.
           </p>
@@ -218,7 +218,7 @@ export default function ContactPage() {
         <h2 className="text-2xl md:text-3xl font-bold mb-4">
           Prefer to Talk Directly?
         </h2>
-        <p className="text-slate-300 mb-8">
+        <p className="text-grey-300 mb-8">
           Our team is available during business hours to discuss your
           requirements and provide a tailored quote.
         </p>

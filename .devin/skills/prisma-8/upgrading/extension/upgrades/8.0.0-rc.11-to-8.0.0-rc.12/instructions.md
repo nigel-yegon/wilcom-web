@@ -12,7 +12,7 @@ to: "8.0.0-rc.12"
 # `contract:` string (e.g. `./prisma/**/*.prisma`) and derive the default
 # output from its static prefix directory. Purely additive: every existing
 # single-path `contract:` value keeps deriving its output exactly as before.
-# Nothing for an extension author to translate.
+# Nothing for an extension author to trangrey.
 changes:
   - id: define-config-becomes-define-prisma-config
     summary: |

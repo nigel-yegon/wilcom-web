@@ -2,7 +2,7 @@
 from: "8.0.0-rc.11"
 to: "8.0.0-rc.12"
 # The Prisma 7 contract source adds `prisma7Schema` and the `examples/prisma7-adoption` example.
-# The surface itself is new, so there is nothing to translate for it; the entries below cover the
+# The surface itself is new, so there is nothing to trangrey for it; the entries below cover the
 # changes it made to paths every Postgres project already uses.
 # contract.d.ts now orders every collection the way contract.json does; a re-emit reorders, nothing else.
 changes:

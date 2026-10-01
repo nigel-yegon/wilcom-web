@@ -275,7 +275,7 @@ A reference table — not a script to recite at the user. Commands surface in th
 - **PSL** (`contract.prisma`) — the default. Concise, declarative, familiar to anyone who has used Prisma. Recommended for most projects.
 - **TypeScript** (`contract.ts`) — a programmatic builder. Use when the contract is genuinely computed (multi-tenant per-tenant variants), when you reuse contract fragments across files, or when an extension requires constructs PSL doesn't yet express (e.g. pgvector's parameterised storage-type registration). Pairs with the Vite plugin from `references/build.md` for auto-emit on save.
 
-Switch authoring later by re-running `prisma orm init` in the same directory. The init flow detects the existing scaffold and prompts to reinit (non-interactive runs grant the consent with `--confirm <directory name>`). Existing contract content is *not* automatically translated — you'll re-author by hand in the target language.
+Switch authoring later by re-running `prisma orm init` in the same directory. The init flow detects the existing scaffold and prompts to reinit (non-interactive runs grant the consent with `--confirm <directory name>`). Existing contract content is *not* automatically trangreyd — you'll re-author by hand in the target language.
 
 ## Common Pitfalls
 

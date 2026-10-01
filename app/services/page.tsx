@@ -185,13 +185,13 @@ const services = [
 
 export default function ServicesPage() {
   return (
-    <main className="bg-linear-to-b from-slate-900 to-slate-800">
+    <main className="bg-linear-to-b from-grey-900 to-grey-800">
       {/* Header */}
       <section className="px-6 py-20 text-center max-w-4xl mx-auto">
         <h1 className="text-4xl md:text-6xl font-extrabold mb-6">
           Products &amp; <span className="text-red-400">Services</span>
         </h1>
-        <p className="text-lg text-slate-300 leading-relaxed">
+        <p className="text-lg text-grey-300 leading-relaxed">
           A complete portfolio of ICT infrastructure, retail automation,
           security systems, and software solutions — designed, installed, and
           supported by Wilcom Systems Limited.
@@ -217,7 +217,7 @@ export default function ServicesPage() {
           ].map((item) => (
             <div
               key={item}
-              className="bg-red	dark:bg-ink-900/60 p-5 rounded-lg border border-slate-700 text-slate-200 font-medium hover:border-red-400 transition"
+              className="bg-red	dark:bg-ink-900/60 p-5 rounded-lg border border-grey-700 text-grey-200 font-medium hover:border-red-400 transition"
             >
               {item}
             </div>
@@ -235,15 +235,15 @@ export default function ServicesPage() {
             <div
               key={service.slug}
               id={service.slug}
-              className="bg-red	dark:bg-ink-900 p-8 rounded-xl border border-slate-700 hover:border-red-400 transition scroll-mt-24"
+              className="bg-red	dark:bg-ink-900 p-8 rounded-xl border border-grey-700 hover:border-red-400 transition scroll-mt-24"
             >
               <h3 className="text-2xl font-bold text-red-400 mb-3">
                 {service.title}
               </h3>
-              <p className="text-slate-300 mb-5 leading-relaxed">
+              <p className="text-grey-300 mb-5 leading-relaxed">
                 {service.summary}
               </p>
-              <ul className="space-y-2 text-slate-300 text-sm">
+              <ul className="space-y-2 text-grey-300 text-sm">
                 {service.items.map((item) => (
                   <li key={item} className="flex items-start gap-2">
                     <span className="text-red-400 mt-0.5">•</span>
@@ -267,14 +267,14 @@ export default function ServicesPage() {
               <h3 className="text-2xl font-bold text-red-400 mb-4">
                 Networking
               </h3>
-              <p className="text-slate-300 mb-4 leading-relaxed">
+              <p className="text-grey-300 mb-4 leading-relaxed">
                 We have a team of well-trained and experienced professionals
                 with the capacity to design and implement complex Local Area
                 Networks (LAN) that support Data, Voice and Video. Our design
                 methodology ensures efficient use of materials, minimal business
                 interruption and maximum return on investment.
               </p>
-              <p className="text-slate-300 leading-relaxed">
+              <p className="text-grey-300 leading-relaxed">
                 We have a team of trained and certified network installers and
                 system integrators with experience in LAN installation including
                 cabling for both data and power, switching, and
@@ -285,12 +285,12 @@ export default function ServicesPage() {
               <h3 className="text-2xl font-bold text-red-400 mb-4">
                 CCTV &amp; Surveillance
               </h3>
-              <p className="text-slate-300 mb-4 leading-relaxed">
+              <p className="text-grey-300 mb-4 leading-relaxed">
                 Digital surveillance systems ranging from cost-effective 20fps
                 to leading 480fps models, with choices ranging from BNC to
                 D-Sub, built-in to standalone I/O modules.
               </p>
-              <p className="text-slate-300 leading-relaxed">
+              <p className="text-grey-300 leading-relaxed">
                 Our IP surveillance product line includes video analysis
                 features, expandable support to POS and Central Monitoring
                 stations, and License Plate Recognition systems — all backed by
@@ -306,20 +306,20 @@ export default function ServicesPage() {
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
           Retail Automation
         </h2>
-        <p className="text-center text-slate-400 mb-12 max-w-3xl mx-auto">
+        <p className="text-center text-grey-400 mb-12 max-w-3xl mx-auto">
           As your retail Point of Sale System Partner, Wilcom offers a complete
           retail POS system solution — starting with initial consultation with
           our Retail Technology Specialists.
         </p>
         <div className="grid md:grid-cols-2 gap-8">
-          <div className="bg-red	dark:bg-ink-900 p-8 rounded-xl border border-slate-700">
+          <div className="bg-red	dark:bg-ink-900 p-8 rounded-xl border border-grey-700">
             <h3 className="text-2xl font-bold text-red-400 mb-4">
               Complete POS Solution
             </h3>
-            <p className="text-slate-300 mb-5 leading-relaxed">
+            <p className="text-grey-300 mb-5 leading-relaxed">
               Based on your specific business needs, we provide:
             </p>
-            <ul className="space-y-2 text-slate-300 text-sm">
+            <ul className="space-y-2 text-grey-300 text-sm">
               {[
                 "Retail POS software",
                 "Retail Hardened POS Computer Hardware",
@@ -336,15 +336,15 @@ export default function ServicesPage() {
               ))}
             </ul>
           </div>
-          <div className="bg-red	dark:bg-ink-900 p-8 rounded-xl border border-slate-700">
+          <div className="bg-red	dark:bg-ink-900 p-8 rounded-xl border border-grey-700">
             <h3 className="text-2xl font-bold text-red-400 mb-4">
               County Management System
             </h3>
-            <p className="text-slate-300 mb-5 leading-relaxed">
+            <p className="text-grey-300 mb-5 leading-relaxed">
               Use <span className="text-red font-medium">MuniLogic</span>{" "}
               for a complete municipal/county solution:
             </p>
-            <div className="grid grid-cols-2 gap-2 text-slate-300 text-sm">
+            <div className="grid grid-cols-2 gap-2 text-grey-300 text-sm">
               {[
                 "Permits",
                 "Licenses",
@@ -374,33 +374,33 @@ export default function ServicesPage() {
       {/* Custom & Web Solutions */}
       <section className="px-6 py-16 bg-ink-50	dark:bg-ink-9500/60">
         <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
-          <div className="bg-red	dark:bg-ink-900 p-8 rounded-xl border border-slate-700">
+          <div className="bg-red	dark:bg-ink-900 p-8 rounded-xl border border-grey-700">
             <h3 className="text-xl font-bold text-red-400 mb-4">
               Custom Solutions
             </h3>
-            <p className="text-slate-300 leading-relaxed">
+            <p className="text-grey-300 leading-relaxed">
               Our custom-made apps are built after understanding the underlying
               business and IT processes, and organization goals and values, to
               deliver comprehensive results. Native-built by tapping into the
               inbuilt technologies inherent to each operating system.
             </p>
           </div>
-          <div className="bg-red	dark:bg-ink-900 p-8 rounded-xl border border-slate-700">
+          <div className="bg-red	dark:bg-ink-900 p-8 rounded-xl border border-grey-700">
             <h3 className="text-xl font-bold text-red-400 mb-4">
               Web Solutions
             </h3>
-            <p className="text-slate-300 leading-relaxed">
+            <p className="text-grey-300 leading-relaxed">
               We build websites that help enterprises take full advantage of
               mobile devices. Mobile websites are optimized for smaller screen
               sizes, slower processors and slower internet speeds, fully
               enhancing the viewing experience.
             </p>
           </div>
-          <div className="bg-red	dark:bg-ink-900 p-8 rounded-xl border border-slate-700">
+          <div className="bg-red	dark:bg-ink-900 p-8 rounded-xl border border-grey-700">
             <h3 className="text-xl font-bold text-red-400 mb-4">
               eBusiness Solutions
             </h3>
-            <p className="text-slate-300 leading-relaxed">
+            <p className="text-grey-300 leading-relaxed">
               We offer consultancy and training on eBusiness solutions,
               helping organizations adopt digital processes and unlock new
               efficiencies across their operations.
@@ -423,10 +423,10 @@ export default function ServicesPage() {
           ].map((item) => (
             <div
               key={item}
-              className="bg-red	dark:bg-ink-900/60 p-6 rounded-xl border border-slate-700 flex items-start gap-3"
+              className="bg-red	dark:bg-ink-900/60 p-6 rounded-xl border border-grey-700 flex items-start gap-3"
             >
               <span className="text-red-400 text-xl mt-0.5">→</span>
-              <p className="text-slate-300">{item}</p>
+              <p className="text-grey-300">{item}</p>
             </div>
           ))}
         </div>
@@ -438,7 +438,7 @@ export default function ServicesPage() {
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Ready to Get Started?
           </h2>
-          <p className="text-slate-300 mb-8">
+          <p className="text-grey-300 mb-8">
             Please contact us for product information, pricing, and ordering.
             Call us if you have any inquiries — we&apos;ll be glad to help.
           </p>
@@ -451,7 +451,7 @@ export default function ServicesPage() {
             </Link>
             <a
               href="tel:+254202396916"
-              className="border border-slate-600 hover:border-red-400 transition px-8 py-3 rounded-lg font-semibold text-slate-200"
+              className="border border-grey-600 hover:border-red-400 transition px-8 py-3 rounded-lg font-semibold text-grey-200"
             >
               Call +254 020 2396916/7
             </a>

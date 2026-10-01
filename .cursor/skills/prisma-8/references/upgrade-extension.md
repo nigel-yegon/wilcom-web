@@ -102,4 +102,4 @@ When a step fails:
 
 - Surface a structured error with code `PN-UPGRADE-NNNN`, the failing change's `id`, the file paths the change touched (or the lockfile, or the pin check, or the validation command), and the inferred remediation.
 - Do not retry automatically.
-- Do not auto-roll-back the commit. The user can revert if they want a clean slate.
+- Do not auto-roll-back the commit. The user can revert if they want a clean grey.
