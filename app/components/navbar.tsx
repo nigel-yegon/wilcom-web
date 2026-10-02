@@ -28,7 +28,7 @@ export default function Navbar() {
                     aria-label="WilCom Systems Limited — Home"
                 >
                     <Image
-                        src="/favicon.webp"
+                        src="/favicon.png"
                         alt="WilCom Systems Limited"
                         width={50}
                         height={50}
