@@ -84,25 +84,22 @@ export default async function Home() {
       >
         <FadeIn y={30}>
           <p className="text-brand-600 dark:text-brand-400 text-sm font-semibold uppercase tracking-widest mb-4">
-            Nairobi, Kenya · Since 2008
+            WilCom Systems Limited · Since 2008
           </p>
         </FadeIn>
 
         <FadeIn y={30} delay={0.1}>
           <h1 className="text-4xl md:text-6xl font-extrabold mb-6 max-w-4xl">
-            Welcome to{" "}
+            Transforming institutions through{" "}
             <span className="text-brand-600 dark:text-brand-400">
-              WilCom Systems Limited
+               Strategy, Technology and Execution.
             </span>
           </h1>
         </FadeIn>
 
         <FadeIn y={20} delay={0.2}>
           <p className="max-w-3xl text-lg text-ink-600 dark:text-ink-300 mb-10">
-            A limited liability company delivering reliable, scalable, and
-            robust ICT solutions — from networking and security systems to
-            retail automation and software development. Our intention is to
-            grow into a large firm with international relationships.
+            We combine management consulting, digital systems expertise, quality assurance, institutional capacity building and implementation support to help organizations deliver measurable and sustainable results.
           </p>
         </FadeIn>
 
@@ -112,13 +109,13 @@ export default async function Home() {
               href="#services"
               className="inline-block bg-brand-600 hover:bg-brand-700 transition px-8 py-3 rounded-lg font-semibold text-white"
             >
-              Explore Our Services
+              Explore Our Experience
             </Link>
             <Link
               href="/contact"
               className="inline-block border border-ink-300 dark:border-ink-700 hover:border-brand-500 transition px-8 py-3 rounded-lg font-semibold text-ink-800 dark:text-ink-200"
             >
-              Contact Us
+              Discuss an ssignment
             </Link>
           </div>
         </FadeIn>
