@@ -227,7 +227,7 @@ export default async function Home() {
                 About <span className="text-brand-600 dark:text-brand-400">Us</span>
               </h2>
               <p className="text-ink-600 dark:text-ink-300 text-lg leading-relaxed mb-4">
-                Wilcom Systems was established in 2008 by experienced and
+                WilCom Systems was established in 2008 by experienced and
                 knowledgeable professionals with an intensive background in the
                 ICT industry. We are a Kenyan-registered limited liability
                 company committed to growing into a large firm with
