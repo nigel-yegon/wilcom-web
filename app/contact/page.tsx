@@ -60,13 +60,13 @@ export default function ContactPage() {
       <section className="px-6 py-20 text-center max-w-4xl mx-auto">
         <FadeIn y={30}>
           <h1 className="text-4xl md:text-6xl font-extrabold mb-6">
-            Contact <span className="text-brand-600 dark:text-brand-400">Us</span>
+            Bring us your next <span className="text-brand-600 dark:text-brand-400">transformation challenge.</span>
           </h1>
         </FadeIn>
         <FadeIn y={20} delay={0.15}>
           <p className="text-lg text-ink-600 dark:text-ink-300 leading-relaxed">
-            Please contact us for product information, pricing, and ordering.
-            Call us if you have any inquiries — we&apos;ll be glad to help.
+            WilCom Systems Limited provides consulting and implementation support from initial diagnosis and requirements 
+            through delivery, quality assurance, training and sustainable handover.
           </p>
         </FadeIn>
       </section>

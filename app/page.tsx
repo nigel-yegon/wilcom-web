@@ -63,10 +63,10 @@ const values = [
 ];
 
 const stats = [
-  { value: "2008", label: "Established" },
-  { value: "15+", label: "Years of Experience" },
-  { value: "9+", label: "Solution Categories" },
-  { value: "24/7", label: "Support Available" },
+  { value: "15", label: "Documented reference assignments" },
+  { value: "2016–2027", label: "Project periods represented" },
+  { value: "Public Sector", label: "National, regulatory & county institutions" },
+  
 ];
 
 export default async function Home() {
@@ -99,7 +99,9 @@ export default async function Home() {
 
         <FadeIn y={20} delay={0.2}>
           <p className="max-w-3xl text-lg text-ink-600 dark:text-ink-300 mb-10">
-            We combine management consulting, digital systems expertise, quality assurance, institutional capacity building and implementation support to help organizations deliver measurable and sustainable results.
+            We combine management consulting, digital systems expertise, 
+            quality assurance, institutional capacity building and implementation 
+            support to help organizations deliver measurable and sustainable results.
           </p>
         </FadeIn>
 
