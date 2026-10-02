@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import FadeIn from "../components/fade-in";
 
 export const metadata: Metadata = {
-  title: "About Us | Wilcom Systems Limited",
+  title: "About Us | WilCom Systems Limited",
   description:
-    "Wilcom Systems Limited — established in 2008, delivering ICT infrastructure, POS solutions, security systems, and software development across Kenya.",
+    "WilCom Systems Limited — established in 2008, delivering ICT infrastructure, POS solutions, security systems, and software development across Kenya.",
 };
 
 export default function AboutPage() {
@@ -16,13 +16,13 @@ export default function AboutPage() {
           <h1 className="text-5xl md:text-6xl font-extrabold mb-6">
             About{" "}
             <span className="text-brand-600 dark:text-brand-400">
-              Wilcom Systems
+              WilCom Systems
             </span>
           </h1>
         </FadeIn>
         <FadeIn y={20} delay={0.15}>
           <p className="text-lg text-ink-600 dark:text-ink-300 leading-relaxed">
-            Wilcom Systems Limited is a limited liability company established in
+            WilCom Systems Limited is a limited liability company established in
             2008 by experienced and knowledgeable professionals with an
             intensive background in the ICT industry. Our intention is to grow
             into a large firm with international relationships.
@@ -39,7 +39,7 @@ export default function AboutPage() {
                 Who We Are
               </h2>
               <p className="text-ink-600 dark:text-ink-300 leading-relaxed">
-                Wilcom Systems was established in 2008 by experienced and
+                WilCom Systems was established in 2008 by experienced and
                 knowledgeable professionals with intensive background in the ICT
                 industry. We are a Kenyan-registered limited liability company
                 committed to growing into a large firm with international
@@ -246,7 +246,7 @@ export default function AboutPage() {
           </FadeIn>
           <FadeIn y={20} delay={0.15}>
             <p className="text-center text-ink-500 dark:text-ink-400 mb-12 max-w-3xl mx-auto">
-              As your retail Point of Sale System Partner, Wilcom offers a
+              As your retail Point of Sale System Partner, WilCom offers a
               complete retail POS system solution starting with initial
               consultation with our Retail Technology Specialists.
             </p>
@@ -274,16 +274,16 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Why Choose Wilcom */}
+      {/* Why Choose WilCom */}
       <section className="px-6 py-16 max-w-6xl mx-auto">
         <FadeIn y={20}>
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-            Why Choose Wilcom
+            Why Choose WilCom
           </h2>
         </FadeIn>
         <div className="space-y-4 max-w-4xl mx-auto">
           {[
-            "Wilcom's experience on the web and now on mobile helps us understand complex back-ends and create connected mobile applications across all smartphone platforms.",
+            "WilCom's experience on the web and now on mobile helps us understand complex back-ends and create connected mobile applications across all smartphone platforms.",
             "Flexibility to work and provide various engagement models — including fixed bids and long-term engagements.",
             "Extensive experience in creating Enterprise consumer-facing web applications.",
             "Innovative approach with specific strategies that assure ROI and increased customer engagement.",
@@ -322,26 +322,26 @@ export default function AboutPage() {
               <p>
                 <span className="text-ink-500">Email:</span>{" "}
                 <a
-                  href="mailto:sales@wilcom.co.ke"
+                  href="mailto:sales@WilCom.co.ke"
                   className="text-brand-600 dark:text-brand-400 hover:underline"
                 >
-                  sales@wilcom.co.ke
+                  sales@WilCom.co.ke
                 </a>{" "}
                 /{" "}
                 <a
-                  href="mailto:info@wilcom.co.ke"
+                  href="mailto:info@WilCom.co.ke"
                   className="text-brand-600 dark:text-brand-400 hover:underline"
                 >
-                  info@wilcom.co.ke
+                  info@WilCom.co.ke
                 </a>
               </p>
               <p>
                 <span className="text-ink-500">Website:</span>{" "}
                 <a
-                  href="https://www.wilcom.co.ke"
+                  href="https://www.WilCom.co.ke"
                   className="text-brand-600 dark:text-brand-400 hover:underline"
                 >
-                  www.wilcom.co.ke
+                  www.WilCom.co.ke
                 </a>
               </p>
             </div>

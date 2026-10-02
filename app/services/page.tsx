@@ -3,9 +3,9 @@ import Link from "next/link";
 import FadeIn from "../components/fade-in";
 
 export const metadata: Metadata = {
-  title: "Products & Services | Wilcom Systems Limited",
+  title: "Products & Services | WilCom Systems Limited",
   description:
-    "ICT infrastructure, networking, CCTV, biometric access control, retail POS, software development, and enterprise solutions from Wilcom Systems Limited.",
+    "ICT infrastructure, networking, CCTV, biometric access control, retail POS, software development, and enterprise solutions from WilCom Systems Limited.",
 };
 
 const services = [
@@ -201,7 +201,7 @@ export default function ServicesPage() {
           <p className="text-lg text-ink-600 dark:text-ink-300 leading-relaxed">
             A complete portfolio of ICT infrastructure, retail automation,
             security systems, and software solutions — designed, installed, and
-            supported by Wilcom Systems Limited.
+            supported by WilCom Systems Limited.
           </p>
         </FadeIn>
       </section>
@@ -328,7 +328,7 @@ export default function ServicesPage() {
         </FadeIn>
         <FadeIn y={20} delay={0.15}>
           <p className="text-center text-ink-500 dark:text-ink-400 mb-12 max-w-3xl mx-auto">
-            As your retail Point of Sale System Partner, Wilcom offers a
+            As your retail Point of Sale System Partner, WilCom offers a
             complete retail POS system solution — starting with initial
             consultation with our Retail Technology Specialists.
           </p>
@@ -435,11 +435,11 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Why Choose Wilcom */}
+      {/* Why Choose WilCom */}
       <section className="px-6 py-16 max-w-6xl mx-auto">
         <FadeIn y={20}>
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-            Why Choose Wilcom
+            Why Choose WilCom
           </h2>
         </FadeIn>
         <div className="space-y-4 max-w-4xl mx-auto">

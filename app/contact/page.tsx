@@ -3,15 +3,15 @@ import ContactForm from "../contact-form";
 import FadeIn from "../components/fade-in";
 
 export const metadata: Metadata = {
-  title: "Contact Us | Wilcom Systems Limited",
+  title: "Contact Us | WilCom Systems Limited",
   description:
-    "Get in touch with Wilcom Systems Limited — Nairobi-based ICT solutions provider for networking, POS, security, and software development.",
+    "Get in touch with WilCom Systems Limited — Nairobi-based ICT solutions provider for networking, POS, security, and software development.",
 };
 
 const testimonials = [
   {
     quote:
-      "Wilcom rolled out our entire retail POS system across 14 branches in under three weeks. Their team handled the cabling, hardware, training, and support — all without disrupting our daily operations. Truly professional.",
+      "WilCom rolled out our entire retail POS system across 14 branches in under three weeks. Their team handled the cabling, hardware, training, and support — all without disrupting our daily operations. Truly professional.",
     name: "Grace Mwangi",
     role: "Operations Director",
     company: "Retail Chain, Nairobi",
@@ -25,28 +25,28 @@ const testimonials = [
   },
   {
     quote:
-      "We engaged Wilcom to modernize our LAN across three floors. Their team designed a clean, scalable network that has eliminated our connectivity issues and prepared us for future growth. Highly recommended.",
+      "We engaged WilCom to modernize our LAN across three floors. Their team designed a clean, scalable network that has eliminated our connectivity issues and prepared us for future growth. Highly recommended.",
     name: "Sarah Kipchoge",
     role: "IT Manager",
     company: "Manufacturing Firm",
   },
   {
     quote:
-      "Wilcom built a custom HR and payroll system tailored to our needs. It integrated with our existing biometric readers and saved our HR team countless hours every month. Excellent work.",
+      "WilCom built a custom HR and payroll system tailored to our needs. It integrated with our existing biometric readers and saved our HR team countless hours every month. Excellent work.",
     name: "James Njoroge",
     role: "HR Director",
     company: "Hospitality Group",
   },
   {
     quote:
-      "From the first consultation to final deployment, the Wilcom team was responsive, knowledgeable, and honest about timelines. Their MuniLogic county system has streamlined how we handle permits and licenses.",
+      "From the first consultation to final deployment, the WilCom team was responsive, knowledgeable, and honest about timelines. Their MuniLogic county system has streamlined how we handle permits and licenses.",
     name: "Peter Kamau",
     role: "County ICT Officer",
     company: "County Government",
   },
   {
     quote:
-      "We've worked with Wilcom on multiple projects — servers, networking, software. They always deliver on time and stand behind their work. A reliable long-term partner.",
+      "We've worked with WilCom on multiple projects — servers, networking, software. They always deliver on time and stand behind their work. A reliable long-term partner.",
     name: "Anne Wanjiku",
     role: "Chief Technology Officer",
     company: "Logistics Company",
@@ -131,18 +131,18 @@ export default function ContactPage() {
                       </p>
                       <p>
                         <a
-                          href="mailto:sales@wilcom.co.ke"
+                          href="mailto:sales@WilCom.co.ke"
                           className="hover:text-brand-600 dark:hover:text-brand-400"
                         >
-                          sales@wilcom.co.ke
+                          sales@WilCom.co.ke
                         </a>
                       </p>
                       <p>
                         <a
-                          href="mailto:info@wilcom.co.ke"
+                          href="mailto:info@WilCom.co.ke"
                           className="hover:text-brand-600 dark:hover:text-brand-400"
                         >
-                          info@wilcom.co.ke
+                          info@WilCom.co.ke
                         </a>
                       </p>
                     </div>
@@ -156,12 +156,12 @@ export default function ContactPage() {
                         Website
                       </p>
                       <a
-                        href="https://www.wilcom.co.ke"
+                        href="https://www.WilCom.co.ke"
                         target="_blank"
                         rel="noreferrer"
                         className="hover:text-brand-600 dark:hover:text-brand-400"
                       >
-                        www.wilcom.co.ke
+                        www.WilCom.co.ke
                       </a>
                     </div>
                   </li>

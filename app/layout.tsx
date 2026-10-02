@@ -8,9 +8,9 @@ import { ThemeProvider } from "./components/theme-provider";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Wilcom Systems Limited",
+  title: "WilCom Systems Limited",
   description:
-    "Wilcom Systems Limited — delivering innovative ICT solutions, POS systems, security, and software across Kenya.",
+    "WilCom Systems Limited — delivering innovative ICT solutions, POS systems, security, and software across Kenya.",
 };
 
 export default function RootLayout({

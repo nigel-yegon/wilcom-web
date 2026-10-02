@@ -92,7 +92,7 @@ export default async function Home() {
           <h1 className="text-4xl md:text-6xl font-extrabold mb-6 max-w-4xl">
             Welcome to{" "}
             <span className="text-brand-600 dark:text-brand-400">
-              Wilcom Systems Limited
+              WilCom Systems Limited
             </span>
           </h1>
         </FadeIn>
@@ -288,11 +288,11 @@ export default async function Home() {
         </FadeIn>
       </section>
 
-      {/* Why Choose Wilcom */}
+      {/* Why Choose WilCom */}
       <section className="px-6 py-20 max-w-6xl mx-auto w-full">
         <FadeIn y={20}>
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-            Why Choose Wilcom
+            Why Choose WilCom
           </h2>
         </FadeIn>
         <div className="space-y-4 max-w-4xl mx-auto">
