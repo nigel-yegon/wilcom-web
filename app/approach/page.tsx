@@ -2,16 +2,16 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Our Approach",
+  title: "Our Approach | WilCom Systems Limited",
   description:
-    "How WilCom Systems delivers technology projects in Kenya — from discovery and solution design to deployment, training, and ongoing support. A proven, structured methodology.",
+    "WilCom Systems' structured approach to development consulting, digital transformation, ICT advisory, systems implementation, quality assurance, capacity building, and programme delivery.",
   alternates: {
     canonical: "https://wilcom.co.ke/approach",
   },
   openGraph: {
     title: "Our Approach | WilCom Systems Limited",
     description:
-      "A proven, structured methodology for delivering ICT, security, POS, and software projects across Kenya.",
+      "A structured methodology for delivering development, management consulting, digital transformation, ICT and institutional strengthening assignments.",
     url: "https://wilcom.co.ke/approach",
   },
 };
@@ -21,68 +21,80 @@ export const revalidate = 3600;
 const phases = [
   {
     step: "01",
-    title: "Discovery & Consultation",
+    title: "Understand & Diagnose",
     description:
-      "We begin by understanding your business objectives, operational constraints, and existing infrastructure. This phase includes site surveys, stakeholder interviews, and a technical audit of your current environment.",
+      "We begin by understanding the institutional context, development objectives, stakeholders, existing processes, systems, capabilities, and constraints. We use consultations, assessments, requirements analysis, document review, process mapping, and technical diagnostics to establish a clear baseline.",
     deliverables: [
-      "Requirements document",
-      "Site survey report",
+      "Needs assessment",
+      "Stakeholder analysis",
+      "Requirements specification",
+      "Baseline assessment",
       "Gap analysis",
     ],
   },
   {
     step: "02",
-    title: "Solution Design",
+    title: "Design the Solution",
     description:
-      "Our engineers design a solution tailored to your needs — not a generic template. We specify hardware, software, network topology, and integration points, then present a clear scope with pricing.",
+      "We translate the findings into a practical solution that responds to the client's institutional and operational priorities. Depending on the assignment, this may include strategy, business processes, operating models, system architecture, implementation frameworks, training programmes, or technical designs.",
     deliverables: [
-      "Technical architecture",
-      "Bill of materials",
-      "Implementation timeline",
+      "Strategy or implementation framework",
+      "Solution architecture",
+      "Business process design",
+      "Technical specifications",
+      "Implementation roadmap",
     ],
   },
   {
     step: "03",
-    title: "Procurement & Staging",
+    title: "Develop & Prepare",
     description:
-      "We source hardware from vetted suppliers, configure and stage equipment in our lab, and test integrations before anything reaches your site. This minimizes disruption and deployment risk.",
+      "Where implementation is required, we develop, configure, document and prepare the solution for deployment. Our work may include software development, systems configuration, infrastructure preparation, training materials, quality assurance processes, and implementation planning.",
     deliverables: [
-      "Configured hardware",
-      "Pre-deployment test results",
-      "Delivery schedule",
+      "Configured or developed solution",
+      "Technical documentation",
+      "Training materials",
+      "Test plans",
+      "Implementation plan",
     ],
   },
   {
     step: "04",
-    title: "Deployment & Integration",
+    title: "Implement & Integrate",
     description:
-      "Our field team installs, configures, and integrates the solution on-site. We work around your operating hours to avoid downtime, and we document every step of the rollout.",
+      "We support implementation through coordinated deployment, integration, testing, stakeholder engagement, change management and quality control. For complex programmes, we work across technical and institutional workstreams to maintain alignment between the solution and the intended outcomes.",
     deliverables: [
-      "Installed solution",
-      "As-built documentation",
-      "Integration test report",
+      "Implementation support",
+      "System integration",
+      "User acceptance testing",
+      "Quality assurance",
+      "Deployment documentation",
     ],
   },
   {
     step: "05",
-    title: "Training & Handover",
+    title: "Build Capacity & Transfer Knowledge",
     description:
-      "We train your staff on day-to-day operation and provide administrator-level training for internal IT teams. Every deployment includes user manuals and quick-reference guides.",
+      "Sustainable results require capable teams. We therefore incorporate structured training, coaching, documentation and knowledge transfer into our engagements. Our capacity-building work can include training-needs assessment, curriculum development, training delivery, professional development and training-of-trainers.",
     deliverables: [
-      "User training sessions",
-      "Admin training",
-      "Manuals & guides",
+      "Training-needs assessment",
+      "Training programmes",
+      "User training",
+      "Training-of-trainers",
+      "Knowledge-transfer framework",
     ],
   },
   {
     step: "06",
-    title: "Support & Continuous Improvement",
+    title: "Assure, Support & Sustain",
     description:
-      "Our relationship doesn't end at go-live. We provide responsive after-sales support, preventive maintenance, and periodic reviews to ensure the solution continues to meet your needs.",
+      "Our involvement can continue beyond implementation through quality assurance, monitoring, technical support, maintenance, performance review and continuous improvement. We focus on strengthening institutional ownership so that solutions remain useful beyond the initial engagement.",
     deliverables: [
-      "SLA-based support",
-      "Maintenance schedule",
-      "Quarterly reviews",
+      "Quality assurance",
+      "Performance monitoring",
+      "Technical support",
+      "Maintenance framework",
+      "Continuous improvement",
     ],
   },
 ];
@@ -90,39 +102,39 @@ const phases = [
 const principles = [
   {
     icon: "🎯",
-    title: "Business-First Thinking",
+    title: "Development Outcomes First",
     description:
-      "Technology is a means, not an end. Every recommendation we make is tied to a measurable business outcome.",
+      "We connect consulting and technology interventions to the institutional, operational and development outcomes they are intended to support.",
   },
   {
     icon: "🔍",
-    title: "Transparency",
+    title: "Evidence & Understanding",
     description:
-      "Clear scopes, honest timelines, and no hidden costs. You know exactly what you're getting and when.",
+      "Recommendations are grounded in requirements, stakeholder perspectives, existing systems, processes, institutional realities and available evidence.",
   },
   {
     icon: "🤝",
-    title: "Collaboration",
+    title: "Collaborative Delivery",
     description:
-      "We work alongside your team, not around them. Your input shapes the solution at every stage.",
+      "We work with client teams and stakeholders throughout the engagement, encouraging ownership and ensuring solutions reflect the operating environment.",
   },
   {
-    icon: "📈",
-    title: "Measurable Results",
+    icon: "🧩",
+    title: "Fit-for-Purpose Solutions",
     description:
-      "We define success criteria upfront and report against them — uptime, efficiency gains, cost savings.",
+      "We avoid one-size-fits-all approaches and design interventions around the client's objectives, capabilities, constraints and implementation context.",
   },
   {
     icon: "🔒",
-    title: "Security by Design",
+    title: "Quality & Security",
     description:
-      "Security is built into every layer of our solutions, from network design to application code.",
+      "Quality assurance, risk management, information security and appropriate controls are incorporated into our technical and programme delivery activities.",
   },
   {
-    icon: "🔄",
-    title: "Long-Term Partnership",
+    icon: "📚",
+    title: "Knowledge Transfer",
     description:
-      "We invest in relationships, not transactions. Most of our clients have worked with us for years.",
+      "We place emphasis on documentation, training, mentoring and institutional capability so clients can sustain and build on the results.",
   },
 ];
 
@@ -132,24 +144,44 @@ export default function ApproachPage() {
       {/* Hero */}
       <section className="px-6 py-20 md:py-28 max-w-6xl mx-auto text-center">
         <p className="text-brand-600 dark:text-brand-400 text-sm font-semibold uppercase tracking-widest mb-4">
-          Methodology
+          Our Methodology
         </p>
-        <h1 className="text-4xl md:text-6xl font-extrabold mb-6 max-w-4xl mx-auto">
-          Our <span className="text-brand-600 dark:text-brand-400">Approach</span>
+
+        <h1 className="text-4xl md:text-6xl font-extrabold mb-6 max-w-5xl mx-auto">
+          From insight to{" "}
+          <span className="text-brand-600 dark:text-brand-400">
+            sustainable results.
+          </span>
         </h1>
-        <p className="max-w-3xl mx-auto text-lg text-ink-600 dark:text-ink-300">
-          Every project we deliver follows a structured, six-phase methodology
-          refined over 15+ years. It's how we ensure solutions work on day one
-          — and continue working years later.
+
+        <p className="max-w-3xl mx-auto text-lg text-ink-600 dark:text-ink-300 leading-relaxed">
+          WilCom Systems combines development consulting, management advisory,
+          technology expertise, institutional capacity building and programme
+          delivery through a structured approach designed around each client&apos;s
+          context and objectives.
         </p>
       </section>
 
-      {/* Phases */}
+      {/* Delivery process */}
       <section className="px-6 py-20 bg-ink-100 dark:bg-ink-900/60">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-            The Six-Phase Delivery Process
-          </h2>
+          <div className="max-w-3xl mb-12">
+            <p className="text-brand-600 dark:text-brand-400 text-sm font-semibold uppercase tracking-widest mb-3">
+              How We Work
+            </p>
+
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              A structured delivery methodology
+            </h2>
+
+            <p className="text-ink-600 dark:text-ink-300">
+              Our engagements can range from focused advisory assignments to
+              complex technology and institutional transformation programmes.
+              The methodology adapts to the nature, scale and requirements of
+              each assignment.
+            </p>
+          </div>
+
           <div className="space-y-6">
             {phases.map((phase) => (
               <div
@@ -162,18 +194,21 @@ export default function ApproachPage() {
                       {phase.step}
                     </span>
                   </div>
+
                   <div className="flex-1">
                     <h3 className="text-xl md:text-2xl font-bold mb-3">
                       {phase.title}
                     </h3>
-                    <p className="text-ink-600 dark:text-ink-300 leading-relaxed mb-4">
+
+                    <p className="text-ink-600 dark:text-ink-300 leading-relaxed mb-5">
                       {phase.description}
                     </p>
+
                     <div className="flex flex-wrap gap-2">
                       {phase.deliverables.map((item) => (
                         <span
                           key={item}
-                          className="text-xs px-3 py-1 rounded-full bg-ink-100 dark:bg-ink-800 text-ink-600 dark:text-ink-300"
+                          className="text-xs px-3 py-1.5 rounded-full bg-ink-100 dark:bg-ink-800 text-ink-600 dark:text-ink-300"
                         >
                           {item}
                         </span>
@@ -189,22 +224,33 @@ export default function ApproachPage() {
 
       {/* Principles */}
       <section className="px-6 py-20 max-w-6xl mx-auto w-full">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
-          Guiding Principles
-        </h2>
-        <p className="text-center text-ink-500 dark:text-ink-400 max-w-3xl mx-auto mb-12">
-          These principles shape how we engage with every client, on every project.
-        </p>
+        <div className="text-center mb-12">
+          <p className="text-brand-600 dark:text-brand-400 text-sm font-semibold uppercase tracking-widest mb-3">
+            What Guides Us
+          </p>
+
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            Guiding Principles
+          </h2>
+
+          <p className="text-ink-500 dark:text-ink-400 max-w-3xl mx-auto">
+            These principles shape how WilCom approaches consulting,
+            technology, institutional strengthening and programme delivery.
+          </p>
+        </div>
+
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {principles.map((principle) => (
             <div
               key={principle.title}
               className="h-full bg-white dark:bg-ink-900 p-6 rounded-xl border border-ink-200 dark:border-ink-800 hover:border-brand-500 transition"
             >
-              <div className="text-3xl mb-3">{principle.icon}</div>
+              <div className="text-3xl mb-4">{principle.icon}</div>
+
               <h3 className="text-lg font-semibold mb-2 text-brand-600 dark:text-brand-400">
                 {principle.title}
               </h3>
+
               <p className="text-ink-600 dark:text-ink-300 text-sm leading-relaxed">
                 {principle.description}
               </p>
@@ -213,15 +259,67 @@ export default function ApproachPage() {
         </div>
       </section>
 
-      {/* CTA */}
+      {/* Capabilities bridge */}
       <section className="px-6 py-20 bg-ink-100 dark:bg-ink-900/60">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-10 items-center">
+            <div>
+              <p className="text-brand-600 dark:text-brand-400 text-sm font-semibold uppercase tracking-widest mb-3">
+                Integrated Expertise
+              </p>
+
+              <h2 className="text-3xl md:text-4xl font-bold mb-5">
+                Consulting expertise supported by technology capability.
+              </h2>
+
+              <p className="text-ink-600 dark:text-ink-300 leading-relaxed">
+                Our approach brings together management consulting, digital
+                transformation, systems development, ICT advisory, software
+                quality assurance, cybersecurity, capacity building and
+                programme delivery.
+              </p>
+            </div>
+
+            <div className="grid sm:grid-cols-2 gap-3">
+              {[
+                "Management Consulting",
+                "Digital Transformation",
+                "Systems Development",
+                "ICT Advisory",
+                "Quality Assurance",
+                "Cybersecurity",
+                "Capacity Building",
+                "Programme Delivery",
+              ].map((item) => (
+                <div
+                  key={item}
+                  className="bg-white dark:bg-ink-900 rounded-lg border border-ink-200 dark:border-ink-800 p-4 text-sm font-medium"
+                >
+                  {item}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="px-6 py-20">
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            See the Process in Action
-          </h2>
-          <p className="text-ink-600 dark:text-ink-300 mb-8">
-            Let's walk through how our approach applies to your specific project.
+          <p className="text-brand-600 dark:text-brand-400 text-sm font-semibold uppercase tracking-widest mb-3">
+            Let&apos;s Work Together
           </p>
+
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            Have a complex development or transformation challenge?
+          </h2>
+
+          <p className="text-ink-600 dark:text-ink-300 mb-8">
+            Tell us what you are trying to achieve. We can explore the
+            requirements, identify the appropriate approach and define a
+            practical path to implementation.
+          </p>
+
           <Link
             href="/contact"
             className="inline-block bg-brand-600 hover:bg-brand-700 transition px-8 py-3 rounded-lg font-semibold text-white"
