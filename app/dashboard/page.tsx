@@ -295,12 +295,12 @@ function DashboardSidebar({
         <div className="border-t border-slate-200 p-4 dark:border-white/10">
           <div className="rounded-xl bg-slate-50 p-4 dark:bg-white/5">
             <div className="text-xs font-semibold text-slate-700 dark:text-slate-200">
-              Content management
+              Website Content management
             </div>
 
             <p className="mt-1 text-xs leading-5 text-slate-500 dark:text-slate-400">
-              Manage the content that powers WilCom&apos;s consulting,
-              experience and sector pages.
+              Manage the content that displayed on WilCom&apos;s consulting,
+              experience and sector website pages.
             </p>
           </div>
         </div>
