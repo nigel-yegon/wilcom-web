@@ -501,7 +501,7 @@ export default function Home() {
               </p>
 
               <Link
-                href="/about"
+                href="/services"
                 className="inline-block bg-brand-600 hover:bg-brand-700 transition px-6 py-3 rounded-lg font-semibold text-white"
               >
                 Learn More About Us
