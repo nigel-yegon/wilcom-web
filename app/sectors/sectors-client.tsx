@@ -195,9 +195,11 @@ export default function SectorsClient({ sectors }: { sectors: SectorView[] }) {
                                 <article className="rounded-2xl border border-ink-200 dark:border-ink-800 bg-white dark:bg-ink-900 overflow-hidden">
                                     <div className="p-7 md:p-9">
                                         <div className="flex flex-col md:flex-row gap-7">
-                                            <div className="md:w-20 shrink-0">
-                                                <div className="text-4xl">{sector.icon}</div>
-                                            </div>
+                                            {sector.icon && (
+                                                <div className="md:w-20 shrink-0">
+                                                    <div className="text-4xl">{sector.icon}</div>
+                                                </div>
+                                            )}
 
                                             <div className="flex-1">
                                                 <h3 className="text-2xl md:text-3xl font-bold mb-4">
@@ -241,7 +243,7 @@ export default function SectorsClient({ sectors }: { sectors: SectorView[] }) {
                                                                         key={capability}
                                                                         className="flex items-start gap-3 text-sm text-ink-600 dark:text-ink-300"
                                                                     >
-                                                                        <span className="text-brand-600 dark:text-brand-400 font-bold">
+                                                                        <span className="text-brand-600 dark:text-brand-400 font-bold shrink-0">
                                                                             ✓
                                                                         </span>
                                                                         <span>{capability}</span>

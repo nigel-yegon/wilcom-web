@@ -39,6 +39,7 @@ export type SectorMinAggregateOutputType = {
   name: string | null
   slug: string | null
   description: string | null
+  icon: string | null
   order: number | null
   published: boolean | null
   createdAt: Date | null
@@ -50,6 +51,7 @@ export type SectorMaxAggregateOutputType = {
   name: string | null
   slug: string | null
   description: string | null
+  icon: string | null
   order: number | null
   published: boolean | null
   createdAt: Date | null
@@ -61,6 +63,8 @@ export type SectorCountAggregateOutputType = {
   name: number
   slug: number
   description: number
+  icon: number
+  problems: number
   capabilities: number
   order: number
   published: number
@@ -83,6 +87,7 @@ export type SectorMinAggregateInputType = {
   name?: true
   slug?: true
   description?: true
+  icon?: true
   order?: true
   published?: true
   createdAt?: true
@@ -94,6 +99,7 @@ export type SectorMaxAggregateInputType = {
   name?: true
   slug?: true
   description?: true
+  icon?: true
   order?: true
   published?: true
   createdAt?: true
@@ -105,6 +111,8 @@ export type SectorCountAggregateInputType = {
   name?: true
   slug?: true
   description?: true
+  icon?: true
+  problems?: true
   capabilities?: true
   order?: true
   published?: true
@@ -204,6 +212,8 @@ export type SectorGroupByOutputType = {
   name: string
   slug: string
   description: string
+  icon: string | null
+  problems: string[]
   capabilities: string[]
   order: number
   published: boolean
@@ -239,6 +249,8 @@ export type SectorWhereInput = {
   name?: Prisma.StringFilter<"Sector"> | string
   slug?: Prisma.StringFilter<"Sector"> | string
   description?: Prisma.StringFilter<"Sector"> | string
+  icon?: Prisma.StringNullableFilter<"Sector"> | string | null
+  problems?: Prisma.StringNullableListFilter<"Sector">
   capabilities?: Prisma.StringNullableListFilter<"Sector">
   order?: Prisma.IntFilter<"Sector"> | number
   published?: Prisma.BoolFilter<"Sector"> | boolean
@@ -251,6 +263,8 @@ export type SectorOrderByWithRelationInput = {
   name?: Prisma.SortOrder
   slug?: Prisma.SortOrder
   description?: Prisma.SortOrder
+  icon?: Prisma.SortOrderInput | Prisma.SortOrder
+  problems?: Prisma.SortOrder
   capabilities?: Prisma.SortOrder
   order?: Prisma.SortOrder
   published?: Prisma.SortOrder
@@ -266,6 +280,8 @@ export type SectorWhereUniqueInput = Prisma.AtLeast<{
   NOT?: Prisma.SectorWhereInput | Prisma.SectorWhereInput[]
   name?: Prisma.StringFilter<"Sector"> | string
   description?: Prisma.StringFilter<"Sector"> | string
+  icon?: Prisma.StringNullableFilter<"Sector"> | string | null
+  problems?: Prisma.StringNullableListFilter<"Sector">
   capabilities?: Prisma.StringNullableListFilter<"Sector">
   order?: Prisma.IntFilter<"Sector"> | number
   published?: Prisma.BoolFilter<"Sector"> | boolean
@@ -278,6 +294,8 @@ export type SectorOrderByWithAggregationInput = {
   name?: Prisma.SortOrder
   slug?: Prisma.SortOrder
   description?: Prisma.SortOrder
+  icon?: Prisma.SortOrderInput | Prisma.SortOrder
+  problems?: Prisma.SortOrder
   capabilities?: Prisma.SortOrder
   order?: Prisma.SortOrder
   published?: Prisma.SortOrder
@@ -298,6 +316,8 @@ export type SectorScalarWhereWithAggregatesInput = {
   name?: Prisma.StringWithAggregatesFilter<"Sector"> | string
   slug?: Prisma.StringWithAggregatesFilter<"Sector"> | string
   description?: Prisma.StringWithAggregatesFilter<"Sector"> | string
+  icon?: Prisma.StringNullableWithAggregatesFilter<"Sector"> | string | null
+  problems?: Prisma.StringNullableListFilter<"Sector">
   capabilities?: Prisma.StringNullableListFilter<"Sector">
   order?: Prisma.IntWithAggregatesFilter<"Sector"> | number
   published?: Prisma.BoolWithAggregatesFilter<"Sector"> | boolean
@@ -310,6 +330,8 @@ export type SectorCreateInput = {
   name: string
   slug: string
   description?: string
+  icon?: string | null
+  problems?: Prisma.SectorCreateproblemsInput | string[]
   capabilities?: Prisma.SectorCreatecapabilitiesInput | string[]
   order?: number
   published?: boolean
@@ -322,6 +344,8 @@ export type SectorUncheckedCreateInput = {
   name: string
   slug: string
   description?: string
+  icon?: string | null
+  problems?: Prisma.SectorCreateproblemsInput | string[]
   capabilities?: Prisma.SectorCreatecapabilitiesInput | string[]
   order?: number
   published?: boolean
@@ -334,6 +358,8 @@ export type SectorUpdateInput = {
   name?: Prisma.StringFieldUpdateOperationsInput | string
   slug?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.StringFieldUpdateOperationsInput | string
+  icon?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  problems?: Prisma.SectorUpdateproblemsInput | string[]
   capabilities?: Prisma.SectorUpdatecapabilitiesInput | string[]
   order?: Prisma.IntFieldUpdateOperationsInput | number
   published?: Prisma.BoolFieldUpdateOperationsInput | boolean
@@ -346,6 +372,8 @@ export type SectorUncheckedUpdateInput = {
   name?: Prisma.StringFieldUpdateOperationsInput | string
   slug?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.StringFieldUpdateOperationsInput | string
+  icon?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  problems?: Prisma.SectorUpdateproblemsInput | string[]
   capabilities?: Prisma.SectorUpdatecapabilitiesInput | string[]
   order?: Prisma.IntFieldUpdateOperationsInput | number
   published?: Prisma.BoolFieldUpdateOperationsInput | boolean
@@ -358,6 +386,8 @@ export type SectorCreateManyInput = {
   name: string
   slug: string
   description?: string
+  icon?: string | null
+  problems?: Prisma.SectorCreateproblemsInput | string[]
   capabilities?: Prisma.SectorCreatecapabilitiesInput | string[]
   order?: number
   published?: boolean
@@ -370,6 +400,8 @@ export type SectorUpdateManyMutationInput = {
   name?: Prisma.StringFieldUpdateOperationsInput | string
   slug?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.StringFieldUpdateOperationsInput | string
+  icon?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  problems?: Prisma.SectorUpdateproblemsInput | string[]
   capabilities?: Prisma.SectorUpdatecapabilitiesInput | string[]
   order?: Prisma.IntFieldUpdateOperationsInput | number
   published?: Prisma.BoolFieldUpdateOperationsInput | boolean
@@ -382,6 +414,8 @@ export type SectorUncheckedUpdateManyInput = {
   name?: Prisma.StringFieldUpdateOperationsInput | string
   slug?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.StringFieldUpdateOperationsInput | string
+  icon?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  problems?: Prisma.SectorUpdateproblemsInput | string[]
   capabilities?: Prisma.SectorUpdatecapabilitiesInput | string[]
   order?: Prisma.IntFieldUpdateOperationsInput | number
   published?: Prisma.BoolFieldUpdateOperationsInput | boolean
@@ -402,6 +436,8 @@ export type SectorCountOrderByAggregateInput = {
   name?: Prisma.SortOrder
   slug?: Prisma.SortOrder
   description?: Prisma.SortOrder
+  icon?: Prisma.SortOrder
+  problems?: Prisma.SortOrder
   capabilities?: Prisma.SortOrder
   order?: Prisma.SortOrder
   published?: Prisma.SortOrder
@@ -418,6 +454,7 @@ export type SectorMaxOrderByAggregateInput = {
   name?: Prisma.SortOrder
   slug?: Prisma.SortOrder
   description?: Prisma.SortOrder
+  icon?: Prisma.SortOrder
   order?: Prisma.SortOrder
   published?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
@@ -429,6 +466,7 @@ export type SectorMinOrderByAggregateInput = {
   name?: Prisma.SortOrder
   slug?: Prisma.SortOrder
   description?: Prisma.SortOrder
+  icon?: Prisma.SortOrder
   order?: Prisma.SortOrder
   published?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
@@ -439,8 +477,17 @@ export type SectorSumOrderByAggregateInput = {
   order?: Prisma.SortOrder
 }
 
+export type SectorCreateproblemsInput = {
+  set: string[]
+}
+
 export type SectorCreatecapabilitiesInput = {
   set: string[]
+}
+
+export type SectorUpdateproblemsInput = {
+  set?: string[]
+  push?: string | string[]
 }
 
 export type SectorUpdatecapabilitiesInput = {
@@ -455,6 +502,8 @@ export type SectorSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs =
   name?: boolean
   slug?: boolean
   description?: boolean
+  icon?: boolean
+  problems?: boolean
   capabilities?: boolean
   order?: boolean
   published?: boolean
@@ -467,6 +516,8 @@ export type SectorSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extens
   name?: boolean
   slug?: boolean
   description?: boolean
+  icon?: boolean
+  problems?: boolean
   capabilities?: boolean
   order?: boolean
   published?: boolean
@@ -479,6 +530,8 @@ export type SectorSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extens
   name?: boolean
   slug?: boolean
   description?: boolean
+  icon?: boolean
+  problems?: boolean
   capabilities?: boolean
   order?: boolean
   published?: boolean
@@ -491,6 +544,8 @@ export type SectorSelectScalar = {
   name?: boolean
   slug?: boolean
   description?: boolean
+  icon?: boolean
+  problems?: boolean
   capabilities?: boolean
   order?: boolean
   published?: boolean
@@ -498,7 +553,7 @@ export type SectorSelectScalar = {
   updatedAt?: boolean
 }
 
-export type SectorOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "name" | "slug" | "description" | "capabilities" | "order" | "published" | "createdAt" | "updatedAt", ExtArgs["result"]["sector"]>
+export type SectorOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "name" | "slug" | "description" | "icon" | "problems" | "capabilities" | "order" | "published" | "createdAt" | "updatedAt", ExtArgs["result"]["sector"]>
 
 export type $SectorPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "Sector"
@@ -508,6 +563,8 @@ export type $SectorPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs
     name: string
     slug: string
     description: string
+    icon: string | null
+    problems: string[]
     capabilities: string[]
     order: number
     published: boolean
@@ -940,6 +997,8 @@ export interface SectorFieldRefs {
   readonly name: Prisma.FieldRef<"Sector", 'String'>
   readonly slug: Prisma.FieldRef<"Sector", 'String'>
   readonly description: Prisma.FieldRef<"Sector", 'String'>
+  readonly icon: Prisma.FieldRef<"Sector", 'String'>
+  readonly problems: Prisma.FieldRef<"Sector", 'String[]'>
   readonly capabilities: Prisma.FieldRef<"Sector", 'String[]'>
   readonly order: Prisma.FieldRef<"Sector", 'Int'>
   readonly published: Prisma.FieldRef<"Sector", 'Boolean'>

@@ -7,8 +7,10 @@ import { prisma } from "@/lib/prisma";
 import { requireAdmin, slugify } from "@/lib/auth-guard";
 
 const sectorInputSchema = z.object({
-    name: z.string().trim().min(1, "Name is required").max(120),
+    name: z.string().trim().min(1).max(120),
     description: z.string().trim().max(2000).default(""),
+    icon: z.string().trim().max(80).nullable().optional(),
+    problems: z.array(z.string().trim().min(1)).default([]),
     capabilities: z.array(z.string().trim().min(1)).default([]),
     published: z.boolean().default(true),
     order: z.number().int().min(0).optional(),

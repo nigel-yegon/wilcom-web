@@ -875,6 +875,8 @@ export const SectorScalarFieldEnum = {
   name: 'name',
   slug: 'slug',
   description: 'description',
+  icon: 'icon',
+  problems: 'problems',
   capabilities: 'capabilities',
   order: 'order',
   published: 'published',

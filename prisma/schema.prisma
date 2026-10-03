@@ -48,6 +48,8 @@ model Sector {
   name         String
   slug         String   @unique
   description  String   @default("")
+  icon         String?              // ← new: short icon key or emoji
+  problems     String[] @default([]) // ← new: typical challenges
   capabilities String[] @default([])
   order        Int      @default(0)
   published    Boolean  @default(true)

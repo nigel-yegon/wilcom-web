@@ -92,8 +92,16 @@ const sectors = [
     {
         name: "Government & Public Institutions",
         slug: "government-public-institutions",
+        icon: "🏛️",
         description:
             "Public institutions operate in environments where policy, processes, people, systems and accountability must work together. WilCom supports institutions to understand operational challenges, assess existing systems and translate requirements into practical improvements.",
+        problems: [
+            "Fragmented or inefficient institutional processes",
+            "Manual workflows and disconnected information systems",
+            "Weak visibility across operations and service delivery",
+            "Legacy systems that no longer support organizational needs",
+            "Requirements for stronger governance, controls and accountability",
+        ],
         capabilities: [
             "Institutional and ICT needs assessment",
             "Business and process analysis",
@@ -108,8 +116,16 @@ const sectors = [
     {
         name: "Education & TVET",
         slug: "education-tvet",
+        icon: "🎓",
         description:
             "Education and training institutions require systems that connect institutional processes, learning delivery, assessment, information management and decision-making. WilCom combines consulting, technology and capacity building to support sustainable digital transformation.",
+        problems: [
+            "Growing demand for digital learning and assessment",
+            "Disconnected institutional information",
+            "Limited visibility of operational and performance data",
+            "Need for stronger digital skills among staff and trainers",
+            "Systems that require modernization or better integration",
+        ],
         capabilities: [
             "Digital transformation assessment",
             "Learning and management information systems",
@@ -124,8 +140,16 @@ const sectors = [
     {
         name: "Regulatory & Oversight Institutions",
         slug: "regulatory-oversight-institutions",
+        icon: "⚖️",
         description:
             "Regulatory and oversight organizations depend on reliable information, controlled processes, secure systems and auditable operations. WilCom supports these institutions through assessment, systems improvement, quality assurance and technology-enabled process transformation.",
+        problems: [
+            "Complex regulatory and administrative workflows",
+            "Information spread across disconnected systems",
+            "Requirements for auditability and traceability",
+            "Security and access-control concerns",
+            "Need for reliable information for oversight and decision-making",
+        ],
         capabilities: [
             "Process and systems assessment",
             "Information and records management",
@@ -140,8 +164,16 @@ const sectors = [
     {
         name: "Development Programmes & NGOs",
         slug: "development-programmes-ngos",
+        icon: "🌍",
         description:
             "Development programmes require solutions that connect programme objectives with implementation realities. WilCom supports organizations to assess needs, design fit-for-purpose interventions, strengthen institutional capability and improve the systems that enable programme delivery.",
+        problems: [
+            "Translating programme objectives into practical delivery systems",
+            "Weak information flows between programme teams and stakeholders",
+            "Capacity gaps affecting implementation",
+            "Reporting and monitoring requirements",
+            "Need for sustainable solutions beyond the initial intervention",
+        ],
         capabilities: [
             "Programme and institutional assessment",
             "Digital transformation advisory",
@@ -156,8 +188,16 @@ const sectors = [
     {
         name: "Financial Services",
         slug: "financial-services",
+        icon: "🏦",
         description:
             "Financial institutions require dependable processes, secure information systems and technology that supports operational efficiency. WilCom brings together ICT advisory, systems development, integration and security-focused thinking to address business and technology requirements.",
+        problems: [
+            "Operational processes requiring automation",
+            "Disconnected systems and information flows",
+            "Security and control requirements",
+            "Need for reliable management information",
+            "Technology investments that must translate into operational value",
+        ],
         capabilities: [
             "ICT advisory and technology assessment",
             "Business process analysis",
@@ -172,8 +212,16 @@ const sectors = [
     {
         name: "Retail & Commercial Organizations",
         slug: "retail-commercial-organizations",
+        icon: "🛒",
         description:
             "Commercial organizations need technology that improves the way people, processes and information work together. WilCom helps organizations assess operational requirements and develop practical systems that support efficiency, visibility and service delivery.",
+        problems: [
+            "Manual and inefficient business processes",
+            "Limited visibility across operations",
+            "Disconnected applications and data",
+            "Need for improved reporting and decision support",
+            "Technology that does not adequately reflect business processes",
+        ],
         capabilities: [
             "Business and ICT needs assessment",
             "Process digitization",
@@ -188,8 +236,16 @@ const sectors = [
     {
         name: "Hospitality & Service Organizations",
         slug: "hospitality-service-organizations",
+        icon: "🏨",
         description:
             "Service organizations depend on coordinated processes, timely information and systems that support both staff and customers. WilCom applies consulting and technology capabilities to improve operational processes and strengthen digital service delivery.",
+        problems: [
+            "Disconnected operational processes",
+            "Manual information handling",
+            "Limited management visibility",
+            "Need for integrated operational systems",
+            "Challenges translating technology into better service delivery",
+        ],
         capabilities: [
             "Operational assessment",
             "Process improvement",
@@ -204,8 +260,16 @@ const sectors = [
     {
         name: "Industry, Manufacturing & Logistics",
         slug: "industry-manufacturing-logistics",
+        icon: "🏭",
         description:
             "Industrial and logistics environments require dependable information flows, coordinated processes and technology that supports operations. WilCom helps organizations assess their environment, define requirements and implement practical technology-enabled improvements.",
+        problems: [
+            "Operational information gaps",
+            "Disconnected systems and processes",
+            "Infrastructure and connectivity requirements",
+            "Limited visibility across operational activities",
+            "Need for scalable and maintainable technology solutions",
+        ],
         capabilities: [
             "ICT and infrastructure assessment",
             "Systems and process analysis",
