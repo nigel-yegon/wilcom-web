@@ -92,43 +92,43 @@ const engagementSteps = [
 const clients = [
   {
     name: "Client One",
-    logo: "/favicon.png",
-    href: "https://example.com",
+    logo: "/treasury-logo.jpg",
+    href: "https://treasury.go.ke",
   },
   {
     name: "Client Two",
-    logo: "/favicon.png",
-    href: "https://example.com",
+    logo: "/tvet.jpeg",
+    href: "https://tvet.go.ke",
   },
   {
     name: "Client Three",
-    logo: "/favicon.png",
-    href: "https://example.com",
+    logo: "/eldoret-city-logo.jpeg",
+    href: "https://eldoretcity.go.ke",
   },
   {
     name: "Client Four",
-    logo: "/favicon.png",
-    href: "https://example.com",
+    logo: "/UG-county.jpg",
+    href: "https://uasingishu.go.ke",
   },
   {
     name: "Client Five",
-    logo: "/favicon.png",
-    href: "https://example.com",
+    logo: "/ntsp.png",
+    href: "https://tourkenya.go.ke",
   },
   {
     name: "Client Six",
-    logo: "/favicon.png",
-    href: "https://example.com",
+    logo: "/sdr.jpeg",
+    href: "https://transport.go.ke",
   },
   {
     name: "Partner One",
-    logo: "/favicon.png",
-    href: "https://example.com",
+    logo: "/ppra-logo.png",
+    href: "https://tenders.go.ke",
   },
   {
     name: "Partner Two",
-    logo: "/favicon.png",
-    href: "https://example.com",
+    logo: "/cak.jpg",
+    href: "https://ca.go.ke",
   },
 ];
 
