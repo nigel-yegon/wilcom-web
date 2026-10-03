@@ -92,42 +92,42 @@ const engagementSteps = [
 const clients = [
   {
     name: "Client One",
-    logo: "/clients/client-one.png",
+    logo: "/favicon.png",
     href: "https://example.com",
   },
   {
     name: "Client Two",
-    logo: "/clients/client-two.png",
+    logo: "/favicon.png",
     href: "https://example.com",
   },
   {
     name: "Client Three",
-    logo: "/clients/client-three.png",
+    logo: "/favicon.png",
     href: "https://example.com",
   },
   {
     name: "Client Four",
-    logo: "/clients/client-four.png",
+    logo: "/favicon.png",
     href: "https://example.com",
   },
   {
     name: "Client Five",
-    logo: "/clients/client-five.png",
+    logo: "/favicon.png",
     href: "https://example.com",
   },
   {
     name: "Client Six",
-    logo: "/clients/client-six.png",
+    logo: "/favicon.png",
     href: "https://example.com",
   },
   {
     name: "Partner One",
-    logo: "/clients/partner-one.png",
+    logo: "/favicon.png",
     href: "https://example.com",
   },
   {
     name: "Partner Two",
-    logo: "/clients/partner-two.png",
+    logo: "/favicon.png",
     href: "https://example.com",
   },
 ];
