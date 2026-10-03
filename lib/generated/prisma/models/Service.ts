@@ -445,10 +445,6 @@ export type IntFieldUpdateOperationsInput = {
   divide?: number
 }
 
-export type BoolFieldUpdateOperationsInput = {
-  set?: boolean
-}
-
 
 
 export type ServiceSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{

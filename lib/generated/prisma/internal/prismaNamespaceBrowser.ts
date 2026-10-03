@@ -52,8 +52,10 @@ export const AnyNull = runtime.AnyNull
 
 export const ModelName = {
   ContactSubmission: 'ContactSubmission',
+  NewsletterSubscriber: 'NewsletterSubscriber',
   Service: 'Service',
-  NewsletterSubscriber: 'NewsletterSubscriber'
+  Sector: 'Sector',
+  Project: 'Project'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -87,6 +89,16 @@ export const ContactSubmissionScalarFieldEnum = {
 export type ContactSubmissionScalarFieldEnum = (typeof ContactSubmissionScalarFieldEnum)[keyof typeof ContactSubmissionScalarFieldEnum]
 
 
+export const NewsletterSubscriberScalarFieldEnum = {
+  id: 'id',
+  email: 'email',
+  subscribedAt: 'subscribedAt',
+  active: 'active'
+} as const
+
+export type NewsletterSubscriberScalarFieldEnum = (typeof NewsletterSubscriberScalarFieldEnum)[keyof typeof NewsletterSubscriberScalarFieldEnum]
+
+
 export const ServiceScalarFieldEnum = {
   id: 'id',
   title: 'title',
@@ -102,14 +114,38 @@ export const ServiceScalarFieldEnum = {
 export type ServiceScalarFieldEnum = (typeof ServiceScalarFieldEnum)[keyof typeof ServiceScalarFieldEnum]
 
 
-export const NewsletterSubscriberScalarFieldEnum = {
+export const SectorScalarFieldEnum = {
   id: 'id',
-  email: 'email',
-  subscribedAt: 'subscribedAt',
-  active: 'active'
+  name: 'name',
+  slug: 'slug',
+  description: 'description',
+  capabilities: 'capabilities',
+  order: 'order',
+  published: 'published',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
 } as const
 
-export type NewsletterSubscriberScalarFieldEnum = (typeof NewsletterSubscriberScalarFieldEnum)[keyof typeof NewsletterSubscriberScalarFieldEnum]
+export type SectorScalarFieldEnum = (typeof SectorScalarFieldEnum)[keyof typeof SectorScalarFieldEnum]
+
+
+export const ProjectScalarFieldEnum = {
+  id: 'id',
+  ref: 'ref',
+  title: 'title',
+  slug: 'slug',
+  client: 'client',
+  sector: 'sector',
+  engagement: 'engagement',
+  summary: 'summary',
+  services: 'services',
+  order: 'order',
+  published: 'published',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type ProjectScalarFieldEnum = (typeof ProjectScalarFieldEnum)[keyof typeof ProjectScalarFieldEnum]
 
 
 export const SortOrder = {

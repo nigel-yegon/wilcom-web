@@ -1,7 +1,6 @@
 generator client {
   provider = "prisma-client"
   output   = "../lib/generated/prisma"
-
 }
 
 datasource db {
@@ -23,6 +22,13 @@ model ContactSubmission {
   @@index([createdAt])
 }
 
+model NewsletterSubscriber {
+  id           String   @id @default(cuid())
+  email        String   @unique
+  subscribedAt DateTime @default(now())
+  active       Boolean  @default(true)
+}
+
 model Service {
   id          String   @id @default(cuid())
   title       String
@@ -37,9 +43,35 @@ model Service {
   @@index([published, order])
 }
 
-model NewsletterSubscriber {
+model Sector {
   id           String   @id @default(cuid())
-  email        String   @unique
-  subscribedAt DateTime @default(now())
-  active       Boolean  @default(true)
+  name         String
+  slug         String   @unique
+  description  String   @default("")
+  capabilities String[] @default([])
+  order        Int      @default(0)
+  published    Boolean  @default(true)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  @@index([published, order])
+}
+
+model Project {
+  id         String   @id @default(cuid())
+  ref        String   @unique          // e.g. "P-001" — human-readable code
+  title      String
+  slug       String   @unique
+  client     String
+  sector     String
+  engagement String
+  summary    String
+  services   String[] @default([])
+  order      Int      @default(0)
+  published  Boolean  @default(true)
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  @@index([published, order])
+  @@index([sector])
 }

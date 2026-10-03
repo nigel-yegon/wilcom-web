@@ -23,12 +23,22 @@ export * from './enums';
  */
 export type ContactSubmission = Prisma.ContactSubmissionModel
 /**
+ * Model NewsletterSubscriber
+ * 
+ */
+export type NewsletterSubscriber = Prisma.NewsletterSubscriberModel
+/**
  * Model Service
  * 
  */
 export type Service = Prisma.ServiceModel
 /**
- * Model NewsletterSubscriber
+ * Model Sector
  * 
  */
-export type NewsletterSubscriber = Prisma.NewsletterSubscriberModel
+export type Sector = Prisma.SectorModel
+/**
+ * Model Project
+ * 
+ */
+export type Project = Prisma.ProjectModel
