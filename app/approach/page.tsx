@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
+import FadeIn from "../components/fade-in";
+
 export const metadata: Metadata = {
   title: "Our Approach | WilCom Systems Limited",
   description:
@@ -143,80 +145,87 @@ export default function ApproachPage() {
     <main className="min-h-screen">
       {/* Hero */}
       <section className="px-6 py-20 md:py-28 max-w-6xl mx-auto text-center">
-        <p className="text-brand-600 dark:text-brand-400 text-sm font-semibold uppercase tracking-widest mb-4">
-          Our Methodology
-        </p>
+        <FadeIn>
+          <p className="text-brand-600 dark:text-brand-400 text-sm font-semibold uppercase tracking-widest mb-4">
+            Our Methodology
+          </p>
+        </FadeIn>
 
-        <h1 className="text-4xl md:text-6xl font-extrabold mb-6 max-w-5xl mx-auto">
-          From insight to{" "}
-          <span className="text-brand-600 dark:text-brand-400">
-            sustainable results.
-          </span>
-        </h1>
+        <FadeIn delay={0.1}>
+          <h1 className="text-4xl md:text-6xl font-extrabold mb-6 max-w-5xl mx-auto">
+            From insight to{" "}
+            <span className="text-brand-600 dark:text-brand-400">
+              sustainable results.
+            </span>
+          </h1>
+        </FadeIn>
 
-        <p className="max-w-3xl mx-auto text-lg text-ink-600 dark:text-ink-300 leading-relaxed">
-          WilCom Systems combines development consulting, management advisory,
-          technology expertise, institutional capacity building and programme
-          delivery through a structured approach designed around each client&apos;s
-          context and objectives.
-        </p>
+        <FadeIn delay={0.2}>
+          <p className="max-w-3xl mx-auto text-lg text-ink-600 dark:text-ink-300 leading-relaxed">
+            WilCom Systems combines development consulting, management advisory,
+            technology expertise, institutional capacity building and programme
+            delivery through a structured approach designed around each client&apos;s
+            context and objectives.
+          </p>
+        </FadeIn>
       </section>
 
       {/* Delivery process */}
       <section className="px-6 py-20 bg-ink-100 dark:bg-ink-900/60">
         <div className="max-w-6xl mx-auto">
-          <div className="max-w-3xl mb-12">
-            <p className="text-brand-600 dark:text-brand-400 text-sm font-semibold uppercase tracking-widest mb-3">
-              How We Work
-            </p>
+          <FadeIn>
+            <div className="max-w-3xl mb-12">
+              <p className="text-brand-600 dark:text-brand-400 text-sm font-semibold uppercase tracking-widest mb-3">
+                How We Work
+              </p>
 
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              A structured delivery methodology
-            </h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                A structured delivery methodology
+              </h2>
 
-            <p className="text-ink-600 dark:text-ink-300">
-              Our engagements can range from focused advisory assignments to
-              complex technology and institutional transformation programmes.
-              The methodology adapts to the nature, scale and requirements of
-              each assignment.
-            </p>
-          </div>
+              <p className="text-ink-600 dark:text-ink-300">
+                Our engagements can range from focused advisory assignments to
+                complex technology and institutional transformation programmes.
+                The methodology adapts to the nature, scale and requirements of
+                each assignment.
+              </p>
+            </div>
+          </FadeIn>
 
           <div className="space-y-6">
             {phases.map((phase) => (
-              <div
-                key={phase.step}
-                className="bg-white dark:bg-ink-900 p-6 md:p-8 rounded-xl border border-ink-200 dark:border-ink-800 hover:border-brand-500 transition"
-              >
-                <div className="flex flex-col md:flex-row gap-6">
-                  <div className="md:w-24 shrink-0">
-                    <span className="text-4xl md:text-5xl font-extrabold text-brand-600 dark:text-brand-400">
-                      {phase.step}
-                    </span>
-                  </div>
+              <FadeIn key={phase.step}>
+                <div className="bg-white dark:bg-ink-900 p-6 md:p-8 rounded-xl border border-ink-200 dark:border-ink-800 hover:border-brand-500 transition">
+                  <div className="flex flex-col md:flex-row gap-6">
+                    <div className="md:w-24 shrink-0">
+                      <span className="text-4xl md:text-5xl font-extrabold text-brand-600 dark:text-brand-400">
+                        {phase.step}
+                      </span>
+                    </div>
 
-                  <div className="flex-1">
-                    <h3 className="text-xl md:text-2xl font-bold mb-3">
-                      {phase.title}
-                    </h3>
+                    <div className="flex-1">
+                      <h3 className="text-xl md:text-2xl font-bold mb-3">
+                        {phase.title}
+                      </h3>
 
-                    <p className="text-ink-600 dark:text-ink-300 leading-relaxed mb-5">
-                      {phase.description}
-                    </p>
+                      <p className="text-ink-600 dark:text-ink-300 leading-relaxed mb-5">
+                        {phase.description}
+                      </p>
 
-                    <div className="flex flex-wrap gap-2">
-                      {phase.deliverables.map((item) => (
-                        <span
-                          key={item}
-                          className="text-xs px-3 py-1.5 rounded-full bg-ink-100 dark:bg-ink-800 text-ink-600 dark:text-ink-300"
-                        >
-                          {item}
-                        </span>
-                      ))}
+                      <div className="flex flex-wrap gap-2">
+                        {phase.deliverables.map((item) => (
+                          <span
+                            key={item}
+                            className="text-xs px-3 py-1.5 rounded-full bg-ink-100 dark:bg-ink-800 text-ink-600 dark:text-ink-300"
+                          >
+                            {item}
+                          </span>
+                        ))}
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
+              </FadeIn>
             ))}
           </div>
         </div>
@@ -224,37 +233,38 @@ export default function ApproachPage() {
 
       {/* Principles */}
       <section className="px-6 py-20 max-w-6xl mx-auto w-full">
-        <div className="text-center mb-12">
-          <p className="text-brand-600 dark:text-brand-400 text-sm font-semibold uppercase tracking-widest mb-3">
-            What Guides Us
-          </p>
+        <FadeIn>
+          <div className="text-center mb-12">
+            <p className="text-brand-600 dark:text-brand-400 text-sm font-semibold uppercase tracking-widest mb-3">
+              What Guides Us
+            </p>
 
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Guiding Principles
-          </h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Guiding Principles
+            </h2>
 
-          <p className="text-ink-500 dark:text-ink-400 max-w-3xl mx-auto">
-            These principles shape how WilCom approaches consulting,
-            technology, institutional strengthening and programme delivery.
-          </p>
-        </div>
+            <p className="text-ink-500 dark:text-ink-400 max-w-3xl mx-auto">
+              These principles shape how WilCom approaches consulting,
+              technology, institutional strengthening and programme delivery.
+            </p>
+          </div>
+        </FadeIn>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {principles.map((principle) => (
-            <div
-              key={principle.title}
-              className="h-full bg-white dark:bg-ink-900 p-6 rounded-xl border border-ink-200 dark:border-ink-800 hover:border-brand-500 transition"
-            >
-              <div className="text-3xl mb-4">{principle.icon}</div>
+          {principles.map((principle, index) => (
+            <FadeIn key={principle.title} delay={(index % 3) * 0.1} className="h-full">
+              <div className="h-full bg-white dark:bg-ink-900 p-6 rounded-xl border border-ink-200 dark:border-ink-800 hover:border-brand-500 transition">
+                <div className="text-3xl mb-4">{principle.icon}</div>
 
-              <h3 className="text-lg font-semibold mb-2 text-brand-600 dark:text-brand-400">
-                {principle.title}
-              </h3>
+                <h3 className="text-lg font-semibold mb-2 text-brand-600 dark:text-brand-400">
+                  {principle.title}
+                </h3>
 
-              <p className="text-ink-600 dark:text-ink-300 text-sm leading-relaxed">
-                {principle.description}
-              </p>
-            </div>
+                <p className="text-ink-600 dark:text-ink-300 text-sm leading-relaxed">
+                  {principle.description}
+                </p>
+              </div>
+            </FadeIn>
           ))}
         </div>
       </section>
@@ -263,22 +273,24 @@ export default function ApproachPage() {
       <section className="px-6 py-20 bg-ink-100 dark:bg-ink-900/60">
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-2 gap-10 items-center">
-            <div>
-              <p className="text-brand-600 dark:text-brand-400 text-sm font-semibold uppercase tracking-widest mb-3">
-                Integrated Expertise
-              </p>
+            <FadeIn>
+              <div>
+                <p className="text-brand-600 dark:text-brand-400 text-sm font-semibold uppercase tracking-widest mb-3">
+                  Integrated Expertise
+                </p>
 
-              <h2 className="text-3xl md:text-4xl font-bold mb-5">
-                Consulting expertise supported by technology capability.
-              </h2>
+                <h2 className="text-3xl md:text-4xl font-bold mb-5">
+                  Consulting expertise supported by technology capability.
+                </h2>
 
-              <p className="text-ink-600 dark:text-ink-300 leading-relaxed">
-                Our approach brings together management consulting, digital
-                transformation, systems development, ICT advisory, software
-                quality assurance, cybersecurity, capacity building and
-                programme delivery.
-              </p>
-            </div>
+                <p className="text-ink-600 dark:text-ink-300 leading-relaxed">
+                  Our approach brings together management consulting, digital
+                  transformation, systems development, ICT advisory, software
+                  quality assurance, cybersecurity, capacity building and
+                  programme delivery.
+                </p>
+              </div>
+            </FadeIn>
 
             <div className="grid sm:grid-cols-2 gap-3">
               {[
@@ -290,13 +302,12 @@ export default function ApproachPage() {
                 "Cybersecurity",
                 "Capacity Building",
                 "Programme Delivery",
-              ].map((item) => (
-                <div
-                  key={item}
-                  className="bg-white dark:bg-ink-900 rounded-lg border border-ink-200 dark:border-ink-800 p-4 text-sm font-medium"
-                >
-                  {item}
-                </div>
+              ].map((item, index) => (
+                <FadeIn key={item} delay={index * 0.05}>
+                  <div className="bg-white dark:bg-ink-900 rounded-lg border border-ink-200 dark:border-ink-800 p-4 text-sm font-medium">
+                    {item}
+                  </div>
+                </FadeIn>
               ))}
             </div>
           </div>
@@ -306,26 +317,28 @@ export default function ApproachPage() {
       {/* CTA */}
       <section className="px-6 py-20">
         <div className="max-w-3xl mx-auto text-center">
-          <p className="text-brand-600 dark:text-brand-400 text-sm font-semibold uppercase tracking-widest mb-3">
-            Let&apos;s Work Together
-          </p>
+          <FadeIn>
+            <p className="text-brand-600 dark:text-brand-400 text-sm font-semibold uppercase tracking-widest mb-3">
+              Let&apos;s Work Together
+            </p>
 
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Have a complex development or transformation challenge?
-          </h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Have a complex development or transformation challenge?
+            </h2>
 
-          <p className="text-ink-600 dark:text-ink-300 mb-8">
-            Tell us what you are trying to achieve. We can explore the
-            requirements, identify the appropriate approach and define a
-            practical path to implementation.
-          </p>
+            <p className="text-ink-600 dark:text-ink-300 mb-8">
+              Tell us what you are trying to achieve. We can explore the
+              requirements, identify the appropriate approach and define a
+              practical path to implementation.
+            </p>
 
-          <Link
-            href="/contact"
-            className="inline-block bg-brand-600 hover:bg-brand-700 transition px-8 py-3 rounded-lg font-semibold text-white"
-          >
-            Start a Conversation
-          </Link>
+            <Link
+              href="/contact"
+              className="inline-block bg-brand-600 hover:bg-brand-700 transition px-8 py-3 rounded-lg font-semibold text-white"
+            >
+              Start a Conversation
+            </Link>
+          </FadeIn>
         </div>
       </section>
     </main>
