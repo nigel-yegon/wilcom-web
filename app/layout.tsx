@@ -7,6 +7,7 @@ import { ThemeProvider } from "./components/theme-provider";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { GoogleAnalytics } from "@next/third-parties/google";
+import ScrollToTop from "./components/scroll-to-top";
 
 const inter = Inter({ subsets: ["latin"], display: "swap" });
 
@@ -128,6 +129,7 @@ export default function RootLayout({
           <Navbar />
           <div className="flex-1">{children}</div>
           <Footer />
+          <ScrollToTop />
         </ThemeProvider>
         <Analytics />
         <SpeedInsights />

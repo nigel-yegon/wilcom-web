@@ -135,9 +135,9 @@ export default function ContactPage() {
                       <p className="font-semibold text-ink-900 dark:text-white mb-1">
                         Office
                       </p>
-                      <p>2nd Floor, Elyzee Plaza</p>
-                      <p>Kilimani Road</p>
-                      <p>P.O Box 102678-00101 Nairobi</p>
+                      
+                      <p>P.O Box 102678-00101, </p>
+                      <p>Nairobi, KENYA</p>
                     </div>
                   </li>
 
