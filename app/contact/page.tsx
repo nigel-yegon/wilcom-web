@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import ContactForm from "../contact-form";
 import FadeIn from "../components/fade-in";
 import Link from "next/link";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Contact | WilCom Systems Limited",
@@ -77,6 +78,57 @@ const engagementSteps = [
     title: "We move toward delivery",
     description:
       "Where there is a fit, we agree the scope, responsibilities and next steps for the engagement.",
+  },
+];
+
+/**
+ * Clients & Partners
+ * ------------------
+ * Add your real client/partner entries here. Each logo file should live in
+ * /public/clients/ (e.g. /public/clients/acme.png). Keep the images roughly
+ * square or wide-and-short for the cleanest grid alignment. `href` is optional
+ * — omit it (or set to null) to render a non-clickable logo.
+ */
+const clients = [
+  {
+    name: "Client One",
+    logo: "/clients/client-one.png",
+    href: "https://example.com",
+  },
+  {
+    name: "Client Two",
+    logo: "/clients/client-two.png",
+    href: "https://example.com",
+  },
+  {
+    name: "Client Three",
+    logo: "/clients/client-three.png",
+    href: "https://example.com",
+  },
+  {
+    name: "Client Four",
+    logo: "/clients/client-four.png",
+    href: "https://example.com",
+  },
+  {
+    name: "Client Five",
+    logo: "/clients/client-five.png",
+    href: "https://example.com",
+  },
+  {
+    name: "Client Six",
+    logo: "/clients/client-six.png",
+    href: "https://example.com",
+  },
+  {
+    name: "Partner One",
+    logo: "/clients/partner-one.png",
+    href: "https://example.com",
+  },
+  {
+    name: "Partner Two",
+    logo: "/clients/partner-two.png",
+    href: "https://example.com",
   },
 ];
 
@@ -379,45 +431,84 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Direct contact CTA */}
+      {/* Clients & Partners */}
       <section className="px-6 py-20">
-        <div className="max-w-3xl mx-auto text-center">
+        <div className="max-w-6xl mx-auto">
           <FadeIn y={20}>
-            <p className="text-sm font-semibold uppercase tracking-[0.15em] text-brand-600 dark:text-brand-400 mb-4">
-              Prefer a Direct Conversation?
-            </p>
+            <div className="max-w-3xl mx-auto text-center mb-14">
+              <p className="text-sm font-semibold uppercase tracking-[0.15em] text-brand-600 dark:text-brand-400 mb-3">
+                Trusted By
+              </p>
 
-            <h2 className="text-3xl md:text-4xl font-bold mb-5">
-              Speak with the WilCom team
-            </h2>
-          </FadeIn>
+              <h2 className="text-3xl md:text-4xl font-bold mb-5">
+                Our Clients and Partners
+              </h2>
 
-          <FadeIn y={20} delay={0.15}>
-            <p className="text-ink-600 dark:text-ink-300 mb-8 leading-relaxed">
-              If you would rather discuss your requirement directly, contact
-              us during business hours.
-            </p>
-          </FadeIn>
-
-          <FadeIn y={20} delay={0.3}>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="tel:+254202396916"
-                className="bg-brand-600 hover:bg-brand-700 transition px-8 py-3 rounded-lg font-semibold text-white"
-              >
-                Call +254 020 2396916/7
-              </a>
-
-              <a
-                href="mailto:info@WilCom.co.ke"
-                className="border border-ink-300 dark:border-ink-700 hover:border-brand-500 transition px-8 py-3 rounded-lg font-semibold text-ink-800 dark:text-ink-200"
-              >
-                Email WilCom
-              </a>
+              <p className="text-ink-600 dark:text-ink-300 leading-relaxed">
+                We work with public institutions, development organizations,
+                educational bodies and private-sector organizations across
+                Kenya and the region.
+              </p>
             </div>
           </FadeIn>
+
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
+            {clients.map((client, i) => (
+              <FadeIn key={client.name} delay={(i % 4) * 0.06}>
+                <ClientLogo
+                  name={client.name}
+                  logo={client.logo}
+                  href={client.href}
+                />
+              </FadeIn>
+            ))}
+          </div>
         </div>
       </section>
     </main>
+  );
+}
+
+/* -------------------------------------------------------------------------- */
+/* CLIENT LOGO                                                                 */
+/* -------------------------------------------------------------------------- */
+
+function ClientLogo({
+  name,
+  logo,
+  href,
+}: {
+  name: string;
+  logo: string;
+  href?: string | null;
+}) {
+  const content = (
+    <div className="group flex h-32 items-center justify-center rounded-xl border border-ink-200 bg-white p-5 transition hover:border-brand-500 hover:shadow-md dark:border-ink-800 dark:bg-ink-900">
+      <div className="relative h-16 w-full">
+        <Image
+          src={logo}
+          alt={name}
+          fill
+          sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+          className="object-contain opacity-70 grayscale transition group-hover:opacity-100 group-hover:grayscale-0 dark:opacity-80"
+        />
+      </div>
+    </div>
+  );
+
+  if (!href) {
+    return content;
+  }
+
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label={`${name} — visit website`}
+      className="block focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2 rounded-xl dark:focus-visible:ring-offset-ink-950"
+    >
+      {content}
+    </a>
   );
 }
