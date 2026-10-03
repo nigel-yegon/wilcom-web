@@ -107,7 +107,7 @@ const clients = [
   },
   {
     name: "Client Four",
-    logo: "/UG-county.jpg",
+    logo: "/ug.png",
     href: "https://uasingishu.go.ke",
   },
   {
