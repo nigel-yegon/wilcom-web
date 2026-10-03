@@ -71,22 +71,6 @@ export default function Navbar() {
                                 </li>
                             );
                         })}
-
-                        {/* Dashboard link — only for admins */}
-                        {isAdmin && (
-                            <li>
-                                <Link
-                                    href="/dashboard"
-                                    className={
-                                        pathname.startsWith("/dashboard")
-                                            ? "font-semibold text-brand-600 dark:text-brand-400"
-                                            : "text-ink-700 transition hover:text-brand-600 dark:text-ink-200 dark:hover:text-brand-400"
-                                    }
-                                >
-                                    Dashboard
-                                </Link>
-                            </li>
-                        )}
                     </ul>
 
                     {/* Theme */}
@@ -144,28 +128,11 @@ export default function Navbar() {
                         );
                     })}
 
-                    {/* Dashboard link — mobile, admin only */}
-                    {isAdmin && (
-                        <li>
-                            <Link
-                                href="/dashboard"
-                                onClick={() => setOpen(false)}
-                                className={
-                                    pathname.startsWith("/dashboard")
-                                        ? "block font-semibold text-brand-600 dark:text-brand-400"
-                                        : "block text-ink-700 transition hover:text-brand-600 dark:text-ink-200 dark:hover:text-brand-400"
-                                }
-                            >
-                                Dashboard
-                            </Link>
-                        </li>
-                    )}
-
                     {/* Auth — mobile, uses dropdown as well */}
                     <li className="border-t border-ink-200 pt-3 dark:border-ink-800">
                         <div className="flex items-center justify-between">
                             <span className="text-ink-700 dark:text-ink-200">
-                                {isSignedIn ? "Account" : "Account"}
+                                Account
                             </span>
                             <UserDropdown
                                 isSignedIn={!!isSignedIn}
@@ -263,26 +230,40 @@ function UserDropdown({
             </button>
 
             {open && (
-                <div className="absolute right-0 mt-2 w-48 overflow-hidden rounded-md border border-ink-200 bg-white py-1 text-sm shadow-lg dark:border-ink-800 dark:bg-ink-950">
+                <div className="absolute right-0 mt-2 w-52 overflow-hidden rounded-md border border-ink-200 bg-white py-1 text-sm shadow-lg dark:border-ink-800 dark:bg-ink-950">
                     {isSignedIn ? (
                         <>
+                            {/* Admin-only section */}
                             {isAdmin && (
-                                <Link
-                                    href="/dashboard"
-                                    onClick={close}
-                                    className="block px-4 py-2 text-ink-700 transition hover:bg-ink-100 dark:text-ink-200 dark:hover:bg-ink-900"
-                                >
-                                    Dashboard
-                                </Link>
+                                <>
+                                    <div className="px-3 pt-1 pb-1 text-[10px] font-semibold uppercase tracking-wider text-ink-400 dark:text-ink-500">
+                                        Admin
+                                    </div>
+                                    <Link
+                                        href="/dashboard"
+                                        onClick={close}
+                                        className="flex items-center gap-2 px-3 py-2 text-ink-700 transition hover:bg-ink-100 dark:text-ink-200 dark:hover:bg-ink-900"
+                                    >
+                                        <DashboardIcon />
+                                        Dashboard
+                                    </Link>
+                                    <div className="my-1 border-t border-ink-200 dark:border-ink-800" />
+                                </>
                             )}
+
+                            {/* Account section */}
+                            <div className="px-3 pt-1 pb-1 text-[10px] font-semibold uppercase tracking-wider text-ink-400 dark:text-ink-500">
+                                Account
+                            </div>
                             <button
                                 type="button"
                                 onClick={() => {
                                     close();
                                     onManageAccount();
                                 }}
-                                className="block w-full px-4 py-2 text-left text-ink-700 transition hover:bg-ink-100 dark:text-ink-200 dark:hover:bg-ink-900"
+                                className="flex w-full items-center gap-2 px-3 py-2 text-left text-ink-700 transition hover:bg-ink-100 dark:text-ink-200 dark:hover:bg-ink-900"
                             >
+                                <UserIcon />
                                 Manage account
                             </button>
                             <button
@@ -291,19 +272,24 @@ function UserDropdown({
                                     close();
                                     onSignOut();
                                 }}
-                                className="block w-full px-4 py-2 text-left text-ink-700 transition hover:bg-ink-100 dark:text-ink-200 dark:hover:bg-ink-900"
+                                className="flex w-full items-center gap-2 px-3 py-2 text-left text-ink-700 transition hover:bg-ink-100 dark:text-ink-200 dark:hover:bg-ink-900"
                             >
+                                <SignOutIcon />
                                 Sign out
                             </button>
                         </>
                     ) : (
                         <>
+                            <div className="px-3 pt-1 pb-1 text-[10px] font-semibold uppercase tracking-wider text-ink-400 dark:text-ink-500">
+                                Account
+                            </div>
                             <SignInButton mode="modal">
                                 <button
                                     type="button"
                                     onClick={close}
-                                    className="block w-full px-4 py-2 text-left text-ink-700 transition hover:bg-ink-100 dark:text-ink-200 dark:hover:bg-ink-900"
+                                    className="flex w-full items-center gap-2 px-3 py-2 text-left text-ink-700 transition hover:bg-ink-100 dark:text-ink-200 dark:hover:bg-ink-900"
                                 >
+                                    <SignInIcon />
                                     Sign In
                                 </button>
                             </SignInButton>
@@ -311,8 +297,9 @@ function UserDropdown({
                                 <button
                                     type="button"
                                     onClick={close}
-                                    className="block w-full px-4 py-2 text-left text-ink-700 transition hover:bg-ink-100 dark:text-ink-200 dark:hover:bg-ink-900"
+                                    className="flex w-full items-center gap-2 px-3 py-2 text-left text-ink-700 transition hover:bg-ink-100 dark:text-ink-200 dark:hover:bg-ink-900"
                                 >
+                                    <SignUpIcon />
                                     Sign Up
                                 </button>
                             </SignUpButton>
@@ -338,7 +325,7 @@ function UserIcon() {
             strokeWidth="2"
             strokeLinecap="round"
             strokeLinejoin="round"
-            className="h-5 w-5"
+            className="h-4 w-4"
         >
             <circle cx="12" cy="8" r="4" />
             <path d="M4 20c0-4 4-6 8-6s8 2 8 6" />
@@ -362,6 +349,64 @@ function DashboardIcon() {
             <rect x="14" y="3" width="7" height="5" rx="1" />
             <rect x="14" y="12" width="7" height="9" rx="1" />
             <rect x="3" y="16" width="7" height="5" rx="1" />
+        </svg>
+    );
+}
+
+function SignInIcon() {
+    return (
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            className="h-4 w-4"
+        >
+            <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4" />
+            <polyline points="10 17 15 12 10 7" />
+            <line x1="15" y1="12" x2="3" y2="12" />
+        </svg>
+    );
+}
+
+function SignUpIcon() {
+    return (
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            className="h-4 w-4"
+        >
+            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+            <circle cx="9" cy="7" r="4" />
+            <line x1="19" y1="8" x2="19" y2="14" />
+            <line x1="22" y1="11" x2="16" y2="11" />
+        </svg>
+    );
+}
+
+function SignOutIcon() {
+    return (
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            className="h-4 w-4"
+        >
+            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+            <polyline points="16 17 21 12 16 7" />
+            <line x1="21" y1="12" x2="9" y2="12" />
         </svg>
     );
 }
