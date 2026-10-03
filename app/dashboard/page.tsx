@@ -5,7 +5,6 @@ import Link from "next/link";
 
 import {
   EXPERIENCE_SECTORS,
-  EXPERIENCE_THEMES,
   projects,
   SERVICES,
 } from "@/lib/experience";
@@ -97,9 +96,9 @@ export default function DashboardPage() {
       module: "sectors" as ModuleKey,
     },
     {
-      label: "Themes",
-      value: EXPERIENCE_THEMES.length,
-      description: "Delivery themes",
+      label: "Projects",
+      value: projects.length,
+      description: "Delivery Projects",
       module: "experience" as ModuleKey,
     },
   ];

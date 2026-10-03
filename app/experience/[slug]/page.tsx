@@ -171,7 +171,7 @@ export default async function ProjectPage({
             </p>
 
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Services applied to the engagement
+              What we delivered
             </h2>
 
             <p className="text-ink-600 dark:text-ink-300 leading-relaxed">
@@ -230,7 +230,7 @@ export default async function ProjectPage({
           <div className="max-w-5xl mx-auto">
             <div className="rounded-2xl bg-white dark:bg-ink-900 border border-ink-200 dark:border-ink-800 p-8 md:p-10">
               <p className="text-brand-600 dark:text-brand-400 text-sm font-semibold uppercase tracking-widest mb-3">
-                Online Representation
+            The Project Delivered
               </p>
 
               <h2 className="text-2xl md:text-3xl font-bold mb-4">
