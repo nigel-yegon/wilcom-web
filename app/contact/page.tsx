@@ -107,8 +107,8 @@ const clients = [
   },
   {
     name: "Client Four",
-    logo: "/ug.png",
-    href: "https://uasingishu.go.ke",
+    logo: "/cak.png",
+    href: "https://ca.go.ke",
   },
   {
     name: "Client Five",
@@ -127,8 +127,8 @@ const clients = [
   },
   {
     name: "Client Eight",
-    logo: "/cak.png",
-    href: "https://ca.go.ke",
+    logo: "/ug.png",
+    href: "https://uasingishu.go.ke",
   },
 ];
 
