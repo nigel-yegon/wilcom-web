@@ -3,6 +3,7 @@
 import { useMemo, useState } from "react";
 import Link from "next/link";
 
+import FadeIn from "../components/fade-in";
 import {
   EXPERIENCE_SECTORS,
   projects,
@@ -119,33 +120,37 @@ export default function DashboardPage() {
           />
 
           <div className="p-6 lg:p-8">
-            {activeModule === "overview" && (
-              <Overview
-                stats={stats}
-                onNavigate={setActiveModule}
-              />
-            )}
+            {/* Key the animated subtree by activeModule so each module
+                re-mounts and re-triggers its FadeIn animations on switch */}
+            <div key={activeModule}>
+              {activeModule === "overview" && (
+                <Overview
+                  stats={stats}
+                  onNavigate={setActiveModule}
+                />
+              )}
 
-            {activeModule === "services" && (
-              <ServicesModule
-                services={services}
-                setServices={setServices}
-              />
-            )}
+              {activeModule === "services" && (
+                <ServicesModule
+                  services={services}
+                  setServices={setServices}
+                />
+              )}
 
-            {activeModule === "experience" && (
-              <ExperienceModule
-                projects={filteredProjects}
-                search={search}
-              />
-            )}
+              {activeModule === "experience" && (
+                <ExperienceModule
+                  projects={filteredProjects}
+                  search={search}
+                />
+              )}
 
-            {activeModule === "sectors" && (
-              <SectorsModule
-                sectors={sectors}
-                setSectors={setSectors}
-              />
-            )}
+              {activeModule === "sectors" && (
+                <SectorsModule
+                  sectors={sectors}
+                  setSectors={setSectors}
+                />
+              )}
+            </div>
           </div>
         </main>
       </div>
@@ -339,32 +344,36 @@ function DashboardHeader({
   return (
     <header className="border-b border-slate-200 bg-white dark:border-white/10 dark:bg-ink-900">
       <div className="flex flex-col gap-5 px-6 py-5 lg:flex-row lg:items-center lg:justify-between lg:px-8">
-        <div>
-          <div className="text-xs font-medium uppercase tracking-[0.16em] text-brand-600">
-            WilCom Content
+        <FadeIn>
+          <div>
+            <div className="text-xs font-medium uppercase tracking-[0.16em] text-brand-600">
+              WilCom Content
+            </div>
+
+            <h1 className="mt-1 text-2xl font-bold tracking-tight text-slate-950 dark:text-white">
+              {titles[activeModule]}
+            </h1>
+
+            <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
+              {descriptions[activeModule]}
+            </p>
           </div>
-
-          <h1 className="mt-1 text-2xl font-bold tracking-tight text-slate-950 dark:text-white">
-            {titles[activeModule]}
-          </h1>
-
-          <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
-            {descriptions[activeModule]}
-          </p>
-        </div>
+        </FadeIn>
 
         {activeModule === "experience" && (
-          <div className="relative w-full lg:w-80">
-            <SearchIcon />
+          <FadeIn delay={0.1}>
+            <div className="relative w-full lg:w-80">
+              <SearchIcon />
 
-            <input
-              type="search"
-              value={search}
-              onChange={(event) => setSearch(event.target.value)}
-              placeholder="Search projects..."
-              className="w-full rounded-xl border border-slate-200 bg-slate-50 py-2.5 pl-10 pr-4 text-sm outline-none transition placeholder:text-slate-400 focus:border-brand-500 focus:bg-white focus:ring-2 focus:ring-brand-500/10 dark:border-white/10 dark:bg-white/5 dark:text-white dark:focus:bg-white/10"
-            />
-          </div>
+              <input
+                type="search"
+                value={search}
+                onChange={(event) => setSearch(event.target.value)}
+                placeholder="Search projects..."
+                className="w-full rounded-xl border border-slate-200 bg-slate-50 py-2.5 pl-10 pr-4 text-sm outline-none transition placeholder:text-slate-400 focus:border-brand-500 focus:bg-white focus:ring-2 focus:ring-brand-500/10 dark:border-white/10 dark:bg-white/5 dark:text-white dark:focus:bg-white/10"
+              />
+            </div>
+          </FadeIn>
         )}
       </div>
     </header>
@@ -389,111 +398,118 @@ function Overview({
 }) {
   return (
     <div className="mx-auto max-w-7xl">
-      <div className="mb-8">
-        <h2 className="text-xl font-bold text-slate-950 dark:text-white">
-          Content overview
-        </h2>
+      <FadeIn>
+        <div className="mb-8">
+          <h2 className="text-xl font-bold text-slate-950 dark:text-white">
+            Content overview
+          </h2>
 
-        <p className="mt-1 max-w-2xl text-sm leading-6 text-slate-500 dark:text-slate-400">
-          A central workspace for managing the consulting services,
-          project experience and sectors represented across the WilCom
-          website.
-        </p>
-      </div>
+          <p className="mt-1 max-w-2xl text-sm leading-6 text-slate-500 dark:text-slate-400">
+            A central workspace for managing the consulting services,
+            project experience and sectors represented across the WilCom
+            website.
+          </p>
+        </div>
+      </FadeIn>
 
       <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
-        {stats.map((stat) => (
-          <button
-            key={stat.label}
-            type="button"
-            onClick={() => onNavigate(stat.module)}
-            className="rounded-2xl border border-slate-200 bg-white p-5 text-left shadow-sm transition hover:-translate-y-0.5 hover:border-brand-200 hover:shadow-md dark:border-white/10 dark:bg-ink-900 dark:hover:border-brand-500/30"
-          >
-            <div className="flex items-start justify-between">
-              <div>
-                <div className="text-sm font-medium text-slate-500 dark:text-slate-400">
-                  {stat.label}
+        {stats.map((stat, index) => (
+          <FadeIn key={stat.label} delay={index * 0.08}>
+            <button
+              type="button"
+              onClick={() => onNavigate(stat.module)}
+              className="w-full rounded-2xl border border-slate-200 bg-white p-5 text-left shadow-sm transition hover:-translate-y-0.5 hover:border-brand-200 hover:shadow-md dark:border-white/10 dark:bg-ink-900 dark:hover:border-brand-500/30"
+            >
+              <div className="flex items-start justify-between">
+                <div>
+                  <div className="text-sm font-medium text-slate-500 dark:text-slate-400">
+                    {stat.label}
+                  </div>
+
+                  <div className="mt-2 text-3xl font-bold tracking-tight text-slate-950 dark:text-white">
+                    {stat.value}
+                  </div>
                 </div>
 
-                <div className="mt-2 text-3xl font-bold tracking-tight text-slate-950 dark:text-white">
-                  {stat.value}
+                <div className="rounded-lg bg-brand-50 p-2 text-brand-600 dark:bg-brand-500/10 dark:text-brand-300">
+                  <ArrowIcon />
                 </div>
               </div>
 
-              <div className="rounded-lg bg-brand-50 p-2 text-brand-600 dark:bg-brand-500/10 dark:text-brand-300">
-                <ArrowIcon />
+              <div className="mt-4 text-xs text-slate-400">
+                {stat.description}
               </div>
-            </div>
-
-            <div className="mt-4 text-xs text-slate-400">
-              {stat.description}
-            </div>
-          </button>
+            </button>
+          </FadeIn>
         ))}
       </div>
 
-      <div className="mt-8 grid gap-6 xl:grid-cols-3">
-        <div className="rounded-2xl border border-slate-200 bg-white p-6 dark:border-white/10 dark:bg-ink-900 xl:col-span-2">
-          <div className="flex items-center justify-between">
-            <div>
-              <h3 className="font-semibold text-slate-950 dark:text-white">
-                Content modules
-              </h3>
+      <div className="mt-8 grid gap-6 xl:grid-cols-2">
+        <FadeIn delay={0.15}>
+          <div className="h-full rounded-2xl border border-slate-200 bg-white p-6 dark:border-white/10 dark:bg-ink-900 xl:col-span-2">
+            <div className="flex items-center justify-between">
+              <div>
+                <h3 className="font-semibold text-slate-950 dark:text-white">
+                  Content modules
+                </h3>
 
-              <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
-                Select a module to manage its website content.
-              </p>
+                <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
+                  Select a module to manage its website content.
+                </p>
+              </div>
+            </div>
+
+            <div className="mt-6 grid gap-3 md:grid-cols-3">
+              <ModuleCard
+                title="Services"
+                description="Consulting, transformation and technology capabilities."
+                count={stats[0].value}
+                onClick={() => onNavigate("services")}
+              />
+
+              <ModuleCard
+                title="Experience"
+                description="Projects, clients, engagements and delivery capabilities."
+                count={stats[1].value}
+                onClick={() => onNavigate("experience")}
+              />
+
+              <ModuleCard
+                title="Sectors"
+                description="Institutional and industry environments served."
+                count={stats[2].value}
+                onClick={() => onNavigate("sectors")}
+              />
             </div>
           </div>
+        </FadeIn>
 
-          <div className="mt-6 grid gap-3 md:grid-cols-3">
-            <ModuleCard
-              title="Services"
-              description="Consulting, transformation and technology capabilities."
-              count={stats[0].value}
-              onClick={() => onNavigate("services")}
-            />
+        <FadeIn delay={0.25}>
+          <div className="h-full rounded-2xl border border-slate-200 bg-slate-950 p-6 text-white dark:border-white/10">
+            <div className="text-xs font-semibold uppercase tracking-[0.16em] text-brand-300">
+              WilCom Systems Limited
+            </div>
 
-            <ModuleCard
-              title="Experience"
-              description="Projects, clients, engagements and delivery capabilities."
-              count={stats[1].value}
-              onClick={() => onNavigate("experience")}
-            />
+            <h3 className="mt-3 text-xl font-semibold">
+              We&apos;ll Do IT
+            </h3>
 
-            <ModuleCard
-              title="Sectors"
-              description="Institutional and industry environments served."
-              count={stats[2].value}
-              onClick={() => onNavigate("sectors")}
-            />
+            <p className="mt-3 text-sm leading-6 text-slate-300">
+              The dashboard should help maintain the consulting story first:
+              challenges, capabilities, sectors, engagements and outcomes.
+              Technology should support that story rather than become the story.
+            </p>
+
+            <Link
+              href="/"
+              target="_blank"
+              className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-brand-300 hover:text-brand-200"
+            >
+              View public website
+              <ArrowIcon />
+            </Link>
           </div>
-        </div>
-
-        <div className="rounded-2xl border border-slate-200 bg-slate-950 p-6 text-white dark:border-white/10">
-          <div className="text-xs font-semibold uppercase tracking-[0.16em] text-brand-300">
-            WilCom Systems Limited
-          </div>
-
-          <h3 className="mt-3 text-xl font-semibold">
-            We'll Do IT
-          </h3>
-
-          <p className="mt-3 text-sm leading-6 text-slate-300">
-            The dashboard should help maintain the consulting story first:
-            challenges, capabilities, sectors, engagements and outcomes.
-            Technology should support that story rather than become the story.
-          </p>
-
-          <Link
-            href="/"
-            target="_blank"
-            className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-brand-300 hover:text-brand-200"
-          >
-            View public website
-            <ArrowIcon />
-          </Link>
-        </div>
+        </FadeIn>
       </div>
     </div>
   );
@@ -518,95 +534,98 @@ function ServicesModule({
 
   return (
     <div className="mx-auto max-w-7xl">
-      <ModuleHeading
-        eyebrow="Content module"
-        title="Services"
-        description="Manage the consulting and technology capabilities displayed on the public Services page."
-        action={
-          <button
-            type="button"
-            onClick={() => {
-              const id = `service-${Date.now()}`;
+      <FadeIn>
+        <ModuleHeading
+          eyebrow="Content module"
+          title="Services"
+          description="Manage the consulting and technology capabilities displayed on the public Services page."
+          action={
+            <button
+              type="button"
+              onClick={() => {
+                const id = `service-${Date.now()}`;
 
-              setServices((current) => [
-                ...current,
-                {
-                  id,
-                  name: "New Service",
-                  description: "",
-                  status: "Draft",
-                },
-              ]);
+                setServices((current) => [
+                  ...current,
+                  {
+                    id,
+                    name: "New Service",
+                    description: "",
+                    status: "Draft",
+                  },
+                ]);
 
-              setEditingId(id);
-            }}
-            className="inline-flex items-center gap-2 rounded-xl bg-brand-600 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-brand-700"
-          >
-            <PlusIcon />
-            Add service
-          </button>
-        }
-      />
+                setEditingId(id);
+              }}
+              className="inline-flex items-center gap-2 rounded-xl bg-brand-600 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-brand-700"
+            >
+              <PlusIcon />
+              Add service
+            </button>
+          }
+        />
+      </FadeIn>
 
       <div className="mt-6 grid gap-4 xl:grid-cols-[1fr_360px]">
         <div className="space-y-3">
-          {services.map((service) => (
-            <div
-              key={service.id}
-              className="rounded-2xl border border-slate-200 bg-white p-5 dark:border-white/10 dark:bg-ink-900"
-            >
-              <div className="flex items-start justify-between gap-4">
-                <div>
-                  <div className="flex items-center gap-2">
-                    <h3 className="font-semibold text-slate-950 dark:text-white">
-                      {service.name}
-                    </h3>
+          {services.map((service, index) => (
+            <FadeIn key={service.id} delay={Math.min(index * 0.05, 0.4)}>
+              <div className="rounded-2xl border border-slate-200 bg-white p-5 dark:border-white/10 dark:bg-ink-900">
+                <div className="flex items-start justify-between gap-4">
+                  <div>
+                    <div className="flex items-center gap-2">
+                      <h3 className="font-semibold text-slate-950 dark:text-white">
+                        {service.name}
+                      </h3>
 
-                    <StatusBadge status={service.status} />
+                      <StatusBadge status={service.status} />
+                    </div>
+
+                    <p className="mt-2 max-w-2xl text-sm leading-6 text-slate-500 dark:text-slate-400">
+                      {service.description ||
+                        "No description has been added yet."}
+                    </p>
                   </div>
 
-                  <p className="mt-2 max-w-2xl text-sm leading-6 text-slate-500 dark:text-slate-400">
-                    {service.description ||
-                      "No description has been added yet."}
-                  </p>
+                  <button
+                    type="button"
+                    onClick={() => setEditingId(service.id)}
+                    className="shrink-0 rounded-lg border border-slate-200 px-3 py-2 text-xs font-semibold text-slate-600 hover:bg-slate-50 dark:border-white/10 dark:text-slate-300 dark:hover:bg-white/5"
+                  >
+                    Edit
+                  </button>
                 </div>
-
-                <button
-                  type="button"
-                  onClick={() => setEditingId(service.id)}
-                  className="shrink-0 rounded-lg border border-slate-200 px-3 py-2 text-xs font-semibold text-slate-600 hover:bg-slate-50 dark:border-white/10 dark:text-slate-300 dark:hover:bg-white/5"
-                >
-                  Edit
-                </button>
               </div>
-            </div>
+            </FadeIn>
           ))}
         </div>
 
-        <div>
-          {editingService ? (
-            <ServiceEditor
-              service={editingService}
-              onClose={() => setEditingId(null)}
-              onSave={(updated) => {
-                setServices((current) =>
-                  current.map((service) =>
-                    service.id === updated.id
-                      ? updated
-                      : service,
-                  ),
-                );
+        <FadeIn delay={0.15}>
+          <div>
+            {editingService ? (
+              <ServiceEditor
+                service={editingService}
+                onClose={() => setEditingId(null)}
+                onSave={(updated) => {
+                  setServices((current) =>
+                    current.map((service) =>
+                      service.id === updated.id
+                        ? updated
+                        : service,
+                    ),
+                  );
 
-                setEditingId(null);
-              }}
-            />
-          ) : (
-            <EmptyEditorState
-              title="Select a service"
-              description="Choose a service from the list to edit its public-facing content."
-            />
-          )}
-        </div>
+                  setEditingId(null);
+                }}
+              />
+            ) : (
+              <EmptyEditorState
+                title="Select a service"
+                description="Choose a service from the list to edit its public-facing content."
+              />
+            )}
+          </div>
+        </FadeIn>
       </div>
     </div>
   );
@@ -728,122 +747,127 @@ function ExperienceModule({
 }) {
   return (
     <div className="mx-auto max-w-7xl">
-      <ModuleHeading
-        eyebrow="Portfolio content"
-        title="Experience"
-        description="Manage project references, engagement details, services demonstrated and online project representations."
-        action={
-          <Link
-            href="/experience"
-            target="_blank"
-            className="inline-flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-sm font-semibold text-slate-700 hover:bg-slate-50 dark:border-white/10 dark:bg-ink-900 dark:text-slate-200 dark:hover:bg-white/5"
-          >
-            <EyeIcon />
-            View public page
-          </Link>
-        }
-      />
-
-      <div className="mt-6 overflow-hidden rounded-2xl border border-slate-200 bg-white dark:border-white/10 dark:bg-ink-900">
-        <div className="border-b border-slate-200 px-5 py-4 dark:border-white/10">
-          <div className="flex items-center justify-between">
-            <div>
-              <div className="text-sm font-semibold text-slate-950 dark:text-white">
-                Project records
-              </div>
-
-              <div className="mt-1 text-xs text-slate-500 dark:text-slate-400">
-                {projects.length} project
-                {projects.length === 1 ? "" : "s"}
-                {search ? ` matching "${search}"` : ""}
-              </div>
-            </div>
-
+      <FadeIn>
+        <ModuleHeading
+          eyebrow="Portfolio content"
+          title="Experience"
+          description="Manage project references, engagement details, services demonstrated and online project representations."
+          action={
             <Link
               href="/experience"
               target="_blank"
-              className="text-xs font-semibold text-brand-600 hover:text-brand-700"
+              className="inline-flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-sm font-semibold text-slate-700 hover:bg-slate-50 dark:border-white/10 dark:bg-ink-900 dark:text-slate-200 dark:hover:bg-white/5"
             >
-              Preview experience →
+              <EyeIcon />
+              View public page
             </Link>
+          }
+        />
+      </FadeIn>
+
+      <FadeIn delay={0.1}>
+        <div className="mt-6 overflow-hidden rounded-2xl border border-slate-200 bg-white dark:border-white/10 dark:bg-ink-900">
+          <div className="border-b border-slate-200 px-5 py-4 dark:border-white/10">
+            <div className="flex items-center justify-between">
+              <div>
+                <div className="text-sm font-semibold text-slate-950 dark:text-white">
+                  Project records
+                </div>
+
+                <div className="mt-1 text-xs text-slate-500 dark:text-slate-400">
+                  {projects.length} project
+                  {projects.length === 1 ? "" : "s"}
+                  {search ? ` matching "${search}"` : ""}
+                </div>
+              </div>
+
+              <Link
+                href="/experience"
+                target="_blank"
+                className="text-xs font-semibold text-brand-600 hover:text-brand-700"
+              >
+                Preview experience →
+              </Link>
+            </div>
           </div>
-        </div>
 
-        <div className="divide-y divide-slate-100 dark:divide-white/5">
-          {projects.map((project) => (
-            <div
-              key={project.id}
-              className="p-5 transition hover:bg-slate-50 dark:hover:bg-white/2"
-            >
-              <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
-                <div className="min-w-0">
-                  <div className="flex flex-wrap items-center gap-2">
-                    <span className="rounded-md bg-brand-50 px-2 py-1 text-[11px] font-bold text-brand-700 dark:bg-brand-500/10 dark:text-brand-300">
-                      {project.id}
-                    </span>
+          <div className="divide-y divide-slate-100 dark:divide-white/5">
+            {projects.map((project, index) => (
+              <FadeIn key={project.id} delay={Math.min(index * 0.04, 0.4)}>
+                <div className="p-5 transition hover:bg-slate-50 dark:hover:bg-white/2">
+                  <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
+                    <div className="min-w-0">
+                      <div className="flex flex-wrap items-center gap-2">
+                        <span className="rounded-md bg-brand-50 px-2 py-1 text-[11px] font-bold text-brand-700 dark:bg-brand-500/10 dark:text-brand-300">
+                          {project.id}
+                        </span>
 
-                    <span className="text-xs text-slate-400">
-                      {project.sector}
-                    </span>
+                        <span className="text-xs text-slate-400">
+                          {project.sector}
+                        </span>
+                      </div>
+
+                      <h3 className="mt-3 text-base font-semibold text-slate-950 dark:text-white">
+                        {project.title}
+                      </h3>
+
+                      <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
+                        {project.client}
+                      </p>
+
+                      <p className="mt-3 max-w-3xl text-sm leading-6 text-slate-500 dark:text-slate-400">
+                        {project.summary}
+                      </p>
+
+                      <div className="mt-4 flex flex-wrap gap-2">
+                        {project.services.map((service) => (
+                          <span
+                            key={service}
+                            className="rounded-full border border-slate-200 px-2.5 py-1 text-[11px] font-medium text-slate-600 dark:border-white/10 dark:text-slate-300"
+                          >
+                            {service}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div className="flex shrink-0 gap-2">
+                      <Link
+                        href={`/experience/${project.slug}`}
+                        target="_blank"
+                        className="rounded-lg border border-slate-200 px-3 py-2 text-xs font-semibold text-slate-600 hover:bg-slate-50 dark:border-white/10 dark:text-slate-300 dark:hover:bg-white/5"
+                      >
+                        View
+                      </Link>
+
+                      <button
+                        type="button"
+                        className="rounded-lg bg-brand-600 px-3 py-2 text-xs font-semibold text-white hover:bg-brand-700"
+                      >
+                        Edit
+                      </button>
+                    </div>
                   </div>
+                </div>
+              </FadeIn>
+            ))}
 
-                  <h3 className="mt-3 text-base font-semibold text-slate-950 dark:text-white">
-                    {project.title}
-                  </h3>
+            {projects.length === 0 && (
+              <FadeIn>
+                <div className="p-12 text-center">
+                  <div className="text-sm font-semibold text-slate-950 dark:text-white">
+                    No projects found
+                  </div>
 
                   <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
-                    {project.client}
+                    Try changing the search term.
                   </p>
-
-                  <p className="mt-3 max-w-3xl text-sm leading-6 text-slate-500 dark:text-slate-400">
-                    {project.summary}
-                  </p>
-
-                  <div className="mt-4 flex flex-wrap gap-2">
-                    {project.services.map((service) => (
-                      <span
-                        key={service}
-                        className="rounded-full border border-slate-200 px-2.5 py-1 text-[11px] font-medium text-slate-600 dark:border-white/10 dark:text-slate-300"
-                      >
-                        {service}
-                      </span>
-                    ))}
-                  </div>
                 </div>
-
-                <div className="flex shrink-0 gap-2">
-                  <Link
-                    href={`/experience/${project.slug}`}
-                    target="_blank"
-                    className="rounded-lg border border-slate-200 px-3 py-2 text-xs font-semibold text-slate-600 hover:bg-slate-50 dark:border-white/10 dark:text-slate-300 dark:hover:bg-white/5"
-                  >
-                    View
-                  </Link>
-
-                  <button
-                    type="button"
-                    className="rounded-lg bg-brand-600 px-3 py-2 text-xs font-semibold text-white hover:bg-brand-700"
-                  >
-                    Edit
-                  </button>
-                </div>
-              </div>
-            </div>
-          ))}
-
-          {projects.length === 0 && (
-            <div className="p-12 text-center">
-              <div className="text-sm font-semibold text-slate-950 dark:text-white">
-                No projects found
-              </div>
-
-              <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
-                Try changing the search term.
-              </p>
-            </div>
-          )}
+              </FadeIn>
+            )}
+          </div>
         </div>
-      </div>
+      </FadeIn>
     </div>
   );
 }
@@ -867,104 +891,107 @@ function SectorsModule({
 
   return (
     <div className="mx-auto max-w-7xl">
-      <ModuleHeading
-        eyebrow="Content module"
-        title="Sectors"
-        description="Manage the sectors, institutional environments and capability narratives shown on the public Sectors page."
-        action={
-          <button
-            type="button"
-            onClick={() => {
-              const id = `sector-${Date.now()}`;
+      <FadeIn>
+        <ModuleHeading
+          eyebrow="Content module"
+          title="Sectors"
+          description="Manage the sectors, institutional environments and capability narratives shown on the public Sectors page."
+          action={
+            <button
+              type="button"
+              onClick={() => {
+                const id = `sector-${Date.now()}`;
 
-              setSectors((current) => [
-                ...current,
-                {
-                  id,
-                  name: "New Sector",
-                  description: "",
-                  capabilities: [],
-                  status: "Draft",
-                },
-              ]);
+                setSectors((current) => [
+                  ...current,
+                  {
+                    id,
+                    name: "New Sector",
+                    description: "",
+                    capabilities: [],
+                    status: "Draft",
+                  },
+                ]);
 
-              setEditingId(id);
-            }}
-            className="inline-flex items-center gap-2 rounded-xl bg-brand-600 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-brand-700"
-          >
-            <PlusIcon />
-            Add sector
-          </button>
-        }
-      />
+                setEditingId(id);
+              }}
+              className="inline-flex items-center gap-2 rounded-xl bg-brand-600 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-brand-700"
+            >
+              <PlusIcon />
+              Add sector
+            </button>
+          }
+        />
+      </FadeIn>
 
       <div className="mt-6 grid gap-4 xl:grid-cols-[1fr_380px]">
         <div className="grid gap-4 md:grid-cols-2">
-          {sectors.map((sector) => (
-            <div
-              key={sector.id}
-              className="rounded-2xl border border-slate-200 bg-white p-5 dark:border-white/10 dark:bg-ink-900"
-            >
-              <div className="flex items-start justify-between gap-4">
-                <div>
-                  <StatusBadge status={sector.status} />
+          {sectors.map((sector, index) => (
+            <FadeIn key={sector.id} delay={Math.min(index * 0.05, 0.4)}>
+              <div className="rounded-2xl border border-slate-200 bg-white p-5 dark:border-white/10 dark:bg-ink-900">
+                <div className="flex items-start justify-between gap-4">
+                  <div>
+                    <StatusBadge status={sector.status} />
 
-                  <h3 className="mt-3 font-semibold text-slate-950 dark:text-white">
-                    {sector.name}
-                  </h3>
+                    <h3 className="mt-3 font-semibold text-slate-950 dark:text-white">
+                      {sector.name}
+                    </h3>
 
-                  <p className="mt-2 text-sm leading-6 text-slate-500 dark:text-slate-400">
-                    {sector.description}
-                  </p>
+                    <p className="mt-2 text-sm leading-6 text-slate-500 dark:text-slate-400">
+                      {sector.description}
+                    </p>
+                  </div>
+
+                  <button
+                    type="button"
+                    onClick={() => setEditingId(sector.id)}
+                    className="shrink-0 rounded-lg border border-slate-200 px-3 py-2 text-xs font-semibold text-slate-600 hover:bg-slate-50 dark:border-white/10 dark:text-slate-300 dark:hover:bg-white/5"
+                  >
+                    Edit
+                  </button>
                 </div>
 
-                <button
-                  type="button"
-                  onClick={() => setEditingId(sector.id)}
-                  className="shrink-0 rounded-lg border border-slate-200 px-3 py-2 text-xs font-semibold text-slate-600 hover:bg-slate-50 dark:border-white/10 dark:text-slate-300 dark:hover:bg-white/5"
-                >
-                  Edit
-                </button>
+                <div className="mt-4 flex flex-wrap gap-2">
+                  {sector.capabilities.map((capability) => (
+                    <span
+                      key={capability}
+                      className="rounded-full bg-slate-100 px-2.5 py-1 text-[11px] text-slate-600 dark:bg-white/5 dark:text-slate-300"
+                    >
+                      {capability}
+                    </span>
+                  ))}
+                </div>
               </div>
-
-              <div className="mt-4 flex flex-wrap gap-2">
-                {sector.capabilities.map((capability) => (
-                  <span
-                    key={capability}
-                    className="rounded-full bg-slate-100 px-2.5 py-1 text-[11px] text-slate-600 dark:bg-white/5 dark:text-slate-300"
-                  >
-                    {capability}
-                  </span>
-                ))}
-              </div>
-            </div>
+            </FadeIn>
           ))}
         </div>
 
-        <div>
-          {editingSector ? (
-            <SectorEditor
-              sector={editingSector}
-              onClose={() => setEditingId(null)}
-              onSave={(updated) => {
-                setSectors((current) =>
-                  current.map((sector) =>
-                    sector.id === updated.id
-                      ? updated
-                      : sector,
-                  ),
-                );
+        <FadeIn delay={0.15}>
+          <div>
+            {editingSector ? (
+              <SectorEditor
+                sector={editingSector}
+                onClose={() => setEditingId(null)}
+                onSave={(updated) => {
+                  setSectors((current) =>
+                    current.map((sector) =>
+                      sector.id === updated.id
+                        ? updated
+                        : sector,
+                    ),
+                  );
 
-                setEditingId(null);
-              }}
-            />
-          ) : (
-            <EmptyEditorState
-              title="Select a sector"
-              description="Choose a sector from the list to edit its public-facing content."
-            />
-          )}
-        </div>
+                  setEditingId(null);
+                }}
+              />
+            ) : (
+              <EmptyEditorState
+                title="Select a sector"
+                description="Choose a sector from the list to edit its public-facing content."
+              />
+            )}
+          </div>
+        </FadeIn>
       </div>
     </div>
   );
