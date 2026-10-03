@@ -8,7 +8,7 @@ import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import ScrollToTop from "./components/scroll-to-top";
-import { ClerkProvider } from "@clerk/nextjs";
+
 
 const inter = Inter({ subsets: ["latin"], display: "swap" });
 
@@ -112,7 +112,7 @@ export default function RootLayout({
   };
 
   return (
-    <ClerkProvider>
+    
       <html lang="en" suppressHydrationWarning>
         <body
           className={`${inter.className} min-h-screen flex flex-col`}
@@ -138,6 +138,5 @@ export default function RootLayout({
           <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID!} />
         </body>
       </html>
-    </ClerkProvider>
-  );
+      );
 }
