@@ -121,12 +121,12 @@ const clients = [
     href: "https://transport.go.ke",
   },
   {
-    name: "Partner One",
+    name: "Client seven",
     logo: "/ppra-logo.png",
     href: "https://tenders.go.ke",
   },
   {
-    name: "Partner Two",
+    name: "Client Eight",
     logo: "/cak.jpg",
     href: "https://ca.go.ke",
   },
