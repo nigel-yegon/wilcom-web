@@ -1,3 +1,4 @@
+import { ClerkProvider } from "@clerk/nextjs";
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
@@ -118,24 +119,26 @@ export default function RootLayout({
           className={`${inter.className} min-h-screen flex flex-col`}
           suppressHydrationWarning
         >
-          <script
+          <ClerkProvider>
+            <script
             type="application/ld+json"
             dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-          />
-          <ThemeProvider
+            />
+            <ThemeProvider
             attribute="class"
             defaultTheme="light"
             enableSystem
             disableTransitionOnChange
-          >
+            >
             <Navbar />
             <div className="flex-1">{children}</div>
             <Footer />
             <ScrollToTop />
-          </ThemeProvider>
-          <Analytics />
-          <SpeedInsights />
-          <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID!} />
+            </ThemeProvider>
+            <Analytics />
+            <SpeedInsights />
+            <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID!} />
+          </ClerkProvider>
         </body>
       </html>
       );
