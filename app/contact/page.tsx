@@ -92,17 +92,17 @@ const engagementSteps = [
 const clients = [
   {
     name: "Client One",
-    logo: "/treasury-logo.jpg",
+    logo: "/treasury.png",
     href: "https://treasury.go.ke",
   },
   {
     name: "Client Two",
-    logo: "/tvet.jpeg",
+    logo: "/tvet.png",
     href: "https://tvet.go.ke",
   },
   {
     name: "Client Three",
-    logo: "/eldoret-city-logo.jpeg",
+    logo: "/eldoret-city.png",
     href: "https://eldoretcity.go.ke",
   },
   {
@@ -117,7 +117,7 @@ const clients = [
   },
   {
     name: "Client Six",
-    logo: "/sdr.jpeg",
+    logo: "/transport.png",
     href: "https://transport.go.ke",
   },
   {
@@ -127,7 +127,7 @@ const clients = [
   },
   {
     name: "Client Eight",
-    logo: "/cak.jpg",
+    logo: "/cak.png",
     href: "https://ca.go.ke",
   },
 ];
