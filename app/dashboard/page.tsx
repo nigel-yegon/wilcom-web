@@ -484,7 +484,7 @@ function DashboardHeader({
         <FadeIn>
           <div>
             <div className="text-xs font-medium uppercase tracking-[0.16em] text-brand-600">
-              WilCom Content
+              WilCom Systems Content
             </div>
             <h1 className="mt-1 text-2xl font-bold tracking-tight text-slate-950 dark:text-white">
               {titles[activeModule]}

@@ -303,7 +303,7 @@ export default function ExperienceClient({
                             </p>
 
                             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                                Understand. Assess. Design. Deliver.
+                                We Understand. Assess. Design. Deliver.
                             </h2>
 
                             <p className="text-ink-600 dark:text-ink-300 leading-relaxed">

@@ -362,30 +362,30 @@ const sectors = [
 const projects = [
     {
         ref: "P-001",
-        title: "TVET Institution Digital Transformation Assessment",
-        slug: "tvet-institution-digital-transformation-assessment",
-        client: "National TVET Institution",
-        sector: "Education & TVET",
-        engagement: "Assessment & Advisory",
+        title: "e-GP 3rd Party Quality Assurance & Security Audit",
+        slug: "egp-quality-assurance-security-audit",
+        client: "The National Treasury",
+        sector: "Government & Public Institutions",
+        engagement: "Consultancy",
         summary:
-            "Institutional assessment covering processes, systems, data and staff capability, producing a digital transformation roadmap and prioritised implementation plan for the institution.",
+            "Third-party quality assurance and security audit of the electronic Government Procurement (e-GP) platform, covering software quality, SDLC conformance, functional testing, penetration testing and interoperability review.",
         context:
-            "The institution operated a mix of manual and partially digitised processes across admissions, assessment, records management and reporting. Leadership recognised the need for a structured assessment before committing to a large-scale digital transformation programme.",
+            "The National Treasury required independent assurance on the quality, security and interoperability of the electronic Government Procurement platform, which is central to public procurement operations and handles sensitive transactional data.",
         challenge:
-            "Institutional processes were fragmented across departments, information was held in disconnected spreadsheets and legacy systems, and staff capability varied widely. There was no shared view of priorities, dependencies or sequencing for digital investment.",
+            "The platform needed independent verification that it met quality, security and compliance requirements before broader rollout. Concerns included SDLC conformance, potential vulnerabilities, interoperability with other government systems and auditability of procurement transactions.",
         engagementDetail:
-            "WilCom conducted a structured institutional assessment covering process flows, systems landscape, data handling, staff capability and technology infrastructure. Findings were translated into a prioritised digital transformation roadmap with quick wins, medium-term initiatives and capability-building recommendations.",
+            "WilCom conducted an independent third-party quality assurance and security audit covering software quality, SDLC conformance, verification and validation, functional testing, penetration testing, vulnerability assessment, compliance and interoperability review. Findings were documented and prioritised to support remediation and platform readiness.",
         deliveryFocus: [
-            "Institutional process and systems assessment",
-            "Data and information management review",
-            "Digital transformation roadmap development",
-            "Staff capability and capacity-building plan",
-            "Prioritised implementation and investment recommendations",
+            "Software quality assurance and SDLC conformance review",
+            "Verification and validation of platform requirements",
+            "Functional testing and defect identification",
+            "Penetration testing and vulnerability assessment",
+            "Compliance and interoperability review",
         ],
         services: [
-            "Management Consulting",
-            "Digital Transformation",
-            "Capacity Building",
+            "Quality Assurance & Security",
+            "ICT Advisory",
+            "Systems Development",
         ],
         onlineUrl: null,
         onlineLabel: null,
@@ -394,30 +394,32 @@ const projects = [
     },
     {
         ref: "P-002",
-        title: "Regulatory Case Management System Development",
-        slug: "regulatory-case-management-system-development",
-        client: "Regulatory Authority",
-        sector: "Regulatory & Oversight Institutions",
-        engagement: "Systems Development",
+        title:
+            "Capacity Building of TVET Trainers on ODeL Curriculum Delivery & Assessment",
+        slug: "tvet-trainers-odel-capacity-building",
+        client:
+            "Ministry of Education / State Department of Vocational and Technical Training & African Development Bank",
+        sector: "Education & TVET",
+        engagement: "Consultancy",
         summary:
-            "Design and development of a case management platform with workflow, audit trails, access controls and management reporting to support regulatory oversight operations.",
+            "Capacity building programme for TVET trainers covering Open, Distance and e-Learning (ODeL) curriculum delivery, assessment, materials development and certification.",
         context:
-            "The authority needed to modernise how it received, tracked, reviewed and reported on regulatory cases. Existing processes were paper-heavy, involved multiple handoffs and lacked a single source of truth.",
+            "The Ministry, with support from the African Development Bank, was scaling up Open, Distance and e-Learning across TVET institutions and needed to equip trainers with the capability to deliver and assess ODeL curricula effectively.",
         challenge:
-            "Cases were managed across spreadsheets, email threads and physical files. There was limited traceability of decisions, inconsistent handling across teams and no reliable management information on case volume, age or outcome.",
+            "Trainers had varying levels of familiarity with digital delivery methods, and institutional capability for ODeL assessment and materials development was uneven across participating TVET institutions.",
         engagementDetail:
-            "WilCom designed and delivered a web-based case management system with configurable workflows, role-based access control, audit trails, document handling and management dashboards. The system was developed iteratively with input from case handlers, supervisors and management.",
+            "WilCom conducted a training needs assessment, designed the programme, developed training materials, and delivered practical training covering ODeL curriculum delivery, assessment methods and materials development. Continuous and summative assessment was applied, with certification and reporting on completion.",
         deliveryFocus: [
-            "Requirements analysis and process design",
-            "Workflow and case lifecycle configuration",
-            "Role-based access and audit trail implementation",
-            "Document and information management",
-            "Management reporting and dashboards",
+            "Training needs assessment across TVET institutions",
+            "Programme design aligned to ODeL delivery requirements",
+            "Development of training materials and resources",
+            "Practical training delivery to TVET trainers",
+            "Continuous and summative assessment and certification",
         ],
         services: [
-            "Systems Development",
-            "Quality Assurance & Security",
-            "ICT Advisory",
+            "Capacity Building",
+            "Digital Transformation",
+            "Programme Delivery",
         ],
         onlineUrl: null,
         onlineLabel: null,
@@ -426,30 +428,30 @@ const projects = [
     },
     {
         ref: "P-003",
-        title: "Public Institution Process Digitisation",
-        slug: "public-institution-process-digitisation",
-        client: "Government Department",
+        title: "Design, Development & Hosting of an Interactive Website",
+        slug: "eldoret-city-interactive-website",
+        client: "Municipality of Eldoret (Eldoret City)",
         sector: "Government & Public Institutions",
-        engagement: "Digital Transformation",
+        engagement: "Software & Systems",
         summary:
-            "Digitisation of core administrative processes, replacing manual workflows with controlled digital processes and integrated information management to improve service delivery and accountability.",
+            "Design, development, hosting and security hardening of an interactive municipal website supporting public communication, information services and digital presence for Eldoret City.",
         context:
-            "The department was delivering services through largely manual workflows. Improving turnaround times, traceability and stakeholder experience required moving to controlled digital processes.",
+            "Eldoret City required a modern digital presence to communicate with residents, publish information and provide a foundational platform for future digital services.",
         challenge:
-            "Manual workflows created bottlenecks, duplicate data capture and inconsistent records. Management lacked visibility into service backlogs and there was limited evidence to support process improvement decisions.",
+            "The municipality needed a responsive, secure and manageable website that reflected the city's identity, supported self-service content updates and included strong cybersecurity and SEO fundamentals.",
         engagementDetail:
-            "WilCom worked with the department to map core processes, redesign workflows for digital delivery, configure the supporting systems and integrate information flows. Staff were involved throughout, and training was delivered ahead of rollout.",
+            "WilCom designed the user experience, developed a responsive website, implemented a content management system, provisioned secure hosting, applied cybersecurity controls, delivered user training and provided search engine optimization.",
         deliveryFocus: [
-            "Process mapping and redesign",
-            "Digital workflow configuration",
-            "Information integration across the department",
-            "Change management and staff training",
-            "Rollout support and post-launch review",
+            "UI/UX design aligned to city identity and user needs",
+            "Responsive web development and CMS implementation",
+            "Secure hosting and cybersecurity controls",
+            "Content management training for city staff",
+            "Search engine optimization and performance tuning",
         ],
         services: [
-            "Digital Transformation",
             "Systems Development",
-            "ICT Infrastructure & Integration",
+            "Digital Transformation",
+            "Quality Assurance & Security",
         ],
         onlineUrl: null,
         onlineLabel: null,
@@ -458,30 +460,32 @@ const projects = [
     },
     {
         ref: "P-004",
-        title: "Development Programme Monitoring System",
-        slug: "development-programme-monitoring-system",
-        client: "International Development Programme",
-        sector: "Development Programmes & NGOs",
-        engagement: "Programme Delivery",
+        title:
+            "Development of a Web-Based TVET Management Information System",
+        slug: "tvet-management-information-system",
+        client: "Ministry of Education – State Department for TVET",
+        sector: "Education & TVET",
+        engagement: "Software & Systems",
         summary:
-            "Design and implementation of a monitoring and information system connecting programme teams, field activities and reporting requirements across multiple implementation partners.",
+            "Development of a national web-based TVET Management Information System supporting data management, education indicators, reporting, visualization and monitoring and evaluation across TVET institutions.",
         context:
-            "The programme operated across multiple sites with several implementation partners. There was no shared system for capturing activity data, tracking indicators or producing consolidated reports.",
+            "The State Department for TVET required a national platform to consolidate institutional data, track education indicators and support evidence-based planning and reporting across the TVET sector.",
         challenge:
-            "Reporting was slow, inconsistent and heavily manual. Programme management lacked timely visibility on implementation progress, and field teams spent significant time on data collection and reconciliation.",
+            "TVET data was fragmented across institutions and reporting was slow and inconsistent. The State Department needed reliable, timely information for policy, monitoring and planning purposes.",
         engagementDetail:
-            "WilCom designed and implemented a monitoring and information system aligned to the programme's results framework. Partners were on-boarded onto a common platform, reporting templates were standardised, and dashboards were built for programme management.",
+            "WilCom delivered a web-based management information system supporting national TVET data management, education indicators, reporting and visualization, monitoring and evaluation. The engagement included server-room setup, backup configuration and capacity building for system users.",
         deliveryFocus: [
-            "Programme indicators and results framework alignment",
-            "Partner and field team on-boarding",
-            "Digital data collection and consolidation",
-            "Management dashboards and reporting",
-            "Training and continued support for field teams",
+            "National TVET data management and consolidation",
+            "Education indicators and reporting frameworks",
+            "Data visualization and monitoring dashboards",
+            "Monitoring and evaluation support",
+            "Server-room setup, backup and user capacity building",
         ],
         services: [
-            "Programme Delivery",
             "Systems Development",
+            "Digital Transformation",
             "Capacity Building",
+            "ICT Infrastructure & Integration",
         ],
         onlineUrl: null,
         onlineLabel: null,
@@ -490,38 +494,359 @@ const projects = [
     },
     {
         ref: "P-005",
-        title: "Financial Institution ICT & Security Assessment",
-        slug: "financial-institution-ict-security-assessment",
-        client: "Financial Services Provider",
-        sector: "Financial Services",
-        engagement: "Assessment & Advisory",
+        title: "Capacity Building of SMEs",
+        slug: "uasin-gishu-sme-capacity-building",
+        client: "County Government of Uasin Gishu",
+        sector: "Retail & Commercial Organizations",
+        engagement: "Consultancy",
         summary:
-            "Independent assessment of ICT environment, information systems, security controls and operational processes, delivering prioritised recommendations for improvement and investment.",
+            "SME census, skills mapping, training needs analysis, curriculum development and delivery of training to Small and Medium Enterprises across Uasin Gishu County.",
         context:
-            "The institution had grown rapidly and accumulated a mix of legacy and modern systems. Management wanted independent assurance on ICT and security posture before committing to a multi-year investment programme.",
+            "The County Government of Uasin Gishu sought to strengthen SME capability as a driver of local economic development, beginning with an evidence base of SMEs and their skill requirements.",
         challenge:
-            "Systems and controls had evolved organically without a consolidated review. Areas of concern included access management, disaster recovery readiness, vendor dependencies and alignment between business needs and ICT investment.",
+            "The county lacked reliable data on its SME population, and existing interventions were not systematically aligned to identified skill gaps. Training of trainers capacity was also limited.",
         engagementDetail:
-            "WilCom conducted an independent ICT and security assessment covering infrastructure, applications, security controls, operational processes and governance. Findings were prioritised by risk and translated into an investment roadmap with short and medium-term recommendations.",
+            "WilCom conducted an SME census, designed a database, mapped existing skills, conducted a training needs analysis, developed curriculum, delivered training of trainers, and trained SMEs directly across the county.",
         deliveryFocus: [
-            "ICT and security posture assessment",
-            "Controls and access-management review",
-            "Business continuity and disaster recovery review",
-            "Governance and operating-model assessment",
-            "Prioritised improvement and investment roadmap",
+            "SME census and database design",
+            "Skills mapping across the SME population",
+            "Training needs analysis and curriculum development",
+            "Training of trainers",
+            "Direct training delivery to SMEs",
         ],
         services: [
-            "ICT Advisory",
-            "Quality Assurance & Security",
             "Management Consulting",
+            "Capacity Building",
+            "Programme Delivery",
         ],
         onlineUrl: null,
         onlineLabel: null,
         order: 4,
         published: true,
     },
+    {
+        ref: "P-006",
+        title: "Records Management Consultancy",
+        slug: "uasin-gishu-records-management",
+        client: "County Government of Uasin Gishu",
+        sector: "Government & Public Institutions",
+        engagement: "Consultancy",
+        summary:
+            "Records management consultancy covering inventory, gap analysis, electronic records management, digitization, classification, retention schedules, registry reorganization and staff training.",
+        context:
+            "The County Government of Uasin Gishu needed to modernize its records management practices to improve access, accountability and institutional memory across departments.",
+        challenge:
+            "Records were held in a mix of physical and disconnected electronic formats. Classification, retention and access practices varied across the registry, and staff capability for electronic records management was limited.",
+        engagementDetail:
+            "WilCom conducted a records inventory and gap analysis, supported the introduction of electronic records management, supervised digitization, developed classification and retention schedules, reorganized the registry and trained staff on the new practices.",
+        deliveryFocus: [
+            "Records inventory and gap analysis",
+            "Electronic records management design",
+            "Digitization of physical records",
+            "Classification and retention schedules",
+            "Registry reorganization and staff training",
+        ],
+        services: [
+            "Management Consulting",
+            "Digital Transformation",
+            "Capacity Building",
+        ],
+        onlineUrl: null,
+        onlineLabel: null,
+        order: 5,
+        published: true,
+    },
+    {
+        ref: "P-007",
+        title: "Comprehensive ICT Needs Assessment",
+        slug: "uasin-gishu-county-assembly-ict-assessment",
+        client: "Uasin Gishu County Assembly",
+        sector: "Government & Public Institutions",
+        engagement: "Consultancy",
+        summary:
+            "Comprehensive ICT needs assessment covering network and hardware, chambers digitization, VoIP, server room, surveillance, ICT organization, enterprise systems, security and disaster recovery.",
+        context:
+            "The County Assembly required a comprehensive assessment of its ICT environment to inform investment decisions and modernize how the Assembly conducted its legislative and administrative work.",
+        challenge:
+            "ICT infrastructure, systems and organizational arrangements had evolved without a consolidated plan. The Assembly needed a clear picture of gaps, risks and priorities for digital investment.",
+        engagementDetail:
+            "WilCom assessed the network, hardware and infrastructure environment, reviewed chambers digitization requirements, and evaluated VoIP, server-room, surveillance, ICT organization, enterprise systems, security and disaster recovery arrangements. Findings were translated into prioritised recommendations.",
+        deliveryFocus: [
+            "Network, hardware and infrastructure assessment",
+            "Chambers digitization and VoIP requirements",
+            "Server room, surveillance and physical security review",
+            "Enterprise systems and ICT organization review",
+            "Security, disaster recovery and prioritised recommendations",
+        ],
+        services: [
+            "ICT Advisory",
+            "Digital Transformation",
+            "ICT Infrastructure & Integration",
+        ],
+        onlineUrl: null,
+        onlineLabel: null,
+        order: 6,
+        published: true,
+    },
+    {
+        ref: "P-008",
+        title: "National Tourism Service Portal",
+        slug: "national-tourism-service-portal",
+        client:
+            "Ministry of Tourism and Wildlife – State Department for Tourism",
+        sector: "Government & Public Institutions",
+        engagement: "Software & Systems",
+        summary:
+            "Development of a National Tourism Service Portal supporting tourism information, services and digital transformation across the sector, with cloud deployment, security, maintenance and performance monitoring.",
+        context:
+            "The State Department for Tourism required a national digital platform to consolidate tourism-related information, present services to the public and support sector-wide digital transformation.",
+        challenge:
+            "Tourism information and services were spread across multiple channels and were not consistently presented or maintained. The sector needed a unified, secure and scalable digital platform with clear digital strategy behind it.",
+        engagementDetail:
+            "WilCom conducted requirements analysis and developed a digital transformation strategy, then designed and built a responsive custom platform deployed on cloud infrastructure. The engagement included security hardening, maintenance arrangements, SEO and performance monitoring.",
+        deliveryFocus: [
+            "Requirements analysis and digital transformation strategy",
+            "UI/UX design and responsive platform development",
+            "Custom software development and cloud deployment",
+            "Security, maintenance and performance monitoring",
+            "Search engine optimization and content strategy",
+        ],
+        services: [
+            "Systems Development",
+            "Digital Transformation",
+            "Quality Assurance & Security",
+        ],
+        onlineUrl: null,
+        onlineLabel: null,
+        order: 7,
+        published: true,
+    },
+    {
+        ref: "P-009",
+        title: "Library Information Management System for MTRD",
+        slug: "mtrd-library-information-management-system",
+        client:
+            "Ministry of Transport, Infrastructure & Public Works – State Department for Roads",
+        sector: "Government & Public Institutions",
+        engagement: "Software & Systems",
+        summary:
+            "Design, supply, installation and commissioning of a Library Information Management System supporting cataloguing, digitization, migration and institutional knowledge access.",
+        context:
+            "The State Department for Roads required a modern library information management capability to organize, catalogue and provide access to technical and institutional reference materials.",
+        challenge:
+            "Existing library records were largely physical or held in disconnected files. Digitization, cataloguing, migration and integration with other systems required a structured approach and reliable infrastructure.",
+        engagementDetail:
+            "WilCom carried out requirements analysis and system design, supplied and installed hardware, supervised digitization and data migration, integrated the system with other environments, and managed testing, commissioning and training. Ongoing support was provided under a service level agreement.",
+        deliveryFocus: [
+            "Requirements analysis and system design",
+            "Hardware supply, installation and infrastructure setup",
+            "Digitization, cataloguing and data migration",
+            "System integration, testing and commissioning",
+            "Training and service-level support",
+        ],
+        services: [
+            "Systems Development",
+            "ICT Infrastructure & Integration",
+            "Capacity Building",
+        ],
+        onlineUrl: null,
+        onlineLabel: null,
+        order: 8,
+        published: true,
+    },
+    {
+        ref: "P-010",
+        title: "Integrated Health Management Information System",
+        slug: "nandi-county-integrated-health-management-information-system",
+        client: "County Government of Nandi",
+        sector: "Government & Public Institutions",
+        engagement: "Software & Systems",
+        summary:
+            "Integrated health management information system for the County Government of Nandi, covering e-hospital functionality, process re-engineering, system customization, phased rollout and financial integration.",
+        context:
+            "The County Government of Nandi required an integrated health management information system to connect hospital operations, patient records and financial processes across its health facilities.",
+        challenge:
+            "Health information was managed across disconnected systems and manual processes. The county needed a unified platform that reflected clinical and administrative workflows, supported phased rollout and could integrate with financial management.",
+        engagementDetail:
+            "WilCom supported process re-engineering, customized the system to the county's operating environment, delivered training, and supported phased rollout across facilities. Financial integration, monitoring and ongoing maintenance were included.",
+        deliveryFocus: [
+            "Health process re-engineering and system customization",
+            "Integrated e-hospital system rollout across facilities",
+            "Phased implementation and county-wide training",
+            "Financial integration with county systems",
+            "Monitoring, maintenance and continuous support",
+        ],
+        services: [
+            "Systems Development",
+            "Digital Transformation",
+            "ICT Infrastructure & Integration",
+            "Capacity Building",
+        ],
+        onlineUrl: null,
+        onlineLabel: null,
+        order: 9,
+        published: true,
+    },
+    {
+        ref: "P-011",
+        title: "Online Administrative Review Case Management System",
+        slug: "ppra-administrative-review-case-management-system",
+        client: "Public Procurement Regulatory Authority",
+        sector: "Regulatory & Oversight Institutions",
+        engagement: "Software & Systems",
+        summary:
+            "Online case management system supporting administrative review processes at the Public Procurement Regulatory Authority, with workflow automation, notifications and integrations.",
+        context:
+            "The Public Procurement Regulatory Authority required a digital platform to manage administrative review cases, replacing largely manual case handling with a controlled online environment.",
+        challenge:
+            "Cases were managed manually, making it difficult to track progress, manage deadlines and provide consistent visibility to reviewers and parties. Notifications and integrations with other systems were also needed.",
+        engagementDetail:
+            "WilCom conducted requirements analysis and process review, produced a system requirements specification, developed the platform, automated case workflows and notifications, integrated with other systems, and delivered quality assurance, training and go-live support.",
+        deliveryFocus: [
+            "Requirements analysis and process review",
+            "System requirements specification and design",
+            "Case workflow automation and notifications",
+            "Systems integration and quality assurance",
+            "Training and go-live support",
+        ],
+        services: [
+            "Systems Development",
+            "Quality Assurance & Security",
+            "ICT Advisory",
+        ],
+        onlineUrl: null,
+        onlineLabel: null,
+        order: 10,
+        published: true,
+    },
+    {
+        ref: "P-012",
+        title: "Public Procurement Information Portal",
+        slug: "ppra-public-procurement-information-portal",
+        client: "Public Procurement Regulatory Authority",
+        sector: "Regulatory & Oversight Institutions",
+        engagement: "Software & Systems",
+        summary:
+            "Redesign, development, upgrade and maintenance of the Public Procurement Information Portal, supporting public access to procurement information and regulatory transparency.",
+        context:
+            "The Public Procurement Regulatory Authority required its public-facing information portal to be modernized to improve accessibility, transparency and reliability for procurement stakeholders.",
+        challenge:
+            "The existing portal needed assessment, redesign and upgrade to meet current usability, content-management and performance expectations, with ongoing maintenance to sustain operation.",
+        engagementDetail:
+            "WilCom carried out a needs assessment, redesigned the portal, delivered development and upgrade work, and provided ongoing maintenance and support.",
+        deliveryFocus: [
+            "Needs assessment and portal redesign",
+            "Development and upgrade of the information portal",
+            "Content management and usability improvements",
+            "Ongoing maintenance and support",
+        ],
+        services: [
+            "Systems Development",
+            "Digital Transformation",
+            "ICT Advisory",
+        ],
+        onlineUrl: null,
+        onlineLabel: null,
+        order: 11,
+        published: true,
+    },
+    {
+        ref: "P-013",
+        title: "SIM Box Fraud Detector",
+        slug: "cak-sim-box-fraud-detector",
+        client: "Communications Authority of Kenya",
+        sector: "Regulatory & Oversight Institutions",
+        engagement: "Software & Systems",
+        summary:
+            "Deployment and customization of a SIM Box Fraud Detector solution for the Communications Authority of Kenya, covering cloud deployment, dashboards, calibration and managed services.",
+        context:
+            "The Communications Authority of Kenya required a technology solution to detect and support management of SIM box-related fraud affecting telecommunications services.",
+        challenge:
+            "SIM box fraud is dynamic and requires a configurable solution with dashboards, alerting and calibration against real test calls. Regulatory alignment, user acceptance testing and ongoing managed services were essential.",
+        engagementDetail:
+            "WilCom deployed and customized the solution on cloud infrastructure, aligned it to regulatory requirements, configured dashboards, carried out user acceptance testing, test-call calibration and stress testing, trained users and provided managed services.",
+        deliveryFocus: [
+            "Cloud deployment and system customization",
+            "Regulatory alignment and dashboards",
+            "User acceptance testing, calibration and stress testing",
+            "User training",
+            "Managed services and ongoing support",
+        ],
+        services: [
+            "Systems Development",
+            "Quality Assurance & Security",
+            "ICT Infrastructure & Integration",
+        ],
+        onlineUrl: null,
+        onlineLabel: null,
+        order: 12,
+        published: true,
+    },
+    {
+        ref: "P-015",
+        title: "Network Monitoring Software",
+        slug: "cak-network-monitoring-software",
+        client: "Communications Authority of Kenya",
+        sector: "Regulatory & Oversight Institutions",
+        engagement: "Software & Systems",
+        summary:
+            "Supply, installation and configuration of WhatsUp Gold network monitoring software, with network discovery, alerting, dashboards and user training.",
+        context:
+            "The Communications Authority of Kenya required improved visibility into its network environment to support operations and proactive incident management.",
+        challenge:
+            "The Authority needed a reliable monitoring solution that could discover and track network assets, alert on issues and provide actionable dashboards without extensive disruption to operations.",
+        engagementDetail:
+            "WilCom supplied and installed WhatsUp Gold, configured network discovery and monitoring, set up alerting and dashboards, trained users and provided maintenance.",
+        deliveryFocus: [
+            "Supply and installation of network monitoring software",
+            "Network discovery and monitoring configuration",
+            "Alerting and dashboards setup",
+            "User training",
+            "Maintenance and support",
+        ],
+        services: [
+            "ICT Infrastructure & Integration",
+            "ICT Advisory",
+            "Quality Assurance & Security",
+        ],
+        onlineUrl: null,
+        onlineLabel: null,
+        order: 13,
+        published: true,
+    },
+    {
+        ref: "P-016",
+        title: "RFID File Management System",
+        slug: "cak-rfid-file-management-system",
+        client: "Communications Authority of Kenya",
+        sector: "Regulatory & Oversight Institutions",
+        engagement: "Software & Systems",
+        summary:
+            "Supply and implementation of an RFID file management system covering hardware, infrastructure, enrolment, tagging, validation, user acceptance testing, training and SLA maintenance.",
+        context:
+            "The Communications Authority of Kenya required an RFID-based file management solution to improve tracking, retrieval and control of physical files.",
+        challenge:
+            "Manual file tracking made retrieval slow and reduced visibility of file movements. The solution needed reliable hardware, careful enrollment and tagging, and clear operational processes.",
+        engagementDetail:
+            "WilCom supplied the RFID hardware and infrastructure, set up the environment, supported enrollment and tagging of files, carried out validation and user acceptance testing, trained staff, and provided handover and ongoing SLA maintenance.",
+        deliveryFocus: [
+            "RFID hardware and infrastructure setup",
+            "File enrolment, tagging and validation",
+            "User acceptance testing",
+            "User training and handover",
+            "SLA-based maintenance and support",
+        ],
+        services: [
+            "Systems Development",
+            "ICT Infrastructure & Integration",
+            "Capacity Building",
+        ],
+        onlineUrl: null,
+        onlineLabel: null,
+        order: 14,
+        published: true,
+    },
 ];
-
 
 /* -------------------------------------------------------------------------- */
 /* CONTACT SUBMISSIONS (demo)                                                 */
@@ -594,6 +919,20 @@ async function main() {
     }
 
     /* ------------------------------- Projects ------------------------------ */
+
+    // Remove legacy placeholder projects that are no longer part of the seed.
+    // Runs only if those rows still exist.
+    const legacyProjectSlugs = [
+        "tvet-institution-digital-transformation-assessment",
+        "regulatory-case-management-system-development",
+        "public-institution-process-digitisation",
+        "development-programme-monitoring-system",
+        "financial-institution-ict-security-assessment",
+    ];
+
+    await prisma.project.deleteMany({
+        where: { slug: { in: legacyProjectSlugs } },
+    });
 
     for (const project of projects) {
         await prisma.project.upsert({

@@ -63,7 +63,7 @@ export async function generateMetadata({
 /* Page                                                                       */
 /* -------------------------------------------------------------------------- */
 
-export const revalidate = 300; // ISR every 5 minutes
+export const revalidate = 10; // ISR every 5 minutes
 
 export default async function ProjectPage({ params }: ProjectPageProps) {
     const { slug } = await params;
