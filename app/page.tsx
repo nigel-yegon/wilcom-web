@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 import FadeIn from "./components/fade-in";
+import AnimatedHero from "./components/animated-hero";
 
 export const metadata: Metadata = {
   title: "WilCom Systems Limited | Development & Management Consulting",
@@ -191,7 +192,9 @@ export default function Home() {
   return (
     <main className="min-h-screen">
       {/* Hero */}
-      <section
+      {/* Hero */}
+      <AnimatedHero />
+      {/* <section
         id="home"
         className="px-6 py-24 md:py-32 lg:py-36 max-w-7xl mx-auto"
       >
@@ -239,7 +242,7 @@ export default function Home() {
             </div>
           </FadeIn>
         </div>
-      </section>
+      </section> */}
 
       {/* Positioning statement */}
       <section className="px-6 py-16 bg-ink-100 dark:bg-ink-900/60">
