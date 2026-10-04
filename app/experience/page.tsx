@@ -33,7 +33,7 @@ export default async function ExperiencePage() {
         }),
     ]);
 
-    const projectViews: ProjectView[] = projects.map((p) => ({
+    const projectViews: ProjectView[] = projects.map((p: (typeof projects)[number]) => ({
         id: p.id,
         ref: p.ref,
         slug: p.slug,
@@ -45,7 +45,7 @@ export default async function ExperiencePage() {
         services: p.services ?? [],
     }));
 
-    const serviceTitles = services.map((s) => s.title);
+    const serviceTitles: string[] = services.map((s: { title: string }) => s.title);
 
     return (
         <ExperienceClient projects={projectViews} serviceTitles={serviceTitles} />

@@ -128,17 +128,29 @@ export default function DashboardPage() {
         const rows = await listSectors();
         if (cancelled) return;
         setSectors(
-          rows.map((r) => ({
-            id: r.id,
-            name: r.name,
-            slug: r.slug,
-            icon: r.icon,
-            description: r.description,
-            problems: r.problems ?? [],
-            capabilities: r.capabilities ?? [],
-            order: r.order,
-            published: r.published,
-          })),
+          rows.map(
+            (r: {
+              id: string;
+              name: string;
+              slug: string;
+              icon: string | null;
+              description: string;
+              problems?: string[] | null;
+              capabilities?: string[] | null;
+              order: number;
+              published: boolean;
+            }) => ({
+              id: r.id,
+              name: r.name,
+              slug: r.slug,
+              icon: r.icon,
+              description: r.description,
+              problems: r.problems ?? [],
+              capabilities: r.capabilities ?? [],
+              order: r.order,
+              published: r.published,
+            }),
+          ),
         );
       } catch (err) {
         if (!cancelled)
@@ -157,7 +169,7 @@ export default function DashboardPage() {
         const rows = await listProjects();
         if (cancelled) return;
         setProjects(
-          rows.map((r) => ({
+          rows.map((r: (typeof rows)[number]) => ({
             id: r.id,
             ref: r.ref,
             title: r.title,

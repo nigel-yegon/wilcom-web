@@ -43,6 +43,11 @@ export type ProjectMinAggregateOutputType = {
   sector: string | null
   engagement: string | null
   summary: string | null
+  context: string | null
+  challenge: string | null
+  engagementDetail: string | null
+  onlineUrl: string | null
+  onlineLabel: string | null
   order: number | null
   published: boolean | null
   createdAt: Date | null
@@ -58,6 +63,11 @@ export type ProjectMaxAggregateOutputType = {
   sector: string | null
   engagement: string | null
   summary: string | null
+  context: string | null
+  challenge: string | null
+  engagementDetail: string | null
+  onlineUrl: string | null
+  onlineLabel: string | null
   order: number | null
   published: boolean | null
   createdAt: Date | null
@@ -73,6 +83,12 @@ export type ProjectCountAggregateOutputType = {
   sector: number
   engagement: number
   summary: number
+  context: number
+  challenge: number
+  engagementDetail: number
+  deliveryFocus: number
+  onlineUrl: number
+  onlineLabel: number
   services: number
   order: number
   published: number
@@ -99,6 +115,11 @@ export type ProjectMinAggregateInputType = {
   sector?: true
   engagement?: true
   summary?: true
+  context?: true
+  challenge?: true
+  engagementDetail?: true
+  onlineUrl?: true
+  onlineLabel?: true
   order?: true
   published?: true
   createdAt?: true
@@ -114,6 +135,11 @@ export type ProjectMaxAggregateInputType = {
   sector?: true
   engagement?: true
   summary?: true
+  context?: true
+  challenge?: true
+  engagementDetail?: true
+  onlineUrl?: true
+  onlineLabel?: true
   order?: true
   published?: true
   createdAt?: true
@@ -129,6 +155,12 @@ export type ProjectCountAggregateInputType = {
   sector?: true
   engagement?: true
   summary?: true
+  context?: true
+  challenge?: true
+  engagementDetail?: true
+  deliveryFocus?: true
+  onlineUrl?: true
+  onlineLabel?: true
   services?: true
   order?: true
   published?: true
@@ -232,6 +264,12 @@ export type ProjectGroupByOutputType = {
   sector: string
   engagement: string
   summary: string
+  context: string
+  challenge: string
+  engagementDetail: string
+  deliveryFocus: string[]
+  onlineUrl: string | null
+  onlineLabel: string | null
   services: string[]
   order: number
   published: boolean
@@ -271,6 +309,12 @@ export type ProjectWhereInput = {
   sector?: Prisma.StringFilter<"Project"> | string
   engagement?: Prisma.StringFilter<"Project"> | string
   summary?: Prisma.StringFilter<"Project"> | string
+  context?: Prisma.StringFilter<"Project"> | string
+  challenge?: Prisma.StringFilter<"Project"> | string
+  engagementDetail?: Prisma.StringFilter<"Project"> | string
+  deliveryFocus?: Prisma.StringNullableListFilter<"Project">
+  onlineUrl?: Prisma.StringNullableFilter<"Project"> | string | null
+  onlineLabel?: Prisma.StringNullableFilter<"Project"> | string | null
   services?: Prisma.StringNullableListFilter<"Project">
   order?: Prisma.IntFilter<"Project"> | number
   published?: Prisma.BoolFilter<"Project"> | boolean
@@ -287,6 +331,12 @@ export type ProjectOrderByWithRelationInput = {
   sector?: Prisma.SortOrder
   engagement?: Prisma.SortOrder
   summary?: Prisma.SortOrder
+  context?: Prisma.SortOrder
+  challenge?: Prisma.SortOrder
+  engagementDetail?: Prisma.SortOrder
+  deliveryFocus?: Prisma.SortOrder
+  onlineUrl?: Prisma.SortOrderInput | Prisma.SortOrder
+  onlineLabel?: Prisma.SortOrderInput | Prisma.SortOrder
   services?: Prisma.SortOrder
   order?: Prisma.SortOrder
   published?: Prisma.SortOrder
@@ -306,6 +356,12 @@ export type ProjectWhereUniqueInput = Prisma.AtLeast<{
   sector?: Prisma.StringFilter<"Project"> | string
   engagement?: Prisma.StringFilter<"Project"> | string
   summary?: Prisma.StringFilter<"Project"> | string
+  context?: Prisma.StringFilter<"Project"> | string
+  challenge?: Prisma.StringFilter<"Project"> | string
+  engagementDetail?: Prisma.StringFilter<"Project"> | string
+  deliveryFocus?: Prisma.StringNullableListFilter<"Project">
+  onlineUrl?: Prisma.StringNullableFilter<"Project"> | string | null
+  onlineLabel?: Prisma.StringNullableFilter<"Project"> | string | null
   services?: Prisma.StringNullableListFilter<"Project">
   order?: Prisma.IntFilter<"Project"> | number
   published?: Prisma.BoolFilter<"Project"> | boolean
@@ -322,6 +378,12 @@ export type ProjectOrderByWithAggregationInput = {
   sector?: Prisma.SortOrder
   engagement?: Prisma.SortOrder
   summary?: Prisma.SortOrder
+  context?: Prisma.SortOrder
+  challenge?: Prisma.SortOrder
+  engagementDetail?: Prisma.SortOrder
+  deliveryFocus?: Prisma.SortOrder
+  onlineUrl?: Prisma.SortOrderInput | Prisma.SortOrder
+  onlineLabel?: Prisma.SortOrderInput | Prisma.SortOrder
   services?: Prisma.SortOrder
   order?: Prisma.SortOrder
   published?: Prisma.SortOrder
@@ -346,6 +408,12 @@ export type ProjectScalarWhereWithAggregatesInput = {
   sector?: Prisma.StringWithAggregatesFilter<"Project"> | string
   engagement?: Prisma.StringWithAggregatesFilter<"Project"> | string
   summary?: Prisma.StringWithAggregatesFilter<"Project"> | string
+  context?: Prisma.StringWithAggregatesFilter<"Project"> | string
+  challenge?: Prisma.StringWithAggregatesFilter<"Project"> | string
+  engagementDetail?: Prisma.StringWithAggregatesFilter<"Project"> | string
+  deliveryFocus?: Prisma.StringNullableListFilter<"Project">
+  onlineUrl?: Prisma.StringNullableWithAggregatesFilter<"Project"> | string | null
+  onlineLabel?: Prisma.StringNullableWithAggregatesFilter<"Project"> | string | null
   services?: Prisma.StringNullableListFilter<"Project">
   order?: Prisma.IntWithAggregatesFilter<"Project"> | number
   published?: Prisma.BoolWithAggregatesFilter<"Project"> | boolean
@@ -362,6 +430,12 @@ export type ProjectCreateInput = {
   sector: string
   engagement: string
   summary: string
+  context?: string
+  challenge?: string
+  engagementDetail?: string
+  deliveryFocus?: Prisma.ProjectCreatedeliveryFocusInput | string[]
+  onlineUrl?: string | null
+  onlineLabel?: string | null
   services?: Prisma.ProjectCreateservicesInput | string[]
   order?: number
   published?: boolean
@@ -378,6 +452,12 @@ export type ProjectUncheckedCreateInput = {
   sector: string
   engagement: string
   summary: string
+  context?: string
+  challenge?: string
+  engagementDetail?: string
+  deliveryFocus?: Prisma.ProjectCreatedeliveryFocusInput | string[]
+  onlineUrl?: string | null
+  onlineLabel?: string | null
   services?: Prisma.ProjectCreateservicesInput | string[]
   order?: number
   published?: boolean
@@ -394,6 +474,12 @@ export type ProjectUpdateInput = {
   sector?: Prisma.StringFieldUpdateOperationsInput | string
   engagement?: Prisma.StringFieldUpdateOperationsInput | string
   summary?: Prisma.StringFieldUpdateOperationsInput | string
+  context?: Prisma.StringFieldUpdateOperationsInput | string
+  challenge?: Prisma.StringFieldUpdateOperationsInput | string
+  engagementDetail?: Prisma.StringFieldUpdateOperationsInput | string
+  deliveryFocus?: Prisma.ProjectUpdatedeliveryFocusInput | string[]
+  onlineUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  onlineLabel?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   services?: Prisma.ProjectUpdateservicesInput | string[]
   order?: Prisma.IntFieldUpdateOperationsInput | number
   published?: Prisma.BoolFieldUpdateOperationsInput | boolean
@@ -410,6 +496,12 @@ export type ProjectUncheckedUpdateInput = {
   sector?: Prisma.StringFieldUpdateOperationsInput | string
   engagement?: Prisma.StringFieldUpdateOperationsInput | string
   summary?: Prisma.StringFieldUpdateOperationsInput | string
+  context?: Prisma.StringFieldUpdateOperationsInput | string
+  challenge?: Prisma.StringFieldUpdateOperationsInput | string
+  engagementDetail?: Prisma.StringFieldUpdateOperationsInput | string
+  deliveryFocus?: Prisma.ProjectUpdatedeliveryFocusInput | string[]
+  onlineUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  onlineLabel?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   services?: Prisma.ProjectUpdateservicesInput | string[]
   order?: Prisma.IntFieldUpdateOperationsInput | number
   published?: Prisma.BoolFieldUpdateOperationsInput | boolean
@@ -426,6 +518,12 @@ export type ProjectCreateManyInput = {
   sector: string
   engagement: string
   summary: string
+  context?: string
+  challenge?: string
+  engagementDetail?: string
+  deliveryFocus?: Prisma.ProjectCreatedeliveryFocusInput | string[]
+  onlineUrl?: string | null
+  onlineLabel?: string | null
   services?: Prisma.ProjectCreateservicesInput | string[]
   order?: number
   published?: boolean
@@ -442,6 +540,12 @@ export type ProjectUpdateManyMutationInput = {
   sector?: Prisma.StringFieldUpdateOperationsInput | string
   engagement?: Prisma.StringFieldUpdateOperationsInput | string
   summary?: Prisma.StringFieldUpdateOperationsInput | string
+  context?: Prisma.StringFieldUpdateOperationsInput | string
+  challenge?: Prisma.StringFieldUpdateOperationsInput | string
+  engagementDetail?: Prisma.StringFieldUpdateOperationsInput | string
+  deliveryFocus?: Prisma.ProjectUpdatedeliveryFocusInput | string[]
+  onlineUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  onlineLabel?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   services?: Prisma.ProjectUpdateservicesInput | string[]
   order?: Prisma.IntFieldUpdateOperationsInput | number
   published?: Prisma.BoolFieldUpdateOperationsInput | boolean
@@ -458,6 +562,12 @@ export type ProjectUncheckedUpdateManyInput = {
   sector?: Prisma.StringFieldUpdateOperationsInput | string
   engagement?: Prisma.StringFieldUpdateOperationsInput | string
   summary?: Prisma.StringFieldUpdateOperationsInput | string
+  context?: Prisma.StringFieldUpdateOperationsInput | string
+  challenge?: Prisma.StringFieldUpdateOperationsInput | string
+  engagementDetail?: Prisma.StringFieldUpdateOperationsInput | string
+  deliveryFocus?: Prisma.ProjectUpdatedeliveryFocusInput | string[]
+  onlineUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  onlineLabel?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   services?: Prisma.ProjectUpdateservicesInput | string[]
   order?: Prisma.IntFieldUpdateOperationsInput | number
   published?: Prisma.BoolFieldUpdateOperationsInput | boolean
@@ -474,6 +584,12 @@ export type ProjectCountOrderByAggregateInput = {
   sector?: Prisma.SortOrder
   engagement?: Prisma.SortOrder
   summary?: Prisma.SortOrder
+  context?: Prisma.SortOrder
+  challenge?: Prisma.SortOrder
+  engagementDetail?: Prisma.SortOrder
+  deliveryFocus?: Prisma.SortOrder
+  onlineUrl?: Prisma.SortOrder
+  onlineLabel?: Prisma.SortOrder
   services?: Prisma.SortOrder
   order?: Prisma.SortOrder
   published?: Prisma.SortOrder
@@ -494,6 +610,11 @@ export type ProjectMaxOrderByAggregateInput = {
   sector?: Prisma.SortOrder
   engagement?: Prisma.SortOrder
   summary?: Prisma.SortOrder
+  context?: Prisma.SortOrder
+  challenge?: Prisma.SortOrder
+  engagementDetail?: Prisma.SortOrder
+  onlineUrl?: Prisma.SortOrder
+  onlineLabel?: Prisma.SortOrder
   order?: Prisma.SortOrder
   published?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
@@ -509,6 +630,11 @@ export type ProjectMinOrderByAggregateInput = {
   sector?: Prisma.SortOrder
   engagement?: Prisma.SortOrder
   summary?: Prisma.SortOrder
+  context?: Prisma.SortOrder
+  challenge?: Prisma.SortOrder
+  engagementDetail?: Prisma.SortOrder
+  onlineUrl?: Prisma.SortOrder
+  onlineLabel?: Prisma.SortOrder
   order?: Prisma.SortOrder
   published?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
@@ -519,8 +645,17 @@ export type ProjectSumOrderByAggregateInput = {
   order?: Prisma.SortOrder
 }
 
+export type ProjectCreatedeliveryFocusInput = {
+  set: string[]
+}
+
 export type ProjectCreateservicesInput = {
   set: string[]
+}
+
+export type ProjectUpdatedeliveryFocusInput = {
+  set?: string[]
+  push?: string | string[]
 }
 
 export type ProjectUpdateservicesInput = {
@@ -539,6 +674,12 @@ export type ProjectSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs 
   sector?: boolean
   engagement?: boolean
   summary?: boolean
+  context?: boolean
+  challenge?: boolean
+  engagementDetail?: boolean
+  deliveryFocus?: boolean
+  onlineUrl?: boolean
+  onlineLabel?: boolean
   services?: boolean
   order?: boolean
   published?: boolean
@@ -555,6 +696,12 @@ export type ProjectSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Exten
   sector?: boolean
   engagement?: boolean
   summary?: boolean
+  context?: boolean
+  challenge?: boolean
+  engagementDetail?: boolean
+  deliveryFocus?: boolean
+  onlineUrl?: boolean
+  onlineLabel?: boolean
   services?: boolean
   order?: boolean
   published?: boolean
@@ -571,6 +718,12 @@ export type ProjectSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Exten
   sector?: boolean
   engagement?: boolean
   summary?: boolean
+  context?: boolean
+  challenge?: boolean
+  engagementDetail?: boolean
+  deliveryFocus?: boolean
+  onlineUrl?: boolean
+  onlineLabel?: boolean
   services?: boolean
   order?: boolean
   published?: boolean
@@ -587,6 +740,12 @@ export type ProjectSelectScalar = {
   sector?: boolean
   engagement?: boolean
   summary?: boolean
+  context?: boolean
+  challenge?: boolean
+  engagementDetail?: boolean
+  deliveryFocus?: boolean
+  onlineUrl?: boolean
+  onlineLabel?: boolean
   services?: boolean
   order?: boolean
   published?: boolean
@@ -594,7 +753,7 @@ export type ProjectSelectScalar = {
   updatedAt?: boolean
 }
 
-export type ProjectOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "ref" | "title" | "slug" | "client" | "sector" | "engagement" | "summary" | "services" | "order" | "published" | "createdAt" | "updatedAt", ExtArgs["result"]["project"]>
+export type ProjectOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "ref" | "title" | "slug" | "client" | "sector" | "engagement" | "summary" | "context" | "challenge" | "engagementDetail" | "deliveryFocus" | "onlineUrl" | "onlineLabel" | "services" | "order" | "published" | "createdAt" | "updatedAt", ExtArgs["result"]["project"]>
 
 export type $ProjectPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "Project"
@@ -608,6 +767,12 @@ export type $ProjectPayload<ExtArgs extends runtime.Types.Extensions.InternalArg
     sector: string
     engagement: string
     summary: string
+    context: string
+    challenge: string
+    engagementDetail: string
+    deliveryFocus: string[]
+    onlineUrl: string | null
+    onlineLabel: string | null
     services: string[]
     order: number
     published: boolean
@@ -1044,6 +1209,12 @@ export interface ProjectFieldRefs {
   readonly sector: Prisma.FieldRef<"Project", 'String'>
   readonly engagement: Prisma.FieldRef<"Project", 'String'>
   readonly summary: Prisma.FieldRef<"Project", 'String'>
+  readonly context: Prisma.FieldRef<"Project", 'String'>
+  readonly challenge: Prisma.FieldRef<"Project", 'String'>
+  readonly engagementDetail: Prisma.FieldRef<"Project", 'String'>
+  readonly deliveryFocus: Prisma.FieldRef<"Project", 'String[]'>
+  readonly onlineUrl: Prisma.FieldRef<"Project", 'String'>
+  readonly onlineLabel: Prisma.FieldRef<"Project", 'String'>
   readonly services: Prisma.FieldRef<"Project", 'String[]'>
   readonly order: Prisma.FieldRef<"Project", 'Int'>
   readonly published: Prisma.FieldRef<"Project", 'Boolean'>

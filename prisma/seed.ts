@@ -297,11 +297,26 @@ const projects = [
         engagement: "Assessment & Advisory",
         summary:
             "Institutional assessment covering processes, systems, data and staff capability, producing a digital transformation roadmap and prioritised implementation plan for the institution.",
+        context:
+            "The institution operated a mix of manual and partially digitised processes across admissions, assessment, records management and reporting. Leadership recognised the need for a structured assessment before committing to a large-scale digital transformation programme.",
+        challenge:
+            "Institutional processes were fragmented across departments, information was held in disconnected spreadsheets and legacy systems, and staff capability varied widely. There was no shared view of priorities, dependencies or sequencing for digital investment.",
+        engagementDetail:
+            "WilCom conducted a structured institutional assessment covering process flows, systems landscape, data handling, staff capability and technology infrastructure. Findings were translated into a prioritised digital transformation roadmap with quick wins, medium-term initiatives and capability-building recommendations.",
+        deliveryFocus: [
+            "Institutional process and systems assessment",
+            "Data and information management review",
+            "Digital transformation roadmap development",
+            "Staff capability and capacity-building plan",
+            "Prioritised implementation and investment recommendations",
+        ],
         services: [
             "Management Consulting",
             "Digital Transformation",
             "Capacity Building",
         ],
+        onlineUrl: null,
+        onlineLabel: null,
         order: 0,
         published: true,
     },
@@ -314,11 +329,26 @@ const projects = [
         engagement: "Systems Development",
         summary:
             "Design and development of a case management platform with workflow, audit trails, access controls and management reporting to support regulatory oversight operations.",
+        context:
+            "The authority needed to modernise how it received, tracked, reviewed and reported on regulatory cases. Existing processes were paper-heavy, involved multiple handoffs and lacked a single source of truth.",
+        challenge:
+            "Cases were managed across spreadsheets, email threads and physical files. There was limited traceability of decisions, inconsistent handling across teams and no reliable management information on case volume, age or outcome.",
+        engagementDetail:
+            "WilCom designed and delivered a web-based case management system with configurable workflows, role-based access control, audit trails, document handling and management dashboards. The system was developed iteratively with input from case handlers, supervisors and management.",
+        deliveryFocus: [
+            "Requirements analysis and process design",
+            "Workflow and case lifecycle configuration",
+            "Role-based access and audit trail implementation",
+            "Document and information management",
+            "Management reporting and dashboards",
+        ],
         services: [
             "Systems Development",
             "Quality Assurance & Security",
             "ICT Advisory",
         ],
+        onlineUrl: null,
+        onlineLabel: null,
         order: 1,
         published: true,
     },
@@ -331,11 +361,26 @@ const projects = [
         engagement: "Digital Transformation",
         summary:
             "Digitisation of core administrative processes, replacing manual workflows with controlled digital processes and integrated information management to improve service delivery and accountability.",
+        context:
+            "The department was delivering services through largely manual workflows. Improving turnaround times, traceability and stakeholder experience required moving to controlled digital processes.",
+        challenge:
+            "Manual workflows created bottlenecks, duplicate data capture and inconsistent records. Management lacked visibility into service backlogs and there was limited evidence to support process improvement decisions.",
+        engagementDetail:
+            "WilCom worked with the department to map core processes, redesign workflows for digital delivery, configure the supporting systems and integrate information flows. Staff were involved throughout, and training was delivered ahead of rollout.",
+        deliveryFocus: [
+            "Process mapping and redesign",
+            "Digital workflow configuration",
+            "Information integration across the department",
+            "Change management and staff training",
+            "Rollout support and post-launch review",
+        ],
         services: [
             "Digital Transformation",
             "Systems Development",
             "ICT Infrastructure & Integration",
         ],
+        onlineUrl: null,
+        onlineLabel: null,
         order: 2,
         published: true,
     },
@@ -348,11 +393,26 @@ const projects = [
         engagement: "Programme Delivery",
         summary:
             "Design and implementation of a monitoring and information system connecting programme teams, field activities and reporting requirements across multiple implementation partners.",
+        context:
+            "The programme operated across multiple sites with several implementation partners. There was no shared system for capturing activity data, tracking indicators or producing consolidated reports.",
+        challenge:
+            "Reporting was slow, inconsistent and heavily manual. Programme management lacked timely visibility on implementation progress, and field teams spent significant time on data collection and reconciliation.",
+        engagementDetail:
+            "WilCom designed and implemented a monitoring and information system aligned to the programme's results framework. Partners were on-boarded onto a common platform, reporting templates were standardised, and dashboards were built for programme management.",
+        deliveryFocus: [
+            "Programme indicators and results framework alignment",
+            "Partner and field team on-boarding",
+            "Digital data collection and consolidation",
+            "Management dashboards and reporting",
+            "Training and continued support for field teams",
+        ],
         services: [
             "Programme Delivery",
             "Systems Development",
             "Capacity Building",
         ],
+        onlineUrl: null,
+        onlineLabel: null,
         order: 3,
         published: true,
     },
@@ -365,14 +425,74 @@ const projects = [
         engagement: "Assessment & Advisory",
         summary:
             "Independent assessment of ICT environment, information systems, security controls and operational processes, delivering prioritised recommendations for improvement and investment.",
+        context:
+            "The institution had grown rapidly and accumulated a mix of legacy and modern systems. Management wanted independent assurance on ICT and security posture before committing to a multi-year investment programme.",
+        challenge:
+            "Systems and controls had evolved organically without a consolidated review. Areas of concern included access management, disaster recovery readiness, vendor dependencies and alignment between business needs and ICT investment.",
+        engagementDetail:
+            "WilCom conducted an independent ICT and security assessment covering infrastructure, applications, security controls, operational processes and governance. Findings were prioritised by risk and translated into an investment roadmap with short and medium-term recommendations.",
+        deliveryFocus: [
+            "ICT and security posture assessment",
+            "Controls and access-management review",
+            "Business continuity and disaster recovery review",
+            "Governance and operating-model assessment",
+            "Prioritised improvement and investment roadmap",
+        ],
         services: [
             "ICT Advisory",
             "Quality Assurance & Security",
             "Management Consulting",
         ],
+        onlineUrl: null,
+        onlineLabel: null,
         order: 4,
         published: true,
     },
+];
+
+/* -------------------------------------------------------------------------- */
+/* CONTACT SUBMISSIONS (demo)                                                 */
+/* -------------------------------------------------------------------------- */
+
+const contactSubmissions = [
+    {
+        name: "Jane Wanjiku",
+        email: "jane.wanjiku@example.co.ke",
+        phone: "+254 700 111 222",
+        company: "County Government of Nakuru",
+        subject: "Request for ICT needs assessment",
+        message:
+            "We would like to discuss an institutional ICT assessment covering our health and revenue systems. Could you share an approach note and indicative timeline?",
+    },
+    {
+        name: "David Otieno",
+        email: "d.otieno@example.org",
+        phone: "+254 722 333 444",
+        company: "Regional Development Trust",
+        subject: "Programme monitoring system",
+        message:
+            "We are preparing a three-year programme and need a monitoring and reporting system. Interested in a discovery call to scope the requirement.",
+    },
+    {
+        name: "Amina Hassan",
+        email: "amina.hassan@example.com",
+        phone: null,
+        company: "Private Training College",
+        subject: "Digital learning platform",
+        message:
+            "Looking to modernise our learning delivery and assessment. Can WilCom support an assessment and roadmap for the next academic year?",
+    },
+];
+
+/* -------------------------------------------------------------------------- */
+/* NEWSLETTER SUBSCRIBERS (demo)                                              */
+/* -------------------------------------------------------------------------- */
+
+const subscribers = [
+    { email: "subscriber.one@example.com", active: true },
+    { email: "subscriber.two@example.com", active: true },
+    { email: "subscriber.three@example.com", active: true },
+    { email: "former.subscriber@example.com", active: false },
 ];
 
 /* -------------------------------------------------------------------------- */
@@ -380,7 +500,8 @@ const projects = [
 /* -------------------------------------------------------------------------- */
 
 async function main() {
-    // Services
+    /* ------------------------------- Services ------------------------------ */
+
     for (const service of services) {
         await prisma.service.upsert({
             where: { slug: service.slug },
@@ -389,7 +510,8 @@ async function main() {
         });
     }
 
-    // Sectors
+    /* -------------------------------- Sectors ------------------------------ */
+
     for (const sector of sectors) {
         await prisma.sector.upsert({
             where: { slug: sector.slug },
@@ -398,7 +520,8 @@ async function main() {
         });
     }
 
-    // Projects
+    /* ------------------------------- Projects ------------------------------ */
+
     for (const project of projects) {
         await prisma.project.upsert({
             where: { slug: project.slug },
@@ -407,8 +530,44 @@ async function main() {
         });
     }
 
+    /* -------------------------- Contact submissions ------------------------ */
+
+    // No unique constraint on ContactSubmission, so we gate creation on
+    // whether a submission with the same email + subject already exists.
+    for (const submission of contactSubmissions) {
+        const existing = await prisma.contactSubmission.findFirst({
+            where: {
+                email: submission.email,
+                subject: submission.subject,
+            },
+            select: { id: true },
+        });
+
+        if (!existing) {
+            await prisma.contactSubmission.create({ data: submission });
+        }
+    }
+
+    /* --------------------------- Newsletter subs --------------------------- */
+
+    for (const sub of subscribers) {
+        await prisma.newsletterSubscriber.upsert({
+            where: { email: sub.email },
+            update: { active: sub.active },
+            create: sub,
+        });
+    }
+
+    /* --------------------------------- Done -------------------------------- */
+
     console.log(
-        `Seeded ${services.length} services, ${sectors.length} sectors, ${projects.length} projects`,
+        [
+            `Seeded ${services.length} services`,
+            `${sectors.length} sectors`,
+            `${projects.length} projects`,
+            `${contactSubmissions.length} contact submissions (demo)`,
+            `${subscribers.length} newsletter subscribers (demo)`,
+        ].join(", "),
     );
 }
 

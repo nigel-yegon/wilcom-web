@@ -312,7 +312,7 @@ export type ServiceScalarWhereWithAggregatesInput = {
 export type ServiceCreateInput = {
   id?: string
   title: string
-  description: string
+  description?: string
   slug: string
   icon?: string | null
   order?: number
@@ -324,7 +324,7 @@ export type ServiceCreateInput = {
 export type ServiceUncheckedCreateInput = {
   id?: string
   title: string
-  description: string
+  description?: string
   slug: string
   icon?: string | null
   order?: number
@@ -360,7 +360,7 @@ export type ServiceUncheckedUpdateInput = {
 export type ServiceCreateManyInput = {
   id?: string
   title: string
-  description: string
+  description?: string
   slug: string
   icon?: string | null
   order?: number

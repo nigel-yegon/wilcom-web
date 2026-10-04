@@ -26,15 +26,17 @@ export default async function SectorsPage() {
         orderBy: [{ order: "asc" }, { createdAt: "asc" }],
     });
 
-    const sectorsView: SectorView[] = sectors.map((s) => ({
-        id: s.id,
-        slug: s.slug,
-        name: s.name,
-        icon: s.icon ?? "",
-        description: s.description,
-        problems: s.problems ?? [],
-        capabilities: s.capabilities ?? [],
-    }));
+    const sectorsView: SectorView[] = sectors.map(
+        (s: (typeof sectors)[number]) => ({
+            id: s.id,
+            slug: s.slug,
+            name: s.name,
+            icon: s.icon ?? "",
+            description: s.description,
+            problems: s.problems ?? [],
+            capabilities: s.capabilities ?? [],
+        }),
+    );
 
     return <SectorsClient sectors={sectorsView} />;
 }

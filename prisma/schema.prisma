@@ -7,6 +7,10 @@ datasource db {
   provider = "postgresql"
 }
 
+/* -------------------------------------------------------------------------- */
+/* Contact form submissions                                                   */
+/* -------------------------------------------------------------------------- */
+
 model ContactSubmission {
   id        String   @id @default(cuid())
   name      String
@@ -22,17 +26,27 @@ model ContactSubmission {
   @@index([createdAt])
 }
 
+/* -------------------------------------------------------------------------- */
+/* Newsletter                                                                 */
+/* -------------------------------------------------------------------------- */
+
 model NewsletterSubscriber {
   id           String   @id @default(cuid())
   email        String   @unique
   subscribedAt DateTime @default(now())
   active       Boolean  @default(true)
+
+  @@index([active, subscribedAt])
 }
+
+/* -------------------------------------------------------------------------- */
+/* Services                                                                   */
+/* -------------------------------------------------------------------------- */
 
 model Service {
   id          String   @id @default(cuid())
   title       String
-  description String
+  description String   @default("")
   slug        String   @unique
   icon        String?
   order       Int      @default(0)
@@ -43,13 +57,17 @@ model Service {
   @@index([published, order])
 }
 
+/* -------------------------------------------------------------------------- */
+/* Sectors                                                                    */
+/* -------------------------------------------------------------------------- */
+
 model Sector {
   id           String   @id @default(cuid())
   name         String
   slug         String   @unique
   description  String   @default("")
-  icon         String?              // ← new: short icon key or emoji
-  problems     String[] @default([]) // ← new: typical challenges
+  icon         String?
+  problems     String[] @default([])
   capabilities String[] @default([])
   order        Int      @default(0)
   published    Boolean  @default(true)
@@ -59,15 +77,28 @@ model Sector {
   @@index([published, order])
 }
 
+/* -------------------------------------------------------------------------- */
+/* Projects                                                                   */
+/* -------------------------------------------------------------------------- */
+
 model Project {
   id         String   @id @default(cuid())
-  ref        String   @unique          // e.g. "P-001" — human-readable code
+  ref        String   @unique
   title      String
   slug       String   @unique
   client     String
   sector     String
   engagement String
   summary    String
+
+  context          String   @default("")
+  challenge        String   @default("")
+  engagementDetail String   @default("")
+  deliveryFocus    String[] @default([])
+
+  onlineUrl   String?
+  onlineLabel String?
+
   services   String[] @default([])
   order      Int      @default(0)
   published  Boolean  @default(true)
