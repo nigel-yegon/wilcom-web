@@ -56,7 +56,13 @@ type ProjectRecord = {
   sector: string;
   engagement: string;
   summary: string;
+  context: string;
+  challenge: string;
+  engagementDetail: string;
   services: string[];
+  deliveryFocus: string[];
+  onlineUrl: string | null;
+  onlineLabel: string | null;
   order: number;
   published: boolean;
 };
@@ -91,25 +97,15 @@ export default function DashboardPage() {
         const rows = await listServices();
         if (cancelled) return;
         setServices(
-          rows.map(
-            (r: {
-              id: string;
-              title: string;
-              slug: string;
-              description: string;
-              icon: string | null;
-              order: number;
-              published: boolean;
-            }) => ({
-              id: r.id,
-              title: r.title,
-              slug: r.slug,
-              description: r.description,
-              icon: r.icon,
-              order: r.order,
-              published: r.published,
-            }),
-          ),
+          rows.map((r) => ({
+            id: r.id,
+            title: r.title,
+            slug: r.slug,
+            description: r.description,
+            icon: r.icon,
+            order: r.order,
+            published: r.published,
+          })),
         );
       } catch (err) {
         if (!cancelled)
@@ -128,29 +124,17 @@ export default function DashboardPage() {
         const rows = await listSectors();
         if (cancelled) return;
         setSectors(
-          rows.map(
-            (r: {
-              id: string;
-              name: string;
-              slug: string;
-              icon: string | null;
-              description: string;
-              problems?: string[] | null;
-              capabilities?: string[] | null;
-              order: number;
-              published: boolean;
-            }) => ({
-              id: r.id,
-              name: r.name,
-              slug: r.slug,
-              icon: r.icon,
-              description: r.description,
-              problems: r.problems ?? [],
-              capabilities: r.capabilities ?? [],
-              order: r.order,
-              published: r.published,
-            }),
-          ),
+          rows.map((r) => ({
+            id: r.id,
+            name: r.name,
+            slug: r.slug,
+            icon: r.icon,
+            description: r.description,
+            problems: r.problems ?? [],
+            capabilities: r.capabilities ?? [],
+            order: r.order,
+            published: r.published,
+          })),
         );
       } catch (err) {
         if (!cancelled)
@@ -169,7 +153,7 @@ export default function DashboardPage() {
         const rows = await listProjects();
         if (cancelled) return;
         setProjects(
-          rows.map((r: (typeof rows)[number]) => ({
+          rows.map((r) => ({
             id: r.id,
             ref: r.ref,
             title: r.title,
@@ -178,7 +162,13 @@ export default function DashboardPage() {
             sector: r.sector,
             engagement: r.engagement,
             summary: r.summary,
-            services: r.services,
+            context: r.context ?? "",
+            challenge: r.challenge ?? "",
+            engagementDetail: r.engagementDetail ?? "",
+            services: r.services ?? [],
+            deliveryFocus: r.deliveryFocus ?? [],
+            onlineUrl: r.onlineUrl,
+            onlineLabel: r.onlineLabel,
             order: r.order,
             published: r.published,
           })),
@@ -927,6 +917,11 @@ function ExperienceModule({
           sector: "Sector",
           engagement: "Engagement type",
           summary: "Describe the project…",
+          context: "",
+          challenge: "",
+          engagementDetail: "",
+          services: [],
+          deliveryFocus: [],
           published: false,
         });
 
@@ -941,7 +936,13 @@ function ExperienceModule({
             sector: created.sector,
             engagement: created.engagement,
             summary: created.summary,
-            services: created.services,
+            context: created.context ?? "",
+            challenge: created.challenge ?? "",
+            engagementDetail: created.engagementDetail ?? "",
+            services: created.services ?? [],
+            deliveryFocus: created.deliveryFocus ?? [],
+            onlineUrl: created.onlineUrl,
+            onlineLabel: created.onlineLabel,
             order: created.order,
             published: created.published,
           },
@@ -968,7 +969,13 @@ function ExperienceModule({
         sector: updated.sector,
         engagement: updated.engagement,
         summary: updated.summary,
+        context: updated.context,
+        challenge: updated.challenge,
+        engagementDetail: updated.engagementDetail,
         services: updated.services,
+        deliveryFocus: updated.deliveryFocus,
+        onlineUrl: updated.onlineUrl,
+        onlineLabel: updated.onlineLabel,
         published: updated.published,
       });
       setEditingId(null);
@@ -1089,7 +1096,32 @@ function ExperienceModule({
                           {project.summary}
                         </p>
 
-                        <div className="mt-4 flex flex-wrap gap-2">
+                        {/* Detail-page content preview */}
+                        <div className="mt-4 flex flex-wrap gap-2 text-[11px]">
+                          <DetailPill
+                            label="Context"
+                            complete={project.context.length > 0}
+                          />
+                          <DetailPill
+                            label="Challenge"
+                            complete={project.challenge.length > 0}
+                          />
+                          <DetailPill
+                            label="Engagement"
+                            complete={project.engagementDetail.length > 0}
+                          />
+                          <DetailPill
+                            label="Delivery focus"
+                            complete={project.deliveryFocus.length > 0}
+                            count={project.deliveryFocus.length}
+                          />
+                          <DetailPill
+                            label="Online link"
+                            complete={!!project.onlineUrl}
+                          />
+                        </div>
+
+                        <div className="mt-3 flex flex-wrap gap-2">
                           {project.services.map((service) => (
                             <span
                               key={service}
@@ -1159,7 +1191,21 @@ function ProjectEditor({
   const [sector, setSector] = useState(project.sector);
   const [engagement, setEngagement] = useState(project.engagement);
   const [summary, setSummary] = useState(project.summary);
+
+  const [context, setContext] = useState(project.context);
+  const [challenge, setChallenge] = useState(project.challenge);
+  const [engagementDetail, setEngagementDetail] = useState(
+    project.engagementDetail,
+  );
+
   const [servicesText, setServicesText] = useState(project.services.join("\n"));
+  const [deliveryFocusText, setDeliveryFocusText] = useState(
+    project.deliveryFocus.join("\n"),
+  );
+
+  const [onlineUrl, setOnlineUrl] = useState(project.onlineUrl ?? "");
+  const [onlineLabel, setOnlineLabel] = useState(project.onlineLabel ?? "");
+
   const [published, setPublished] = useState(project.published);
   const [saving, startSave] = useTransition();
 
@@ -1173,10 +1219,19 @@ function ProjectEditor({
         sector,
         engagement,
         summary,
+        context,
+        challenge,
+        engagementDetail,
         services: servicesText
           .split("\n")
           .map((s) => s.trim())
           .filter(Boolean),
+        deliveryFocus: deliveryFocusText
+          .split("\n")
+          .map((s) => s.trim())
+          .filter(Boolean),
+        onlineUrl: onlineUrl.trim() ? onlineUrl.trim() : null,
+        onlineLabel: onlineLabel.trim() ? onlineLabel.trim() : null,
         published,
       });
     });
@@ -1190,67 +1245,150 @@ function ProjectEditor({
       saving={saving}
       onSave={handleSave}
     >
-      <Field label="Reference">
-        <input
-          value={ref}
-          onChange={(e) => setRef(e.target.value)}
-          placeholder="e.g. P-001"
-          className={inputClass}
-        />
-      </Field>
+      {/* ---------------- Identity ---------------- */}
 
-      <Field label="Project title">
-        <input
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
-          className={inputClass}
-        />
-      </Field>
+      <EditorSection label="Identity">
+        <div className="grid gap-4 sm:grid-cols-[120px_1fr]">
+          <Field label="Reference">
+            <input
+              value={ref}
+              onChange={(e) => setRef(e.target.value)}
+              placeholder="P-001"
+              className={inputClass}
+            />
+          </Field>
 
-      <div className="grid gap-4 sm:grid-cols-2">
-        <Field label="Client">
+          <Field label="Title">
+            <input
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
+              className={inputClass}
+            />
+          </Field>
+        </div>
+      </EditorSection>
+
+      {/* ---------------- Core metadata ---------------- */}
+
+      <EditorSection label="Metadata">
+        <div className="grid gap-4 sm:grid-cols-2">
+          <Field label="Client">
+            <input
+              value={client}
+              onChange={(e) => setClient(e.target.value)}
+              className={inputClass}
+            />
+          </Field>
+
+          <Field label="Sector">
+            <input
+              value={sector}
+              onChange={(e) => setSector(e.target.value)}
+              className={inputClass}
+            />
+          </Field>
+        </div>
+
+        <Field label="Engagement type">
           <input
-            value={client}
-            onChange={(e) => setClient(e.target.value)}
+            value={engagement}
+            onChange={(e) => setEngagement(e.target.value)}
             className={inputClass}
           />
         </Field>
 
-        <Field label="Sector">
-          <input
-            value={sector}
-            onChange={(e) => setSector(e.target.value)}
+        <Field label="Summary (shown on cards)">
+          <textarea
+            value={summary}
+            onChange={(e) => setSummary(e.target.value)}
+            rows={4}
             className={inputClass}
           />
         </Field>
-      </div>
+      </EditorSection>
 
-      <Field label="Engagement">
-        <input
-          value={engagement}
-          onChange={(e) => setEngagement(e.target.value)}
-          className={inputClass}
-        />
-      </Field>
+      {/* ---------------- Detail page content ---------------- */}
 
-      <Field label="Summary">
-        <textarea
-          value={summary}
-          onChange={(e) => setSummary(e.target.value)}
-          rows={5}
-          className={inputClass}
-        />
-      </Field>
+      <EditorSection label="Detail page content">
+        <Field label="Project context">
+          <textarea
+            value={context}
+            onChange={(e) => setContext(e.target.value)}
+            rows={5}
+            placeholder="Background, setting and why this engagement happened…"
+            className={inputClass}
+          />
+        </Field>
 
-      <Field label="Services">
-        <textarea
-          value={servicesText}
-          onChange={(e) => setServicesText(e.target.value)}
-          rows={5}
-          placeholder="One service per line"
-          className={inputClass}
-        />
-      </Field>
+        <Field label="The challenge">
+          <textarea
+            value={challenge}
+            onChange={(e) => setChallenge(e.target.value)}
+            rows={5}
+            placeholder="What problem did the engagement address?"
+            className={inputClass}
+          />
+        </Field>
+
+        <Field label="WilCom's engagement">
+          <textarea
+            value={engagementDetail}
+            onChange={(e) => setEngagementDetail(e.target.value)}
+            rows={5}
+            placeholder="What WilCom actually did…"
+            className={inputClass}
+          />
+        </Field>
+      </EditorSection>
+
+      {/* ---------------- Lists ---------------- */}
+
+      <EditorSection label="Lists">
+        <Field label="Services (one per line)">
+          <textarea
+            value={servicesText}
+            onChange={(e) => setServicesText(e.target.value)}
+            rows={4}
+            placeholder="Management Consulting&#10;Digital Transformation"
+            className={inputClass}
+          />
+        </Field>
+
+        <Field label="Delivery focus (one per line)">
+          <textarea
+            value={deliveryFocusText}
+            onChange={(e) => setDeliveryFocusText(e.target.value)}
+            rows={4}
+            placeholder="Process mapping and redesign&#10;Digital workflow configuration"
+            className={inputClass}
+          />
+        </Field>
+      </EditorSection>
+
+      {/* ---------------- External link ---------------- */}
+
+      <EditorSection label="External link (optional)">
+        <Field label="URL">
+          <input
+            type="url"
+            value={onlineUrl}
+            onChange={(e) => setOnlineUrl(e.target.value)}
+            placeholder="https://…"
+            className={inputClass}
+          />
+        </Field>
+
+        <Field label="Button label">
+          <input
+            value={onlineLabel}
+            onChange={(e) => setOnlineLabel(e.target.value)}
+            placeholder="View live system"
+            className={inputClass}
+          />
+        </Field>
+      </EditorSection>
+
+      {/* ---------------- Publication ---------------- */}
 
       <PublishToggle value={published} onChange={setPublished} />
     </EditorShell>
@@ -1613,8 +1751,8 @@ function EditorShell({
   children: React.ReactNode;
 }) {
   return (
-    <div className="sticky top-6 rounded-2xl border border-slate-200 bg-white p-5 dark:border-white/10 dark:bg-ink-900">
-      <div className="flex items-start justify-between">
+    <div className="sticky top-6 max-h-[calc(100vh-3rem)] overflow-y-auto rounded-2xl border border-slate-200 bg-white p-5 dark:border-white/10 dark:bg-ink-900">
+      <div className="sticky -top-5 z-10 -mx-5 -mt-5 mb-4 flex items-start justify-between border-b border-slate-200 bg-white px-5 py-4 dark:border-white/10 dark:bg-ink-900">
         <div>
           <div className="text-xs font-semibold uppercase tracking-[0.14em] text-brand-600">
             {eyebrow}
@@ -1633,10 +1771,10 @@ function EditorShell({
         </button>
       </div>
 
-      <div className="mt-6 space-y-5">
+      <div className="space-y-6">
         {children}
 
-        <div className="flex gap-2 pt-2">
+        <div className="flex gap-2 border-t border-slate-200 pt-4 dark:border-white/10">
           <button
             type="button"
             onClick={onSave}
@@ -1656,6 +1794,58 @@ function EditorShell({
         </div>
       </div>
     </div>
+  );
+}
+
+function EditorSection({
+  label,
+  children,
+}: {
+  label: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <section className="space-y-4">
+      <div className="flex items-center gap-3">
+        <span className="text-[10px] font-bold uppercase tracking-[0.16em] text-slate-400">
+          {label}
+        </span>
+        <span className="h-px flex-1 bg-slate-200 dark:bg-white/10" />
+      </div>
+      {children}
+    </section>
+  );
+}
+
+function DetailPill({
+  label,
+  complete,
+  count,
+}: {
+  label: string;
+  complete: boolean;
+  count?: number;
+}) {
+  return (
+    <span
+      className={[
+        "inline-flex items-center gap-1 rounded-full px-2 py-0.5 font-medium",
+        complete
+          ? "bg-emerald-50 text-emerald-700 dark:bg-emerald-500/10 dark:text-emerald-300"
+          : "bg-slate-100 text-slate-400 dark:bg-white/5 dark:text-slate-500",
+      ].join(" ")}
+    >
+      <span
+        className={[
+          "h-1.5 w-1.5 rounded-full",
+          complete ? "bg-emerald-500" : "bg-slate-400 dark:bg-slate-600",
+        ].join(" ")}
+      />
+      {label}
+      {typeof count === "number" && count > 0 && (
+        <span className="text-[10px] opacity-70">({count})</span>
+      )}
+    </span>
   );
 }
 

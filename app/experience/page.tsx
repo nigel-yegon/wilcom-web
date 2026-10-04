@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     },
 };
 
-export const revalidate = 300; // ISR — refresh at most every 5 minutes
+export const revalidate = 10; // ISR — refresh at most every 10 seconds
 
 export default async function ExperiencePage() {
     const [projects, services] = await Promise.all([
