@@ -27,7 +27,7 @@ export default function Navbar() {
     const isAdmin = (user?.publicMetadata as { role?: string })?.role === "admin";
 
     return (
-        <nav className="sticky top-0 z-50 border-b border-ink-200 bg-white/90 backdrop-blur dark:border-ink-800 dark:bg-ink-950/90">
+        <nav className="sticky top-0 z-50 border-b border-ink-200 bg-white/3 backdrop-blur dark:border-ink-200 dark:bg-ink-900/9">
             <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-0">
 
                 {/* Logo */}
