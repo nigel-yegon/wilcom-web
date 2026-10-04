@@ -92,7 +92,7 @@ export default function RootLayout({
     "@type": "Organization",
     name: "WilCom Systems Limited",
     url: "https://wilcom.co.ke",
-    logo: "https://wilcom.co.ke/favicon.webp",
+    logo: "https://wilcom.co.ke/favicon.png",
     description:
       "Kenyan-registered ICT company delivering networking, security, POS, software development, and e-Government solutions since 2008.",
     foundingDate: "2008",

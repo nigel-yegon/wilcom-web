@@ -392,7 +392,7 @@ export default function AnimatedHero() {
                             repeat: Infinity,
                             ease: "easeInOut",
                         }}
-                        className="h-152 w-152 rounded-full bg-brand-400/25 blur-3xl dark:bg-brand-500/15"
+                        className="h-152 w-152 rounded-full bg-brand-600 blur-3xl dark:bg-brand-500"
                     />
                 </ParallaxLayer>
 

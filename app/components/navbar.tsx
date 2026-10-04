@@ -28,26 +28,30 @@ export default function Navbar() {
 
     return (
         <nav className="sticky top-0 z-50 border-b border-ink-200 bg-white/90 backdrop-blur dark:border-ink-800 dark:bg-ink-950/90">
-            <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-3">
+            <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-0">
 
                 {/* Logo */}
                 <Link
                     href="/"
-                    className="flex items-center gap-0.5"
+                    className="items-baseline gap-0"
                     onClick={() => setOpen(false)}
                     aria-label="WilCom Systems Limited — Home"
                 >
                     <Image
-                        src="/favicon.png"
+                        src="/wilcom-transparent.png"
                         alt="WilCom Systems Limited"
                         width={50}
                         height={50}
                         priority
-                        className="h-10 w-auto rounded-full object-contain p-1 md:h-12"
+                        className="h-10 w-auto object-contain pt-0.5 md:h-12"
                     />
-                    <span className="whitespace-nowrap text-lg font-bold text-brand-600 dark:text-brand-400 md:text-xl">
-                        WilCom Systems
+                    <span className="whitespace-nowrap text-xl font-bold pr-1.5 text-gray-900 dark:text-gray-300 md:text-xl">
+                        WILCOM
                     </span>
+                    <span className="whitespace-nowrap text-xl font-bold text-brand-700 dark:text-brand-600 md:text-xl">
+                        Systems
+                    </span>
+                    
                 </Link>
 
                 <div className="flex items-center gap-4">
