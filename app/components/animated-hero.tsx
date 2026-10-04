@@ -358,8 +358,8 @@ export default function AnimatedHero() {
         return () => document.removeEventListener("visibilitychange", onVis);
     }, []);
 
-    const headlineTop = ["Development, management"];
-    const headlineAccent = "& technology consulting.";
+    const headlineTop = ["Transforming institutions through strategy,"];
+    const headlineAccent = "technology & execution";
 
     return (
         <section
@@ -503,7 +503,7 @@ export default function AnimatedHero() {
                                     <span className="relative inline-flex h-2 w-2 rounded-full bg-brand-600" />
                                 </span>
                                 <span className="text-xs font-semibold uppercase tracking-widest text-brand-700 dark:text-brand-300">
-                                    WilCom Systems Limited
+                                    Development | Technology | Management Consulting
                                 </span>
                             </div>
                         </FadeIn>
