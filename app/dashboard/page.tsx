@@ -31,6 +31,8 @@ type ServiceRecord = {
   slug: string;
   description: string;
   icon: string | null;
+  link: string | null;
+  activities: string[];
   order: number;
   published: boolean;
 };
@@ -103,6 +105,8 @@ export default function DashboardPage() {
             slug: r.slug,
             description: r.description,
             icon: r.icon,
+            link: r.link,
+            activities: r.activities ?? [],
             order: r.order,
             published: r.published,
           })),
@@ -313,31 +317,31 @@ function DashboardSidebar({
     description: string;
     icon: React.ReactNode;
   }[] = [
-    {
-      key: "overview",
-      label: "Overview",
-      description: "Dashboard summary",
-      icon: <GridIcon />,
-    },
-    {
-      key: "services",
-      label: "Services",
-      description: "Manage service areas",
-      icon: <LayersIcon />,
-    },
-    {
-      key: "experience",
-      label: "Experience",
-      description: "Manage projects",
-      icon: <BriefcaseIcon />,
-    },
-    {
-      key: "sectors",
-      label: "Sectors",
-      description: "Manage sectors",
-      icon: <BuildingIcon />,
-    },
-  ];
+      {
+        key: "overview",
+        label: "Overview",
+        description: "Dashboard summary",
+        icon: <GridIcon />,
+      },
+      {
+        key: "services",
+        label: "Services",
+        description: "Manage service areas",
+        icon: <LayersIcon />,
+      },
+      {
+        key: "experience",
+        label: "Experience",
+        description: "Manage projects",
+        icon: <BriefcaseIcon />,
+      },
+      {
+        key: "sectors",
+        label: "Sectors",
+        description: "Manage sectors",
+        icon: <BuildingIcon />,
+      },
+    ];
 
   return (
     <aside className="hidden w-72 shrink-0 border-r border-slate-200 bg-white dark:border-white/10 dark:bg-ink-900 lg:block">
@@ -534,8 +538,8 @@ function Overview({
             Content overview
           </h2>
           <p className="mt-1 max-w-2xl text-sm leading-6 text-slate-500 dark:text-slate-400">
-            A central workspace for managing the consulting services,
-            project experience and sectors represented across the WilCom
+            A central workspace for recording projects, services offered;services,
+            project experience and sectors to be displayed across the WilCom
             website.
           </p>
         </div>
@@ -657,24 +661,26 @@ function ServicesModule({
     startTransition(async () => {
       try {
         const created = await createService({
-          title: "New Service",
-          description: "Describe this service…",
-          published: false,
-        });
+    title: "New Service",
+    description: "Describe this service…",
+    activities: [],
+    published: false,
+});
 
-        setServices((current) => [
-          ...current,
-          {
-            id: created.id,
-            title: created.title,
-            slug: created.slug,
-            description: created.description,
-            icon: created.icon,
-            order: created.order,
-            published: created.published,
-          },
-        ]);
-
+setServices((current) => [
+    ...current,
+    {
+        id: created.id,
+        title: created.title,
+        slug: created.slug,
+        description: created.description,
+        icon: created.icon,
+        link: created.link,
+        activities: created.activities ?? [],
+        order: created.order,
+        published: created.published,
+    },
+]);
         setEditingId(created.id);
       } catch (err) {
         alert(err instanceof Error ? err.message : "Failed to create service");
@@ -693,6 +699,9 @@ function ServicesModule({
         title: updated.title,
         description: updated.description,
         icon: updated.icon,
+        link: updated.link,
+        activities: updated.activities,
+        order: updated.order,
         published: updated.published,
       });
       setEditingId(null);
@@ -819,69 +828,105 @@ function ServicesModule({
 }
 
 function ServiceEditor({
-  service,
-  onClose,
-  onSave,
+    service,
+    onClose,
+    onSave,
 }: {
-  service: ServiceRecord;
-  onClose: () => void;
-  onSave: (service: ServiceRecord) => void | Promise<void>;
+    service: ServiceRecord;
+    onClose: () => void;
+    onSave: (service: ServiceRecord) => void | Promise<void>;
 }) {
-  const [title, setTitle] = useState(service.title);
-  const [description, setDescription] = useState(service.description);
-  const [icon, setIcon] = useState(service.icon ?? "");
-  const [published, setPublished] = useState(service.published);
-  const [saving, startSave] = useTransition();
+    const [title, setTitle] = useState(service.title);
+    const [description, setDescription] = useState(service.description);
+    const [icon, setIcon] = useState(service.icon ?? "");
+    const [link, setLink] = useState(service.link ?? "");
+    const [activitiesText, setActivitiesText] = useState(
+        service.activities.join("\n"),
+    );
+    const [published, setPublished] = useState(service.published);
+    const [saving, startSave] = useTransition();
 
-  function handleSave() {
-    startSave(async () => {
-      await onSave({
-        ...service,
-        title,
-        description,
-        icon: icon.trim() ? icon.trim() : null,
-        published,
-      });
-    });
-  }
+    function handleSave() {
+        startSave(async () => {
+            await onSave({
+                ...service,
+                title,
+                description,
+                icon: icon.trim() ? icon.trim() : null,
+                link: link.trim() ? link.trim() : null,
+                activities: activitiesText
+                    .split("\n")
+                    .map((s) => s.trim())
+                    .filter(Boolean),
+                published,
+            });
+        });
+    }
 
-  return (
-    <EditorShell
-      eyebrow="Edit service"
-      title="Service details"
-      onClose={onClose}
-      saving={saving}
-      onSave={handleSave}
-    >
-      <Field label="Service title">
-        <input
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
-          className={inputClass}
-        />
-      </Field>
+    return (
+        <EditorShell
+            eyebrow="Edit service"
+            title="Service details"
+            onClose={onClose}
+            saving={saving}
+            onSave={handleSave}
+        >
+            <Field label="Service title">
+                <input
+                    value={title}
+                    onChange={(e) => setTitle(e.target.value)}
+                    className={inputClass}
+                />
+            </Field>
 
-      <Field label="Description">
-        <textarea
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
-          rows={6}
-          className={inputClass}
-        />
-      </Field>
+            <Field label="Description">
+                <textarea
+                    value={description}
+                    onChange={(e) => setDescription(e.target.value)}
+                    rows={6}
+                    className={inputClass}
+                />
+            </Field>
 
-      <Field label="Icon (optional)">
-        <input
-          value={icon}
-          onChange={(e) => setIcon(e.target.value)}
-          placeholder="e.g. layers, briefcase, building"
-          className={inputClass}
-        />
-      </Field>
+            <Field label="Icon (optional)">
+                <input
+                    value={icon}
+                    onChange={(e) => setIcon(e.target.value)}
+                    placeholder="e.g. layers, briefcase, building"
+                    className={inputClass}
+                />
+            </Field>
 
-      <PublishToggle value={published} onChange={setPublished} />
-    </EditorShell>
-  );
+            <Field label="Activities (one per line)">
+                <textarea
+                    value={activitiesText}
+                    onChange={(e) => setActivitiesText(e.target.value)}
+                    rows={6}
+                    placeholder={`Process and systems assessment\nInformation and records management\nCase and workflow management systems`}
+                    className={inputClass}
+                />
+                <p className="mt-1 text-[11px] text-slate-400">
+                    What this service actually does, listed as bullets on the
+                    service detail page.
+                </p>
+            </Field>
+
+            <Field label="Link (optional)">
+                <input
+                    type="url"
+                    value={link}
+                    onChange={(e) => setLink(e.target.value)}
+                    placeholder="https://…"
+                    className={inputClass}
+                />
+                <p className="mt-1 text-[11px] text-slate-400">
+                    External resource related to this service.
+                </p>
+            </Field>
+
+            <PublishToggle value={published} onChange={setPublished} />
+        </EditorShell>
+    );
 }
 
 /* -------------------------------------------------------------------------- */

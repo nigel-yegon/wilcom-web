@@ -16,6 +16,15 @@ const services = [
         description:
             "Advisory support focused on institutional, operational and management challenges, translating requirements into practical actions and delivery priorities.",
         icon: "briefcase",
+        link: null,
+        activities: [
+            "Institutional and operational assessment",
+            "Business process analysis and redesign",
+            "Requirements gathering and prioritisation",
+            "Strategy and operating model development",
+            "Implementation planning and roadmap design",
+            "Stakeholder engagement and change support",
+        ],
         order: 0,
         published: true,
     },
@@ -25,6 +34,15 @@ const services = [
         description:
             "Helping organizations redesign services, processes and operating models through purposeful use of digital technologies.",
         icon: "refresh",
+        link: null,
+        activities: [
+            "Digital maturity and readiness assessment",
+            "Service and process redesign for digital delivery",
+            "Transformation strategy and roadmap development",
+            "Systems and technology landscape review",
+            "Digital operating model design",
+            "Change management and adoption planning",
+        ],
         order: 1,
         published: true,
     },
@@ -34,6 +52,15 @@ const services = [
         description:
             "Designing and developing fit-for-purpose information systems, web platforms and enterprise applications.",
         icon: "code",
+        link: null,
+        activities: [
+            "Requirements analysis and specification",
+            "System architecture and design",
+            "Web and enterprise application development",
+            "Database design and data modelling",
+            "Integration with existing systems",
+            "Testing, deployment and post-launch support",
+        ],
         order: 2,
         published: true,
     },
@@ -43,6 +70,15 @@ const services = [
         description:
             "Independent advice on ICT strategy, needs assessment, architecture, infrastructure, systems and technology investment.",
         icon: "consulting",
+        link: null,
+        activities: [
+            "ICT strategy and roadmap development",
+            "ICT needs assessment and gap analysis",
+            "Architecture and infrastructure review",
+            "Technology investment appraisal",
+            "Vendor and solution evaluation",
+            "ICT governance and policy advisory",
+        ],
         order: 3,
         published: true,
     },
@@ -52,6 +88,15 @@ const services = [
         description:
             "Quality assurance, security assessment and controls designed to improve the reliability, resilience and trustworthiness of digital systems.",
         icon: "shield",
+        link: null,
+        activities: [
+            "Quality assurance reviews and audits",
+            "Security assessment and penetration testing",
+            "Access-control and identity review",
+            "Business continuity and disaster recovery assessment",
+            "Compliance and audit-readiness support",
+            "Controls design and remediation planning",
+        ],
         order: 4,
         published: true,
     },
@@ -61,6 +106,15 @@ const services = [
         description:
             "Structured training, knowledge transfer and institutional capability development to support adoption and sustainable use.",
         icon: "academic",
+        link: null,
+        activities: [
+            "Training needs assessment",
+            "Curriculum and training material development",
+            "Instructor-led and blended training delivery",
+            "Technical and end-user skills transfer",
+            "Institutional capability development",
+            "Post-training support and evaluation",
+        ],
         order: 5,
         published: true,
     },
@@ -70,6 +124,15 @@ const services = [
         description:
             "Practical implementation support across complex technology, institutional development and digital transformation programmes.",
         icon: "layers",
+        link: null,
+        activities: [
+            "Programme design and implementation planning",
+            "Stakeholder coordination and engagement",
+            "Workstream and partner management",
+            "Monitoring, reporting and evaluation",
+            "Risk management and issue resolution",
+            "Handover and sustainability planning",
+        ],
         order: 6,
         published: true,
     },
@@ -79,6 +142,15 @@ const services = [
         description:
             "Infrastructure, connectivity and technology integration capabilities supporting dependable digital environments.",
         icon: "network",
+        link: null,
+        activities: [
+            "Infrastructure assessment and design",
+            "Network and connectivity planning",
+            "Server, storage and cloud deployment",
+            "Systems integration and data exchange",
+            "Infrastructure security and resilience",
+            "Operations and support planning",
+        ],
         order: 7,
         published: true,
     },
@@ -449,6 +521,7 @@ const projects = [
         published: true,
     },
 ];
+
 
 /* -------------------------------------------------------------------------- */
 /* CONTACT SUBMISSIONS (demo)                                                 */

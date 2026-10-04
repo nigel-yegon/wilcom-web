@@ -40,6 +40,7 @@ export type ServiceMinAggregateOutputType = {
   description: string | null
   slug: string | null
   icon: string | null
+  link: string | null
   order: number | null
   published: boolean | null
   createdAt: Date | null
@@ -52,6 +53,7 @@ export type ServiceMaxAggregateOutputType = {
   description: string | null
   slug: string | null
   icon: string | null
+  link: string | null
   order: number | null
   published: boolean | null
   createdAt: Date | null
@@ -64,6 +66,8 @@ export type ServiceCountAggregateOutputType = {
   description: number
   slug: number
   icon: number
+  link: number
+  activities: number
   order: number
   published: number
   createdAt: number
@@ -86,6 +90,7 @@ export type ServiceMinAggregateInputType = {
   description?: true
   slug?: true
   icon?: true
+  link?: true
   order?: true
   published?: true
   createdAt?: true
@@ -98,6 +103,7 @@ export type ServiceMaxAggregateInputType = {
   description?: true
   slug?: true
   icon?: true
+  link?: true
   order?: true
   published?: true
   createdAt?: true
@@ -110,6 +116,8 @@ export type ServiceCountAggregateInputType = {
   description?: true
   slug?: true
   icon?: true
+  link?: true
+  activities?: true
   order?: true
   published?: true
   createdAt?: true
@@ -209,6 +217,8 @@ export type ServiceGroupByOutputType = {
   description: string
   slug: string
   icon: string | null
+  link: string | null
+  activities: string[]
   order: number
   published: boolean
   createdAt: Date
@@ -244,6 +254,8 @@ export type ServiceWhereInput = {
   description?: Prisma.StringFilter<"Service"> | string
   slug?: Prisma.StringFilter<"Service"> | string
   icon?: Prisma.StringNullableFilter<"Service"> | string | null
+  link?: Prisma.StringNullableFilter<"Service"> | string | null
+  activities?: Prisma.StringNullableListFilter<"Service">
   order?: Prisma.IntFilter<"Service"> | number
   published?: Prisma.BoolFilter<"Service"> | boolean
   createdAt?: Prisma.DateTimeFilter<"Service"> | Date | string
@@ -256,6 +268,8 @@ export type ServiceOrderByWithRelationInput = {
   description?: Prisma.SortOrder
   slug?: Prisma.SortOrder
   icon?: Prisma.SortOrderInput | Prisma.SortOrder
+  link?: Prisma.SortOrderInput | Prisma.SortOrder
+  activities?: Prisma.SortOrder
   order?: Prisma.SortOrder
   published?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
@@ -271,6 +285,8 @@ export type ServiceWhereUniqueInput = Prisma.AtLeast<{
   title?: Prisma.StringFilter<"Service"> | string
   description?: Prisma.StringFilter<"Service"> | string
   icon?: Prisma.StringNullableFilter<"Service"> | string | null
+  link?: Prisma.StringNullableFilter<"Service"> | string | null
+  activities?: Prisma.StringNullableListFilter<"Service">
   order?: Prisma.IntFilter<"Service"> | number
   published?: Prisma.BoolFilter<"Service"> | boolean
   createdAt?: Prisma.DateTimeFilter<"Service"> | Date | string
@@ -283,6 +299,8 @@ export type ServiceOrderByWithAggregationInput = {
   description?: Prisma.SortOrder
   slug?: Prisma.SortOrder
   icon?: Prisma.SortOrderInput | Prisma.SortOrder
+  link?: Prisma.SortOrderInput | Prisma.SortOrder
+  activities?: Prisma.SortOrder
   order?: Prisma.SortOrder
   published?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
@@ -303,6 +321,8 @@ export type ServiceScalarWhereWithAggregatesInput = {
   description?: Prisma.StringWithAggregatesFilter<"Service"> | string
   slug?: Prisma.StringWithAggregatesFilter<"Service"> | string
   icon?: Prisma.StringNullableWithAggregatesFilter<"Service"> | string | null
+  link?: Prisma.StringNullableWithAggregatesFilter<"Service"> | string | null
+  activities?: Prisma.StringNullableListFilter<"Service">
   order?: Prisma.IntWithAggregatesFilter<"Service"> | number
   published?: Prisma.BoolWithAggregatesFilter<"Service"> | boolean
   createdAt?: Prisma.DateTimeWithAggregatesFilter<"Service"> | Date | string
@@ -315,6 +335,8 @@ export type ServiceCreateInput = {
   description?: string
   slug: string
   icon?: string | null
+  link?: string | null
+  activities?: Prisma.ServiceCreateactivitiesInput | string[]
   order?: number
   published?: boolean
   createdAt?: Date | string
@@ -327,6 +349,8 @@ export type ServiceUncheckedCreateInput = {
   description?: string
   slug: string
   icon?: string | null
+  link?: string | null
+  activities?: Prisma.ServiceCreateactivitiesInput | string[]
   order?: number
   published?: boolean
   createdAt?: Date | string
@@ -339,6 +363,8 @@ export type ServiceUpdateInput = {
   description?: Prisma.StringFieldUpdateOperationsInput | string
   slug?: Prisma.StringFieldUpdateOperationsInput | string
   icon?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  link?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  activities?: Prisma.ServiceUpdateactivitiesInput | string[]
   order?: Prisma.IntFieldUpdateOperationsInput | number
   published?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -351,6 +377,8 @@ export type ServiceUncheckedUpdateInput = {
   description?: Prisma.StringFieldUpdateOperationsInput | string
   slug?: Prisma.StringFieldUpdateOperationsInput | string
   icon?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  link?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  activities?: Prisma.ServiceUpdateactivitiesInput | string[]
   order?: Prisma.IntFieldUpdateOperationsInput | number
   published?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -363,6 +391,8 @@ export type ServiceCreateManyInput = {
   description?: string
   slug: string
   icon?: string | null
+  link?: string | null
+  activities?: Prisma.ServiceCreateactivitiesInput | string[]
   order?: number
   published?: boolean
   createdAt?: Date | string
@@ -375,6 +405,8 @@ export type ServiceUpdateManyMutationInput = {
   description?: Prisma.StringFieldUpdateOperationsInput | string
   slug?: Prisma.StringFieldUpdateOperationsInput | string
   icon?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  link?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  activities?: Prisma.ServiceUpdateactivitiesInput | string[]
   order?: Prisma.IntFieldUpdateOperationsInput | number
   published?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -387,10 +419,20 @@ export type ServiceUncheckedUpdateManyInput = {
   description?: Prisma.StringFieldUpdateOperationsInput | string
   slug?: Prisma.StringFieldUpdateOperationsInput | string
   icon?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  link?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  activities?: Prisma.ServiceUpdateactivitiesInput | string[]
   order?: Prisma.IntFieldUpdateOperationsInput | number
   published?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+}
+
+export type StringNullableListFilter<$PrismaModel = never> = {
+  equals?: string[] | Prisma.ListStringFieldRefInput<$PrismaModel> | null
+  has?: string | Prisma.StringFieldRefInput<$PrismaModel> | null
+  hasEvery?: string[] | Prisma.ListStringFieldRefInput<$PrismaModel>
+  hasSome?: string[] | Prisma.ListStringFieldRefInput<$PrismaModel>
+  isEmpty?: boolean
 }
 
 export type ServiceCountOrderByAggregateInput = {
@@ -399,6 +441,8 @@ export type ServiceCountOrderByAggregateInput = {
   description?: Prisma.SortOrder
   slug?: Prisma.SortOrder
   icon?: Prisma.SortOrder
+  link?: Prisma.SortOrder
+  activities?: Prisma.SortOrder
   order?: Prisma.SortOrder
   published?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
@@ -415,6 +459,7 @@ export type ServiceMaxOrderByAggregateInput = {
   description?: Prisma.SortOrder
   slug?: Prisma.SortOrder
   icon?: Prisma.SortOrder
+  link?: Prisma.SortOrder
   order?: Prisma.SortOrder
   published?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
@@ -427,6 +472,7 @@ export type ServiceMinOrderByAggregateInput = {
   description?: Prisma.SortOrder
   slug?: Prisma.SortOrder
   icon?: Prisma.SortOrder
+  link?: Prisma.SortOrder
   order?: Prisma.SortOrder
   published?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
@@ -435,6 +481,15 @@ export type ServiceMinOrderByAggregateInput = {
 
 export type ServiceSumOrderByAggregateInput = {
   order?: Prisma.SortOrder
+}
+
+export type ServiceCreateactivitiesInput = {
+  set: string[]
+}
+
+export type ServiceUpdateactivitiesInput = {
+  set?: string[]
+  push?: string | string[]
 }
 
 export type IntFieldUpdateOperationsInput = {
@@ -453,6 +508,8 @@ export type ServiceSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs 
   description?: boolean
   slug?: boolean
   icon?: boolean
+  link?: boolean
+  activities?: boolean
   order?: boolean
   published?: boolean
   createdAt?: boolean
@@ -465,6 +522,8 @@ export type ServiceSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Exten
   description?: boolean
   slug?: boolean
   icon?: boolean
+  link?: boolean
+  activities?: boolean
   order?: boolean
   published?: boolean
   createdAt?: boolean
@@ -477,6 +536,8 @@ export type ServiceSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Exten
   description?: boolean
   slug?: boolean
   icon?: boolean
+  link?: boolean
+  activities?: boolean
   order?: boolean
   published?: boolean
   createdAt?: boolean
@@ -489,13 +550,15 @@ export type ServiceSelectScalar = {
   description?: boolean
   slug?: boolean
   icon?: boolean
+  link?: boolean
+  activities?: boolean
   order?: boolean
   published?: boolean
   createdAt?: boolean
   updatedAt?: boolean
 }
 
-export type ServiceOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "title" | "description" | "slug" | "icon" | "order" | "published" | "createdAt" | "updatedAt", ExtArgs["result"]["service"]>
+export type ServiceOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "title" | "description" | "slug" | "icon" | "link" | "activities" | "order" | "published" | "createdAt" | "updatedAt", ExtArgs["result"]["service"]>
 
 export type $ServicePayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "Service"
@@ -506,6 +569,8 @@ export type $ServicePayload<ExtArgs extends runtime.Types.Extensions.InternalArg
     description: string
     slug: string
     icon: string | null
+    link: string | null
+    activities: string[]
     order: number
     published: boolean
     createdAt: Date
@@ -938,6 +1003,8 @@ export interface ServiceFieldRefs {
   readonly description: Prisma.FieldRef<"Service", 'String'>
   readonly slug: Prisma.FieldRef<"Service", 'String'>
   readonly icon: Prisma.FieldRef<"Service", 'String'>
+  readonly link: Prisma.FieldRef<"Service", 'String'>
+  readonly activities: Prisma.FieldRef<"Service", 'String[]'>
   readonly order: Prisma.FieldRef<"Service", 'Int'>
   readonly published: Prisma.FieldRef<"Service", 'Boolean'>
   readonly createdAt: Prisma.FieldRef<"Service", 'DateTime'>

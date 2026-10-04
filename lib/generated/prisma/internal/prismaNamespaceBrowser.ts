@@ -105,6 +105,8 @@ export const ServiceScalarFieldEnum = {
   description: 'description',
   slug: 'slug',
   icon: 'icon',
+  link: 'link',
+  activities: 'activities',
   order: 'order',
   published: 'published',
   createdAt: 'createdAt',

@@ -49,6 +49,8 @@ model Service {
   description String   @default("")
   slug        String   @unique
   icon        String?
+  link        String?
+  activities  String[] @default([])
   order       Int      @default(0)
   published   Boolean  @default(true)
   createdAt   DateTime @default(now())
