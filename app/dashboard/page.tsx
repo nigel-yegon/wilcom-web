@@ -484,14 +484,14 @@ function DashboardHeader({
         <FadeIn>
           <div>
             <div className="text-xs font-medium uppercase tracking-[0.16em] text-brand-600">
-              WilCom Systems Content
+              WilCom Systems' Content
             </div>
-            <h1 className="mt-1 text-2xl font-bold tracking-tight text-slate-950 dark:text-white">
+            <h1 className="text-2xl font-bold tracking-tight text-slate-950 dark:text-white">
               {titles[activeModule]}
             </h1>
-            <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
+            {/* <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
               {descriptions[activeModule]}
-            </p>
+            </p> */}
           </div>
         </FadeIn>
 
@@ -535,7 +535,7 @@ function Overview({
       <FadeIn>
         <div className="mb-8">
           <h2 className="text-xl font-bold text-slate-950 dark:text-white">
-            Content overview
+            Overview
           </h2>
           <p className="mt-1 max-w-2xl text-sm leading-6 text-slate-500 dark:text-slate-400">
             A central workspace for recording projects, services offered;services,
@@ -2010,9 +2010,9 @@ function ModuleHeading({
         <div className="text-xs font-semibold uppercase tracking-[0.16em] text-brand-600">
           {eyebrow}
         </div>
-        <h2 className="mt-2 text-2xl font-bold tracking-tight text-slate-950 dark:text-white">
+        {/* <h2 className="mt-2 text-2xl font-bold tracking-tight text-slate-950 dark:text-white">
           {title}
-        </h2>
+        </h2> */}
         <p className="mt-2 max-w-2xl text-sm leading-6 text-slate-500 dark:text-slate-400">
           {description}
         </p>
