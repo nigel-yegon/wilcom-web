@@ -365,7 +365,7 @@ export default function AnimatedHero() {
         <section
             ref={heroRef}
             id="home"
-            className="relative isolate overflow-hidden px-6 py-24 md:py-32 lg:py-36"
+            className="relative isolate overflow-hidden px-6 pt-10 pb-24 md:pt-14 md:pb-32 lg:pt-16 lg:pb-36"
         >
             {/* Animated background */}
             <div className="pointer-events-none absolute inset-0 -z-10">
