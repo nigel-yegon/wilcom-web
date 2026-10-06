@@ -6,18 +6,11 @@ export default async function DashboardLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const { userId, has } = await auth();
+ const { userId } = await auth();
 
-  // Not signed in
-  if (!userId) {
-    redirect("/sign-in");
-  }
+if (!userId) {
+  redirect("/sign-in");
+}
 
-  // Signed in, but not an admin
-  if (!has({ role: "admin" })) {
-    redirect("/");
-  }
-
-  // Signed in + admin
-  return <>{children}</>;
+return <>{children}</>;
 }
