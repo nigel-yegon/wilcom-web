@@ -6,18 +6,20 @@ export default async function DashboardLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const { userId, has } = await auth();
+  const { userId, sessionClaims } = await auth();
 
-  // User must be signed in
+  // Not signed in
   if (!userId) {
     redirect("/sign-in");
   }
 
-  // User must have the Clerk "admin" role
-  if (!has({ role: "admin" })) {
+  // Only users with publicMetadata.role === "admin"
+  // can access the dashboard
+  const userRole = (sessionClaims?.publicMetadata as { role?: string } | undefined)?.role;
+
+  if (userRole !== "admin") {
     redirect("/");
   }
 
-  // Only authenticated admins reach the dashboard
   return <>{children}</>;
 }
