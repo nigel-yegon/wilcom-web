@@ -24,7 +24,7 @@ export default function AccessibilityToolbar() {
   } = useAccessibility();
 
   return (
-    <div className="fixed right-0 top-1/2 z-[9999] -translate-y-1/2">
+    <div className="fixed right-0 top-1/2 z-9999 -translate-y-1/2">
       {open && (
         <div
           id="accessibility-panel"
