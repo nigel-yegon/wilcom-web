@@ -49,3 +49,144 @@ body {
   background: var(--color-brand-600);
   color: #ffffff;
 }
+/* =========================================================
+   WilCom Accessibility
+   ========================================================= */
+
+html.accessibility-large-text {
+  font-size: 112.5%;
+}
+
+html.accessibility-xlarge-text {
+  font-size: 125%;
+}
+
+html.accessibility-high-contrast {
+  filter: contrast(1.25);
+}
+
+html.accessibility-grayscale {
+  filter: grayscale(1);
+}
+
+html.accessibility-readable-font {
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+}
+
+html.accessibility-increased-spacing {
+  letter-spacing: 0.04em;
+  word-spacing: 0.08em;
+}
+
+html.accessibility-increased-spacing p,
+html.accessibility-increased-spacing li,
+html.accessibility-increased-spacing button,
+html.accessibility-increased-spacing a {
+  line-height: 1.8;
+}
+
+html.accessibility-reduced-motion *,
+html.accessibility-reduced-motion *::before,
+html.accessibility-reduced-motion *::after {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+  scroll-behavior: auto !important;
+}
+
+/* Always provide a visible keyboard focus indicator */
+:focus-visible {
+  outline: 3px solid #2563eb;
+  outline-offset: 3px;
+}
+
+/* Skip link */
+.skip-to-content {
+  position: fixed;
+  left: 1rem;
+  top: -100px;
+  z-index: 10000;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  background: #111827;
+  color: white;
+  font-weight: 600;
+}
+
+.skip-to-content:focus {
+  top: 1rem;
+}
+
+/* =========================================================
+   WilCom Accessibility
+   ========================================================= */
+
+html.accessibility-large-text {
+  font-size: 112.5%;
+}
+
+html.accessibility-xlarge-text {
+  font-size: 125%;
+}
+
+html.accessibility-high-contrast {
+  --accessibility-contrast: 1.15;
+}
+
+html.accessibility-grayscale {
+  filter: grayscale(1);
+}
+
+html.accessibility-readable-font {
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+}
+
+html.accessibility-increased-spacing {
+  letter-spacing: 0.04em;
+  word-spacing: 0.08em;
+}
+
+html.accessibility-increased-spacing p,
+html.accessibility-increased-spacing li,
+html.accessibility-increased-spacing button,
+html.accessibility-increased-spacing a {
+  line-height: 1.8;
+}
+
+html.accessibility-reduced-motion *,
+html.accessibility-reduced-motion *::before,
+html.accessibility-reduced-motion *::after {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+  scroll-behavior: auto !important;
+}
+
+/* Keyboard focus */
+:focus-visible {
+  outline: 3px solid currentColor;
+  outline-offset: 3px;
+}
+
+/* Skip navigation */
+.skip-to-content {
+  position: fixed;
+  left: 1rem;
+  top: -100px;
+  z-index: 10000;
+  border-radius: 0.5rem;
+  background: #111827;
+  color: #ffffff;
+  padding: 0.75rem 1rem;
+  font-weight: 600;
+}
+
+.skip-to-content:focus {
+  top: 1rem;
+}

@@ -9,6 +9,8 @@ import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import ScrollToTop from "./components/scroll-to-top";
+import { AccessibilityProvider } from "./components/accessibility/accessibility-provider";
+import AccessibilityToolbar from "./components/accessibility/accessibility-toolbar";
 
 
 const inter = Inter({ subsets: ["latin"], display: "swap" });
@@ -113,33 +115,36 @@ export default function RootLayout({
   };
 
   return (
-    
-      <html lang="en" suppressHydrationWarning>
-        <body
-          className={`${inter.className} min-h-screen flex flex-col`}
-          suppressHydrationWarning
-        >
-          <ClerkProvider>
-            <script
+
+    <html lang="en" suppressHydrationWarning>
+      <body
+        className={`${inter.className} min-h-screen flex flex-col`}
+        suppressHydrationWarning
+      >
+        <ClerkProvider>
+          <script
             type="application/ld+json"
             dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-            />
-            <ThemeProvider
+          />
+          <ThemeProvider
             attribute="class"
             defaultTheme="light"
             enableSystem
             disableTransitionOnChange
-            >
-            <Navbar />
-            <div className="flex-1">{children}</div>
-            <Footer />
-            <ScrollToTop />
-            </ThemeProvider>
-            <Analytics />
-            <SpeedInsights />
-            <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID!} />
-          </ClerkProvider>
-        </body>
-      </html>
-      );
+          >
+            <AccessibilityProvider>
+              <Navbar />
+              <div className="flex-1">{children}</div>
+              <Footer />
+              <ScrollToTop />
+              <AccessibilityToolbar />
+            </AccessibilityProvider>
+          </ThemeProvider>
+        <Analytics />
+        <SpeedInsights />
+        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID!} />
+      </ClerkProvider>
+    </body>
+  </html>
+  );
 }
