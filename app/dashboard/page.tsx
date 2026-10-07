@@ -23,6 +23,8 @@ import {
   updateService,
 } from "./actions/services";
 
+export const dynamic = 'force-dynamic';
+
 type ModuleKey = "overview" | "services" | "experience" | "sectors";
 
 type ServiceRecord = {
